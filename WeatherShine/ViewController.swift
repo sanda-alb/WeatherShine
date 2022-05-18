@@ -47,19 +47,35 @@ class MyViewController: UIViewController {
 
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.startUpdatingLocation()
+            startMySignificantLocationChanges()
         }
+    }
+    
+    func startMySignificantLocationChanges() {
+        if !CLLocationManager.significantLocationChangeMonitoringAvailable() {
+            // The device does not support this service.
+            return
+        }
+        locationManager.startMonitoringSignificantLocationChanges()
     }
 }
 
 extension MyViewController: CLLocationManagerDelegate {
-    public func locationManager(_ manager: CLLocationManager,
-                         didChangeAuthorization status: CLAuthorizationStatus) {
-
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-            print("locations = \(locValue.latitude) \(locValue.longitude)")
-        label.text = "\(manager.location)"
-
+    func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
+       let lastLocation = locations.last!
+                   
+       // Do something with the location.
+        print("Location: \(lastLocation)")
+        label.text = "\(lastLocation)"
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+       if let error = error as? CLError, error.code == .denied {
+          // Location updates are not authorized.
+          manager.stopMonitoringSignificantLocationChanges()
+          return
+       }
+       // Notify the user of any errors.
     }
 }
 
