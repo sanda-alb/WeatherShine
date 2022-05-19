@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 import CoreLocation
-import MapKit
 
 class MyViewController: UIViewController {
 
@@ -39,43 +38,31 @@ class MyViewController: UIViewController {
 
     private func setupAppearance() {
         view.backgroundColor = .white
-        label.backgroundColor = .blue
+        label.numberOfLines = 2
     }
 
     private func setupBehaviour() {
-        locationManager.requestWhenInUseAuthorization()
-
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            startMySignificantLocationChanges()
-        }
+        getLocation()
     }
     
-    func startMySignificantLocationChanges() {
-        if !CLLocationManager.significantLocationChangeMonitoringAvailable() {
-            // The device does not support this service.
-            return
-        }
-        locationManager.startMonitoringSignificantLocationChanges()
+    func getLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
     }
 }
+
+// MARK: - CLLocationManagerDelegate
 
 extension MyViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
-       let lastLocation = locations.last!
-                   
-       // Do something with the location.
-        print("Location: \(lastLocation)")
-        label.text = "\(lastLocation)"
-    }
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-       if let error = error as? CLError, error.code == .denied {
-          // Location updates are not authorized.
-          manager.stopMonitoringSignificantLocationChanges()
-          return
-       }
-       // Notify the user of any errors.
+      print("didFailWithError \(error.localizedDescription)")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      let newLocation = locations.last!
+      print("didUpdateLocations \(newLocation)")
+        label.text = "latitude: \(newLocation.coordinate.latitude), longitude: \(newLocation.coordinate.longitude)"
     }
 }
-
