@@ -9,7 +9,9 @@ import UIKit
 import SnapKit
 import CoreLocation
 
-class MyViewController: UIViewController {
+class WeatherViewController: UIViewController, WeatherViewInput {
+    
+    var output: WeatherViewOutput!
 
     private let cityLabel = UILabel()
     private let timeLabel = UILabel()
@@ -66,7 +68,7 @@ class MyViewController: UIViewController {
 
 // MARK: - CLLocationManagerDelegate
 
-extension MyViewController: CLLocationManagerDelegate {
+extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
       print("didFailWithError \(error.localizedDescription)")
     }
