@@ -12,7 +12,7 @@ class WeatherPresenter {
     var router: WeatherRouterInput!
 
     func viewIsReady() {
-
+        interactor.fetchData()
     }
 
 }

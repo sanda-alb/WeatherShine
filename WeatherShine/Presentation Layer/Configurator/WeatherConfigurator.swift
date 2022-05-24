@@ -29,7 +29,5 @@ class WeatherModuleConfigurator {
 
         presenter.interactor = interactor
         viewController.output = presenter
-    }
-
+    } 
 }
-
