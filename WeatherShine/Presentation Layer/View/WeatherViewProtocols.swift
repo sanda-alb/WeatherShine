@@ -10,5 +10,11 @@ protocol  WeatherViewInput: class {
 }
 
 protocol WeatherViewOutput {
+    func viewLoaded(lat: Double, lng: Double)
     
+}
+
+
+protocol WeatherViewProtocol: WeatherViewInput {
+    var output: WeatherViewOutput? { get set }
 }

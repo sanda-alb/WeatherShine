@@ -10,14 +10,21 @@ import SnapKit
 import CoreLocation
 import Alamofire
 
-class WeatherViewController: UIViewController, WeatherViewInput {
+class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProtocol {
     
-    var output: WeatherViewOutput!
+    var output: WeatherViewOutput?
 
     private let cityLabel = UILabel()
     private let timeLabel = UILabel()
+    private let tableView = UITableView()
+    
+    private var latitude: Double? = nil
+    private var longitude: Double? = nil
     
     private let locationManager = CLLocationManager()
+    private var currentLocation: CLLocation?
+    
+    var models = [Weather]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,42 +33,20 @@ class WeatherViewController: UIViewController, WeatherViewInput {
         setupLayout()
         setupAppearance()
         setupBehaviour()
-        
-        fetchData()
-        
     }
     
-    func fetchData() {
-        let lat = 55.7558
-        let lng = 37.6173
-        let API_KEY = "0e0ab86e-d831-11ec-881e-0242ac130002-0e0ab8dc-d831-11ec-881e-0242ac130002"
-        let params = "airTemperature,pressure,gust"
-        let headers: HTTPHeaders = [.authorization(API_KEY)]
-        let parameters: [String: Any] = ["lat": lat, "lng": lng, "params": params]
-        
-        AF.request("https://api.stormglass.io/v2/weather/point",parameters: parameters, headers: headers).responseJSON { response in
-            debugPrint(response)
-}
-    }
+
         
     private func embedViews() {
-        view.addSubview(cityLabel)
-        view.addSubview(timeLabel)
-    
+        view.addSubview(tableView)
     }
 
     private func setupLayout() {
-        cityLabel.snp.makeConstraints { make in
-            make.width.equalTo(300)
-            make.height.equalTo(100)
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
-        
-        timeLabel.snp.makeConstraints { make in
-            make.height.equalTo(100)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(cityLabel.snp.bottom).offset(50)
+        tableView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
     }
 
@@ -69,13 +54,23 @@ class WeatherViewController: UIViewController, WeatherViewInput {
         view.backgroundColor = .white
         cityLabel.numberOfLines = 2
         cityLabel.textAlignment = .center
+        tableView.backgroundColor = .systemPink
     }
 
     private func setupBehaviour() {
-        getLocation()
+        setupLocation()
+        setupTableView()
     }
     
-    func getLocation() {
+    private func setupTableView() {
+        tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "weatherTableViewCell")
+        tableView.register(HourlyTableViewCell.self, forCellReuseIdentifier: "hourlyTableViewCell")
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    func setupLocation() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -91,19 +86,45 @@ extension WeatherViewController: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-      let newLocation = locations.last!
-      print("didUpdateLocations \(newLocation)")
-        let time = newLocation.timestamp
-        timeLabel.text = "\(time)"
-        
-        
-       
-        let geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(newLocation) { placemarks, _ in
-                if let place = placemarks?.first {
-                    print("place: \(place.administrativeArea)")
-                    self.cityLabel.text = place.administrativeArea
-                }
+
+        if !locations.isEmpty, currentLocation == nil {
+            currentLocation = locations.last
+            locationManager.stopUpdatingLocation()
+            requestWeatherForLocation()
         }
+       
+//        let time = newLocation.timestamp
+//        timeLabel.text = "\(time)"
+
+//
+//        let geocoder = CLGeocoder()
+//        geocoder.reverseGeocodeLocation(newLocation) { placemarks, _ in
+//            if let place = placemarks?.first {
+//                print("place: \(place.administrativeArea)")
+//                self.cityLabel.text = place.administrativeArea
+//            }
+//        }
+    }
+    
+    func requestWeatherForLocation() {
+        guard let currentLocation = currentLocation else { return }
+        let lat = currentLocation.coordinate.latitude
+        let lng = currentLocation.coordinate.longitude
+        print("Lat: \(lat), lng: \(lng)")
+        output?.viewLoaded(lat: lat, lng: lng)
+    }
+}
+
+extension WeatherViewController: UITableViewDelegate {
+    
+}
+
+extension WeatherViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  models.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }

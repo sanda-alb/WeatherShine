@@ -12,22 +12,24 @@ class WeatherModuleConfigurator {
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
         
         if let viewController = viewInput as? WeatherViewController {
-            configure(viewController: viewController)
+            configure(with: viewController)
         }
     }
 
-    private func configure(viewController: WeatherViewController) {
-
-        let router = WeatherRouter(viewController: viewController)
-
-        let presenter = WeatherPresenter()
-        presenter.view = viewController
-        presenter.router = router
+    private func configure(with viewController: WeatherViewController) {
 
         let interactor = WeatherInteractor()
-        interactor.output = presenter
+        
+        let router = WeatherRouter(viewController: viewController)
 
-        presenter.interactor = interactor
+        let presenter = WeatherPresenter(
+            view      : viewController,
+            interactor: interactor,
+            router    : router
+            )
+        
+        interactor.output     = presenter
         viewController.output = presenter
     } 
 }
+ 

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F000322A283E8232006760BE /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0003229283E8231006760BE /* Weather.swift */; };
+		F000322C283E9378006760BE /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000322B283E9378006760BE /* WeatherTableViewCell.swift */; };
+		F000322E283E9481006760BE /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000322D283E9481006760BE /* HourlyTableViewCell.swift */; };
 		F00B1346283B9C8C003F5D0E /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B1345283B9C8C003F5D0E /* WeatherInteractor.swift */; };
 		F00B134A283B9CB7003F5D0E /* WeatherConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B1349283B9CB7003F5D0E /* WeatherConfigurator.swift */; };
-		F062056E283BA3E6004FADA4 /* WeatherViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062056D283BA3E6004FADA4 /* WeatherViewControllerProtocols.swift */; };
+		F062056E283BA3E6004FADA4 /* WeatherViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062056D283BA3E6004FADA4 /* WeatherViewProtocols.swift */; };
 		F0620570283BA3F6004FADA4 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F062056F283BA3F6004FADA4 /* WeatherPresenter.swift */; };
 		F0620574283BA41D004FADA4 /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0620573283BA41D004FADA4 /* WeatherRouter.swift */; };
 		F0620576283BA42A004FADA4 /* WeatherRouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0620575283BA42A004FADA4 /* WeatherRouterProtocols.swift */; };
@@ -43,9 +46,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F0003229283E8231006760BE /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		F000322B283E9378006760BE /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		F000322D283E9481006760BE /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
 		F00B1345283B9C8C003F5D0E /* WeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractor.swift; sourceTree = "<group>"; };
 		F00B1349283B9CB7003F5D0E /* WeatherConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConfigurator.swift; sourceTree = "<group>"; };
-		F062056D283BA3E6004FADA4 /* WeatherViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerProtocols.swift; sourceTree = "<group>"; };
+		F062056D283BA3E6004FADA4 /* WeatherViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewProtocols.swift; sourceTree = "<group>"; };
 		F062056F283BA3F6004FADA4 /* WeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
 		F0620573283BA41D004FADA4 /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
 		F0620575283BA42A004FADA4 /* WeatherRouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouterProtocols.swift; sourceTree = "<group>"; };
@@ -92,7 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				F072F10A2832C63800907CB2 /* WeatherView.swift */,
-				F062056D283BA3E6004FADA4 /* WeatherViewControllerProtocols.swift */,
+				F062056D283BA3E6004FADA4 /* WeatherViewProtocols.swift */,
+				F000322B283E9378006760BE /* WeatherTableViewCell.swift */,
+				F000322D283E9481006760BE /* HourlyTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 			children = (
 				F062057D283BCEC8004FADA4 /* Forecast.swift */,
 				F062057F283BDCB6004FADA4 /* Constants.swift */,
+				F0003229283E8231006760BE /* Weather.swift */,
 			);
 			path = "Core Layer";
 			sourceTree = "<group>";
@@ -253,12 +262,15 @@
 			files = (
 				F0620574283BA41D004FADA4 /* WeatherRouter.swift in Sources */,
 				F0620570283BA3F6004FADA4 /* WeatherPresenter.swift in Sources */,
+				F000322C283E9378006760BE /* WeatherTableViewCell.swift in Sources */,
 				F0620578283BA595004FADA4 /* WeatherInteractorProtocols.swift in Sources */,
 				F0620576283BA42A004FADA4 /* WeatherRouterProtocols.swift in Sources */,
 				F072F10B2832C63800907CB2 /* WeatherView.swift in Sources */,
-				F062056E283BA3E6004FADA4 /* WeatherViewControllerProtocols.swift in Sources */,
+				F062056E283BA3E6004FADA4 /* WeatherViewProtocols.swift in Sources */,
+				F000322E283E9481006760BE /* HourlyTableViewCell.swift in Sources */,
 				F00B1346283B9C8C003F5D0E /* WeatherInteractor.swift in Sources */,
 				F00B134A283B9CB7003F5D0E /* WeatherConfigurator.swift in Sources */,
+				F000322A283E8232006760BE /* Weather.swift in Sources */,
 				F072F1072832C63800907CB2 /* AppDelegate.swift in Sources */,
 				F062057E283BCEC8004FADA4 /* Forecast.swift in Sources */,
 				F072F1092832C63800907CB2 /* SceneDelegate.swift in Sources */,

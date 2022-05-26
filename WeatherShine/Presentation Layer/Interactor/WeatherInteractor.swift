@@ -8,16 +8,17 @@ import Alamofire
 
 class WeatherInteractor: WeatherInteractorInput {
     
-    weak var output: WeatherInteractorOutput!
+    weak var output: WeatherInteractorOutput?
     
-    func fetchData() {
-        AF.request("https://api.stormglass.io/v2")
-        let params = ["airTemperature", "pressure", "cloudCover", "currentSpeed", "humidity" ]
-        let headers: HTTPHeaders = [.authorization("0e0ab86e-d831-11ec-881e-0242ac130002-0e0ab8dc-d831-11ec-881e-0242ac130002")
-        ]
+    func fetchData(lat: Double, lng: Double) {
+        let API_KEY = "0e0ab86e-d831-11ec-881e-0242ac130002-0e0ab8dc-d831-11ec-881e-0242ac130002"
+        let params = "airTemperature,pressure,gust"
+        let headers: HTTPHeaders = [.authorization(API_KEY)]
+        let parameters: [String: Any] = ["lat": lat, "lng": lng, "params": params]
         
-        let lat = 58.7984;
-        let lng = 17.8081;
+        AF.request("https://api.stormglass.io/v2/weather/point",parameters: parameters, headers: headers).responseJSON { response in
+            debugPrint(response)
+        }
         
 
 //            .validate()

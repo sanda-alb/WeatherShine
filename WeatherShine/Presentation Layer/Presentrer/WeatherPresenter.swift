@@ -4,20 +4,33 @@
 //
 //  Created by Sanda Albrecht on 5/23/22.
 //
+import Foundation
 
 class WeatherPresenter {
     
-    weak var view: WeatherViewInput!
-    var interactor: WeatherInteractorInput!
-    var router: WeatherRouterInput!
-
-    func viewIsReady() {
-        interactor.fetchData()
+    // MARK: - Components
+    
+    weak var view: WeatherViewInput?
+    var interactor: WeatherInteractorInput
+    var router: WeatherRouterInput
+    
+    // MARK: - Init
+    
+    init(
+        view       : WeatherViewInput,
+        interactor : WeatherInteractorInput,
+        router     : WeatherRouterInput
+    ) {
+        self.view       = view
+        self.interactor = interactor
+        self.router     = router
     }
-
 }
 
 extension WeatherPresenter: WeatherViewOutput {
+    func viewLoaded(lat: Double, lng: Double) {
+        interactor.fetchData(lat: lat, lng: lng)
+    }
 }
 
 extension WeatherPresenter: WeatherInteractorOutput {

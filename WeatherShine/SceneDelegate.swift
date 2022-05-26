@@ -17,12 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let vc = WeatherViewController()
+        
+        WeatherModuleConfigurator().configureModuleForViewInput(viewInput: vc)
         let nav = UINavigationController(rootViewController: vc)
         window.rootViewController = nav
+        
         window.makeKeyAndVisible()
         self.window = window
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
