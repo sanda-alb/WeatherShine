@@ -28,8 +28,8 @@ class WeatherPresenter {
 }
 
 extension WeatherPresenter: WeatherViewOutput {
-    func viewLoaded(lat: Double, lng: Double) {
-        interactor.fetchData(lat: lat, lng: lng)
+    func viewLoaded(lat: Double, lon: Double) {
+        interactor.fetchData(lat: lat, lon: lon)
     }
 }
 

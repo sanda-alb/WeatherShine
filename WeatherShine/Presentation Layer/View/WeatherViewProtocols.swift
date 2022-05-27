@@ -10,7 +10,7 @@ protocol  WeatherViewInput: class {
 }
 
 protocol WeatherViewOutput {
-    func viewLoaded(lat: Double, lng: Double)
+    func viewLoaded(lat: Double, lon: Double)
     
 }
 

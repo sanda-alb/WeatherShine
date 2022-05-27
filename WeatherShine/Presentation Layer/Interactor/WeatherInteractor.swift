@@ -10,13 +10,11 @@ class WeatherInteractor: WeatherInteractorInput {
     
     weak var output: WeatherInteractorOutput?
     
-    func fetchData(lat: Double, lng: Double) {
-        let API_KEY = "0e0ab86e-d831-11ec-881e-0242ac130002-0e0ab8dc-d831-11ec-881e-0242ac130002"
-        let params = "airTemperature,pressure,gust"
-        let headers: HTTPHeaders = [.authorization(API_KEY)]
-        let parameters: [String: Any] = ["lat": lat, "lng": lng, "params": params]
+    func fetchData(lat: Double, lon: Double) {
+        let API_KEY = "582031dfb6b35824f6b6c0e85d5c8ccd"
+        let parameters: [String: Any] = ["lat": lat, "lon": lon, "appid": API_KEY]
         
-        AF.request("https://api.stormglass.io/v2/weather/point",parameters: parameters, headers: headers).responseJSON { response in
+        AF.request("https://api.openweathermap.org/data/2.5/onecall",parameters: parameters).responseJSON { response in
             debugPrint(response)
         }
         

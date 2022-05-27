@@ -6,7 +6,7 @@
 //
 
 protocol WeatherInteractorInput {
-    func fetchData(lat: Double, lng: Double)
+    func fetchData(lat: Double, lon: Double)
 }
 
 protocol WeatherInteractorOutput: class {

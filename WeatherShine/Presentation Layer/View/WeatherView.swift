@@ -109,9 +109,8 @@ extension WeatherViewController: CLLocationManagerDelegate {
     func requestWeatherForLocation() {
         guard let currentLocation = currentLocation else { return }
         let lat = currentLocation.coordinate.latitude
-        let lng = currentLocation.coordinate.longitude
-        print("Lat: \(lat), lng: \(lng)")
-        output?.viewLoaded(lat: lat, lng: lng)
+        let lon = currentLocation.coordinate.longitude
+        output?.viewLoaded(lat: lat, lon: lon)
     }
 }
 

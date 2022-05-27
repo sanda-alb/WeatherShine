@@ -30,9 +30,9 @@
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "fetchData(lat:lng:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "fetchData(lat:lon:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,9 +46,9 @@
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "fetchData(lat:lng:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "fetchData(lat:lon:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -97,22 +97,6 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "viewLoaded(lat:lng:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "29B98B12-6D72-4B80-8FE1-E314CA7CE3C2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherShine/Presentation Layer/View/WeatherView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "requestWeatherForLocation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
