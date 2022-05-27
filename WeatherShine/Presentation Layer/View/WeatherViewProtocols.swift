@@ -6,7 +6,8 @@
 //
 
 protocol  WeatherViewInput: class {
-    func getForecast(forecast: Forecast) 
+    func getForecast(forecast: Forecast)
+    func setCurrent(_ weather: Forecast)
 }
 
 protocol WeatherViewOutput {

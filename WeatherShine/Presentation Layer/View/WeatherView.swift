@@ -26,18 +26,14 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     private let weatherIcon   = UIImageView()
     private let placeholderImage = UIImage(named: "placeholder")
     
-    private let labelsStackView  = UIStackView()
+    private let labelsStackView = UIStackView()
     private let valuesStackView = UIStackView()
-    
-    
     
     private var latitude: Double? = nil
     private var longitude: Double? = nil
     
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
-    
-
     
     var dailyModels = [DailyWeather]()
 
@@ -122,14 +118,9 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     private func setupAppearance() {
         view.backgroundColor = .white
         todayLabel.text = "Today, 15 Dec"
-        cityLabel.text = "Tokio"
         windLabel.text = "Wind"
         tempLabel.text = "Temp"
         humidityLabel.text = "Humidity"
-        
-        windValue.text = "234"
-        tempValue.text = "16C"
-        humidityValue.text = "13%"
         
         weatherIcon.image = placeholderImage
         
@@ -168,6 +159,14 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     func getForecast(forecast: Forecast) {
         self.dailyModels = forecast.daily
     }
+    
+    func setCurrent(_ weather: Forecast) {
+//        tempValue.text = String(round(weather.current.temp))
+        tempValue.text = String(format: "%.0f", weather.current.temp)
+        humidityValue.text = String(weather.current.humidity) + "%"
+        windValue.text = String(weather.current.windSpeed)
+        cityLabel.text = weather.timezone
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -193,3 +192,18 @@ extension WeatherViewController: CLLocationManagerDelegate {
         output?.requestWeather(lat: lat, lon: lon)
     }
 }
+
+
+extension String {
+    func deletingPrefix(_ prefix: String) -> String {
+        guard self.hasPrefix(prefix) else { return self }
+        return String(self.dropFirst(prefix.count))
+    }
+    
+    func deletePrefix(text: String) {
+        if text.contains("/") {
+            let i = firstIndex(of: "/")
+        }
+    }
+}
+    

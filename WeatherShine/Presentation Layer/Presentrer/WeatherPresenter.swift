@@ -36,5 +36,6 @@ extension WeatherPresenter: WeatherViewOutput {
 extension WeatherPresenter: WeatherInteractorOutput {
     func obtainData(forecast: Forecast) {
         view?.getForecast(forecast: forecast)
+        view?.setCurrent(forecast)
     }
 }
