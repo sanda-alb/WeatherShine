@@ -28,11 +28,13 @@ class WeatherPresenter {
 }
 
 extension WeatherPresenter: WeatherViewOutput {
-    func viewLoaded(lat: Double, lon: Double) {
+    func requestWeather(lat: Double, lon: Double) {
         interactor.fetchData(lat: lat, lon: lon)
     }
 }
 
 extension WeatherPresenter: WeatherInteractorOutput {
+    func obtainData(forecast: Forecast) {
+        view?.getForecast(forecast: forecast)
+    }
 }
-

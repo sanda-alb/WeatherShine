@@ -6,11 +6,11 @@
 //
 
 protocol  WeatherViewInput: class {
-    
+    func getForecast(forecast: Forecast) 
 }
 
 protocol WeatherViewOutput {
-    func viewLoaded(lat: Double, lon: Double)
+    func requestWeather(lat: Double, lon: Double)
     
 }
 

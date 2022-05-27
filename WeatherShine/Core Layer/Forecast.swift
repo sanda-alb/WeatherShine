@@ -12,9 +12,9 @@ struct Forecast: Decodable {
     let lon: Double
     let timezone: String
     let timezoneOffset: Int
-    let current: Current
-    let hourly: [Hourly]
-    let daily: [Daily]
+    let current: CurrentWeather
+    let hourly: [HourlyWeather]
+    let daily: [DailyWeather]
 
     enum CodingKeys: String, CodingKey {
         case lat = "lat"
@@ -27,7 +27,7 @@ struct Forecast: Decodable {
     }
 }
 
-struct Current: Decodable {
+struct CurrentWeather: Decodable {
     
     let time: Int
     let sunrise: Int
@@ -56,7 +56,7 @@ struct Current: Decodable {
     }
 }
 
-struct Hourly: Decodable {
+struct HourlyWeather: Decodable {
     
     let time: Int
     let temp: Double
@@ -83,7 +83,7 @@ struct Hourly: Decodable {
     }
 }
 
-struct Daily: Decodable {
+struct DailyWeather: Decodable {
     
     let time: Int
     let temp: DailyTemperature

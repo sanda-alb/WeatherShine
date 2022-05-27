@@ -10,5 +10,5 @@ protocol WeatherInteractorInput {
 }
 
 protocol WeatherInteractorOutput: class {
-    
+    func obtainData(forecast: Forecast)
 }

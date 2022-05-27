@@ -14,9 +14,22 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     
     var output: WeatherViewOutput?
 
-    private let cityLabel = UILabel()
-    private let timeLabel = UILabel()
-    private let tableView = UITableView()
+    private let todayLabel    = UILabel()
+    private let cityLabel     = UILabel()
+    private let tableView     = UITableView()
+    private let windLabel     = UILabel()
+    private let windValue     = UILabel()
+    private let tempLabel     = UILabel()
+    private let tempValue     = UILabel()
+    private let humidityLabel = UILabel()
+    private let humidityValue = UILabel()
+    private let weatherIcon   = UIImageView()
+    private let placeholderImage = UIImage(named: "placeholder")
+    
+    private let labelsStackView  = UIStackView()
+    private let valuesStackView = UIStackView()
+    
+    
     
     private var latitude: Double? = nil
     private var longitude: Double? = nil
@@ -24,7 +37,9 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
     
-    var models = [Forecast]()
+
+    
+    var dailyModels = [DailyWeather]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,43 +53,120 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
 
         
     private func embedViews() {
-        view.addSubview(tableView)
+        [ todayLabel,
+          cityLabel,
+          weatherIcon,
+          windLabel,
+          tempLabel,
+          humidityLabel,
+          windValue,
+          tempValue,
+          humidityValue
+        ].forEach{
+            view.addSubview($0)
+        }
     }
 
     private func setupLayout() {
-        tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+        
+        todayLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+            make.leading.equalToSuperview().offset(45)
+            make.height.equalTo(20)
+        }
+        
+        cityLabel.snp.makeConstraints { make in
+            make.top.equalTo(todayLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(45)
+            make.height.equalTo(25)
+        }
+        
+        weatherIcon.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(230)
+            make.height.equalTo(230)
+            make.width.equalTo(230)
+        }
+        
+        windLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(50)
+            make.top.equalTo(weatherIcon.snp.bottom).offset(50)
+        }
+
+        windValue.snp.makeConstraints { make in
+            make.top.equalTo(windLabel.snp.bottom).offset(10)
+            make.centerX.equalTo(windLabel.snp.centerX)
+        }
+
+        tempLabel.snp.makeConstraints { make in
+            make.top.equalTo(weatherIcon.snp.bottom).offset(50)
+            make.centerX.equalToSuperview()
+        }
+        
+        tempValue.snp.makeConstraints { make in
+            make.top.equalTo(tempLabel.snp.bottom).offset(10)
+            make.centerX.equalTo(tempLabel.snp.centerX)
+        }
+
+        humidityLabel.snp.makeConstraints { make in
+            make.top.equalTo(weatherIcon.snp.bottom).offset(50)
+            make.trailing.equalToSuperview().offset(-50)
+        }
+
+        humidityValue.snp.makeConstraints { make in
+            make.top.equalTo(tempLabel.snp.bottom).offset(10)
+            make.centerX.equalTo(humidityLabel.snp.centerX)
         }
     }
 
     private func setupAppearance() {
         view.backgroundColor = .white
-        cityLabel.numberOfLines = 2
-        cityLabel.textAlignment = .center
-        tableView.backgroundColor = .systemPink
+        todayLabel.text = "Today, 15 Dec"
+        cityLabel.text = "Tokio"
+        windLabel.text = "Wind"
+        tempLabel.text = "Temp"
+        humidityLabel.text = "Humidity"
+        
+        windValue.text = "234"
+        tempValue.text = "16C"
+        humidityValue.text = "13%"
+        
+        weatherIcon.image = placeholderImage
+        
+        todayLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
+        todayLabel.textColor = .secondaryLabel
+        
+        cityLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        cityLabel.textColor = .label
+        
+        [ windLabel,
+          tempLabel,
+          humidityLabel
+        ].forEach {
+            $0.font = UIFont.preferredFont(forTextStyle: .title2)
+        }
+        
+        [ windValue,
+          tempValue,
+          humidityValue
+        ].forEach {
+            $0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        }
     }
 
     private func setupBehaviour() {
         setupLocation()
-        setupTableView()
     }
-    
-    private func setupTableView() {
-        tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "weatherTableViewCell")
-        tableView.register(HourlyTableViewCell.self, forCellReuseIdentifier: "hourlyTableViewCell")
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
-    func setupLocation() {
+
+    private func setupLocation() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
+    }
+    
+    func getForecast(forecast: Forecast) {
+        self.dailyModels = forecast.daily
     }
 }
 
@@ -92,38 +184,12 @@ extension WeatherViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             requestWeatherForLocation()
         }
-       
-//        let time = newLocation.timestamp
-//        timeLabel.text = "\(time)"
-
-//
-//        let geocoder = CLGeocoder()
-//        geocoder.reverseGeocodeLocation(newLocation) { placemarks, _ in
-//            if let place = placemarks?.first {
-//                print("place: \(place.administrativeArea)")
-//                self.cityLabel.text = place.administrativeArea
-//            }
-//        }
     }
     
     func requestWeatherForLocation() {
         guard let currentLocation = currentLocation else { return }
         let lat = currentLocation.coordinate.latitude
         let lon = currentLocation.coordinate.longitude
-        output?.viewLoaded(lat: lat, lon: lon)
-    }
-}
-
-extension WeatherViewController: UITableViewDelegate {
-    
-}
-
-extension WeatherViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  models.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        output?.requestWeather(lat: lat, lon: lon)
     }
 }
