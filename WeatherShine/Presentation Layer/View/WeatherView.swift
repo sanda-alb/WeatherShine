@@ -24,7 +24,7 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
     
-    var models = [Weather]()
+    var models = [Forecast]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,52 +1,157 @@
 //
-//  Forecast.swift
+//  Weather.swift
 //  WeatherShine
 //
-//  Created by Sanda Albrecht on 5/23/22.
+//  Created by Sanda Albrecht on 5/25/22.
 //
-
 import Foundation
 
-struct Mission: Decodable {
+struct Forecast: Decodable {
     
-    let missionName: String
-    let launchDate: String?
-    let links: Links
-    let rocket: Rocket
-  
+    let lat: Double
+    let lon: Double
+    let timezone: String
+    let timezoneOffset: Int
+    let current: Current
+    let hourly: [Hourly]
+    let daily: [Daily]
+
     enum CodingKeys: String, CodingKey {
-        case missionName = "mission_name"
-        case launchDate = "launch_date_utc"
-        case links = "links"
-        case rocket = "rocket"
+        case lat = "lat"
+        case lon = "lon"
+        case timezone = "timezone"
+        case timezoneOffset = "timezone_offset"
+        case current = "current"
+        case hourly = "hourly"
+        case daily = "daily"
     }
 }
 
-struct Links: Decodable {
+struct Current: Decodable {
     
-    let patchPath: String?
-    let article: String?
-    let wikipedia: String?
-    let images: [String]
-    let reddit: String?
-    let video: String?
+    let time: Int
+    let sunrise: Int
+    let sunset: Int
+    let temp: Double
+    let feelsLike: Double
+    let pressure: Int
+    let humidity: Int
+    let clouds: Int
+    let visibility: Int
+    let windSpeed: Double
+    let weather: [Weather]
     
     enum CodingKeys: String, CodingKey {
-        case patchPath = "mission_patch_small"
-        case article = "article_link"
-        case wikipedia = "wikipedia"
-        case reddit = "reddit_media"
-        case video = "video_link"
-        case images = "flickr_images"
+        case time = "dt"
+        case sunrise = "sunrise"
+        case sunset = "sunset"
+        case temp = "temp"
+        case feelsLike = "feels_like"
+        case pressure = "pressure"
+        case humidity = "humidity"
+        case clouds = "clouds"
+        case visibility = "visibility"
+        case windSpeed = "wind_speed"
+        case weather = "weather"
     }
 }
 
-struct Rocket: Decodable {
+struct Hourly: Decodable {
     
-    let rocketName: String?
+    let time: Int
+    let temp: Double
+    let feelsLike: Double
+    let pressure: Int
+    let humidity: Int
+    let clouds: Int
+    let visibility: Int
+    let windSpeed: Double
+    let weather: [Weather]
+    let precipitationProbability: Double
     
     enum CodingKeys: String, CodingKey {
-        case rocketName = "rocket_name"
+        case time = "dt"
+        case temp = "temp"
+        case feelsLike = "feels_like"
+        case pressure = "pressure"
+        case humidity = "humidity"
+        case clouds = "clouds"
+        case visibility = "visibility"
+        case windSpeed = "wind_speed"
+        case weather = "weather"
+        case precipitationProbability = "pop"
     }
 }
 
+struct Daily: Decodable {
+    
+    let time: Int
+    let temp: DailyTemperature
+    let feelsLike: FeelsLike
+    let pressure: Int
+    let humidity: Int
+    let windSpeed: Double
+    let weather: [Weather]
+    let clouds: Int
+    let precipitationProbability: Double
+    let uvi: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case time = "dt"
+        case temp = "temp"
+        case feelsLike = "feels_like"
+        case pressure = "pressure"
+        case humidity = "humidity"
+        case windSpeed = "wind_speed"
+        case weather = "weather"
+        case clouds = "clouds"
+        case precipitationProbability = "pop"
+        case uvi = "uvi"
+    }
+}
+
+struct Weather: Decodable {
+    let id: Int
+    let main: String
+    let description: String
+    let icon: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case main = "main"
+        case description = "description"
+        case icon = "icon"
+    }
+}
+
+struct DailyTemperature: Decodable {
+    let day: Double
+    let min: Double
+    let max: Double
+    let night: Double
+    let evening: Double
+    let morning: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case day = "day"
+        case min = "min"
+        case max = "max"
+        case night = "night"
+        case evening = "eve"
+        case morning = "morn"
+    }
+}
+
+struct FeelsLike: Decodable {
+    let day: Double
+    let night: Double
+    let evening: Double
+    let morning: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case day = "day"
+        case night = "night"
+        case evening = "eve"
+        case morning = "morn"
+    }
+}

@@ -12,25 +12,31 @@ class WeatherInteractor: WeatherInteractorInput {
     
     func fetchData(lat: Double, lon: Double) {
         let API_KEY = "582031dfb6b35824f6b6c0e85d5c8ccd"
-        let parameters: [String: Any] = ["lat": lat, "lon": lon, "appid": API_KEY]
+        let parameters: [String: Any] =
+        [ "lat": lat,
+          "lon": lon,
+          "exclude": "minutely,alerts",
+          "units": "metric",
+          "appid": API_KEY
+        ]
         
-        AF.request("https://api.openweathermap.org/data/2.5/onecall",parameters: parameters).responseJSON { response in
-            debugPrint(response)
+        AF.request("https://api.openweathermap.org/data/2.5/onecall",parameters: parameters)
+        .validate()
+        .responseDecodable(of: Forecast.self) { response in
+            switch response.result {
+            case.success:
+                print("Validation Successful")
+                debugPrint(response)
+            case let .failure(error):
+                print(error)
+            }
+                
         }
-        
 
-//            .validate()
-//            .responseDecodable(of: [Mission].self) { response in
-//                switch response.result {
-//                case .success:
-//                    print("Validation Successful")
-//                    if let missions = response.value {
-//                    self.output.obtainData(missions: missions)
+//                    if let forecast = response.value {
+//                    self.output.obtainData(forecast: forecast)
 //                    }
-//                case let .failure(error):
-//                    print(error)
-//                }
-//            }
+
     }
 }
 
