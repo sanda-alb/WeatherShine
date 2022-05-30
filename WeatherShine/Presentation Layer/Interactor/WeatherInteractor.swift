@@ -26,18 +26,18 @@ class WeatherInteractor: WeatherInteractorInput {
             switch response.result {
             case.success:
                 print("Validation Successful")
+                debugPrint(response)
                 if let forecast = response.value {
                     self.output?.obtainData(forecast: forecast)
                 }
-//                debugPrint(response)
-            case let .failure(error):
-                print(error)
-            }
                 
+            case let .failure(error):
+                self.output?.setMock()
+                print(error)
+                debugPrint(response)
+                
+            }
         }
-
-
-
     }
 }
 

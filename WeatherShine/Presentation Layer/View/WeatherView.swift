@@ -13,21 +13,24 @@ import Alamofire
 class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProtocol {
     
     var output: WeatherViewOutput?
+    
+    // MARK: - Labels
 
     private let todayLabel    = UILabel()
     private let cityLabel     = UILabel()
-    private let tableView     = UITableView()
     private let windLabel     = UILabel()
     private let windValue     = UILabel()
     private let tempLabel     = UILabel()
     private let tempValue     = UILabel()
     private let humidityLabel = UILabel()
     private let humidityValue = UILabel()
-    private let weatherIcon   = UIImageView()
+    
+    // MARK: - Views
+    
+    private let weatherIcon      = UIImageView()
     private let placeholderImage = UIImage(named: "placeholder")
     
-    private let labelsStackView = UIStackView()
-    private let valuesStackView = UIStackView()
+    // MARK: - Data
     
     private var latitude: Double? = nil
     private var longitude: Double? = nil
@@ -45,8 +48,6 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
         setupAppearance()
         setupBehaviour()
     }
-    
-
         
     private func embedViews() {
         [ todayLabel,
@@ -85,8 +86,8 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
         }
         
         windLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(50)
             make.top.equalTo(weatherIcon.snp.bottom).offset(50)
+            make.trailing.equalTo(tempLabel.snp.leading).offset(-70)
         }
 
         windValue.snp.makeConstraints { make in
@@ -106,7 +107,7 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
 
         humidityLabel.snp.makeConstraints { make in
             make.top.equalTo(weatherIcon.snp.bottom).offset(50)
-            make.trailing.equalToSuperview().offset(-50)
+            make.leading.equalTo(tempLabel.snp.trailing).offset(70)
         }
 
         humidityValue.snp.makeConstraints { make in
@@ -161,11 +162,26 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     }
     
     func setCurrent(_ weather: Forecast) {
-//        tempValue.text = String(round(weather.current.temp))
-        tempValue.text = String(format: "%.0f", weather.current.temp)
+        tempValue.text = String(format: "%.0f", weather.current.temp) + " °C"
         humidityValue.text = String(weather.current.humidity) + "%"
-        windValue.text = String(weather.current.windSpeed)
-        cityLabel.text = weather.timezone
+        windValue.text = String(round(weather.current.windSpeed))
+        cityLabel.text = getCity(timezone: weather.timezone)
+    }
+    
+    func setMock() {
+        tempValue.text = "32 °C"
+        humidityValue.text = "92%"
+        windValue.text = "14"
+        cityLabel.text = "Tokio"
+    }
+    
+    func getCity(timezone: String) -> String {
+        if timezone.contains("/") {
+            guard let slashIndex = timezone.firstIndex(of: "/") else { return "" }
+            let cityName = timezone[timezone.index(after: slashIndex)...]
+            return String(cityName)
+        }
+        return timezone
     }
 }
 
@@ -192,18 +208,3 @@ extension WeatherViewController: CLLocationManagerDelegate {
         output?.requestWeather(lat: lat, lon: lon)
     }
 }
-
-
-extension String {
-    func deletingPrefix(_ prefix: String) -> String {
-        guard self.hasPrefix(prefix) else { return self }
-        return String(self.dropFirst(prefix.count))
-    }
-    
-    func deletePrefix(text: String) {
-        if text.contains("/") {
-            let i = firstIndex(of: "/")
-        }
-    }
-}
-    
