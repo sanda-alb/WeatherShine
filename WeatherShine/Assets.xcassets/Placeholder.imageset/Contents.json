@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cloudy.png",
+      "filename" : "noData.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "noData2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "noData3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

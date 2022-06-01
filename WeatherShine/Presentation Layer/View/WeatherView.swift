@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import CoreLocation
-import Alamofire
+import Kingfisher
 
 class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProtocol {
     
@@ -39,6 +39,8 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     private var currentLocation: CLLocation?
     
     var dailyModels = [DailyWeather]()
+    
+    var iconURL = "http://openweathermap.org/img/wn/10d@2x.png"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,7 +125,7 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
         tempLabel.text = "Temp"
         humidityLabel.text = "Humidity"
         
-        weatherIcon.image = placeholderImage
+//        weatherIcon.image = placeholderImage
         
         todayLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
         todayLabel.textColor = .secondaryLabel
@@ -166,6 +168,37 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
         humidityValue.text = String(weather.current.humidity) + "%"
         windValue.text = String(round(weather.current.windSpeed))
         cityLabel.text = getCity(timezone: weather.timezone)
+        
+        let iconId = weather.current.weather.first?.icon
+        
+        setIcon(iconId: iconId ?? "placeholder")
+    }
+    
+    func setIcon(iconId: String) {
+        switch iconId {
+        case "01d", "01n":
+            weatherIcon.image = UIImage(named: "clearSky")
+        case "02d", "02n":
+            weatherIcon.image = UIImage(named: "fewClouds")
+        case "03d", "03n":
+            weatherIcon.image = UIImage(named: "scatteredClouds")
+        case "04d", "04n":
+            weatherIcon.image = UIImage(named: "brokenClouds")
+        case "09d", "09n":
+            weatherIcon.image = UIImage(named: "showerRain")
+        case "10d", "10n":
+            weatherIcon.image = UIImage(named: "rain")
+        case "11d", "11n":
+            weatherIcon.image = UIImage(named: "thunderstorm")
+        case "13d", "13n":
+            weatherIcon.image = UIImage(named: "snow")
+        case "50d", "50n":
+            weatherIcon.image = UIImage(named: "mist")
+        case "placeholder":
+            weatherIcon.image = UIImage(named: "placeholder")
+        default:
+            weatherIcon.image = UIImage(named: "placeholder")
+        }
     }
     
     func setMock() {

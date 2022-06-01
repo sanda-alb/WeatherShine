@@ -3,14 +3,14 @@
   "iOS" : [
     {
       "swiftToolchainVersion" : "5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)",
-      "hash" : "8b641e8eab0d6f38ee96d3afaa720b2e28f08c9fed0038f34c463d1a2882da72",
+      "hash" : "1e8d4e75d420f205e9dc18f3b9054fe262976f7c3d27156bfa7422681b7c6ac0",
       "name" : "SnapKit",
       "container" : "SnapKit.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
       "swiftToolchainVersion" : "5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)",
-      "hash" : "c1535ee51cfc36437788207d1aedae29b53fc6ab56c6ede4f08b2e5dda1dd4c9",
+      "hash" : "77593e125abd005c25fd30b378c29ea5f2b98a1a373ea13cacfef1085a65c621",
       "name" : "SnapKit",
       "container" : "SnapKit.xcframework",
       "identifier" : "ios-arm64_armv7"
