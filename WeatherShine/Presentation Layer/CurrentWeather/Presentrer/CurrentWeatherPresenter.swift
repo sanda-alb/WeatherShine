@@ -28,6 +28,10 @@ class CurrentWeatherPresenter {
 }
 
 extension CurrentWeatherPresenter: CurrentWeatherViewOutput {
+    func openHourlyWeather() {
+        router.openHourlyWeather()
+    }
+    
     func requestWeather(lat: Double, lon: Double) {
         interactor.fetchData(lat: lat, lon: lon)
     }
@@ -35,7 +39,6 @@ extension CurrentWeatherPresenter: CurrentWeatherViewOutput {
 
 extension CurrentWeatherPresenter: CurrentWeatherInteractorOutput {
     func obtainData(forecast: Forecast) {
-        view?.getForecast(forecast: forecast)
         view?.setCurrent(forecast)
         
     }

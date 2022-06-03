@@ -11,12 +11,12 @@ class CurrentWeatherModuleConfigurator {
 
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
         
-        if let viewController = viewInput as? CurrentWeatherViewController {
+        if let viewController = viewInput as? CurrentWeatherView {
             configure(with: viewController)
         }
     }
 
-    private func configure(with viewController: CurrentWeatherViewController) {
+    private func configure(with viewController: CurrentWeatherView) {
 
         let interactor = CurrentWeatherInteractor()
         

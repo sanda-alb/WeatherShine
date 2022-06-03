@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+class HourlyWeatherPresenter {
+    
+    // MARK: - Components
+    
+    weak var view: HourlytWeatherViewInput?
+    var router   : HourlyWeatherRouterInput
+    
+    // MARK: - Init
+    
+    init(
+        view  : HourlytWeatherViewInput,
+        router: HourlyWeatherRouterInput
+    ) {
+        self.view   = view
+        self.router = router
+    }
+}
+
+extension HourlyWeatherPresenter: HourlyWeatherViewOutput {
+
+}

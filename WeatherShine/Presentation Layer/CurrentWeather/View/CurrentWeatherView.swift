@@ -10,7 +10,7 @@ import SnapKit
 import CoreLocation
 import Kingfisher
 
-class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput, CurrentWeatherViewProtocol {
+class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeatherViewProtocol {
     
     var output: CurrentWeatherViewOutput?
     
@@ -41,7 +41,7 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput, C
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
     
-    var dailyModels = [DailyWeather]()
+//    var dailyModels = [DailyWeather]()
     
     var iconURL = "http://openweathermap.org/img/wn/10d@2x.png"
 
@@ -171,6 +171,9 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput, C
 
     private func setupBehaviour() {
         setupLocation()
+        
+        // button taps
+        openButton.addTarget(self, action: #selector(onOpenButtonTap), for: .touchUpInside)
     }
 
     private func setupLocation() {
@@ -178,10 +181,6 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput, C
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
-    }
-    
-    func getForecast(forecast: Forecast) {
-        self.dailyModels = forecast.daily
     }
     
     func setCurrent(_ weather: Forecast) {
@@ -246,11 +245,16 @@ class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput, C
         }
         return timezone
     }
+    
+    
+    @objc private func onOpenButtonTap() {
+        output?.openHourlyWeather()
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
 
-extension CurrentWeatherViewController: CLLocationManagerDelegate {
+extension CurrentWeatherView: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
       print("didFailWithError \(error.localizedDescription)")
     }

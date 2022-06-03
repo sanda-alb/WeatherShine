@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class HourlyWeatherRouter {
+    
+    weak var viewController: HourlyWeatherView?
+    
+    init (viewController: HourlyWeatherView) {
+        self.viewController = viewController
+    }
+}
+
+
+extension HourlyWeatherRouter: HourlyWeatherRouterInput {
+}

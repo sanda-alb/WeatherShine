@@ -7,13 +7,27 @@
 
 class CurrentWeatherRouter {
     
-    weak var viewController: CurrentWeatherViewController?
+    weak var viewController: CurrentWeatherView?
     
-    init (viewController: CurrentWeatherViewController) {
+    init (viewController: CurrentWeatherView) {
         self.viewController = viewController
+    }
+    
+    func showHourlyWeather() {
+        let vc = HourlyWeatherView()
+        
+        
+        HourlyWeatherModuleConfigurator().configureModuleForViewInput(viewInput: viewController)
+       
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    
     }
 }
 
 
 extension CurrentWeatherRouter: CurrentWeatherRouterInput {
+    func openHourlyWeather() {
+        showHourlyWeather()
+    }
+    
 }
