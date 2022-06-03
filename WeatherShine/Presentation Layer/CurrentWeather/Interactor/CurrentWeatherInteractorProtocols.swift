@@ -1,15 +1,15 @@
 //
-//  WeatherInteractorProtocols.swift
+//  CurrentWeatherInteractorProtocols.swift
 //  WeatherShine
 //
 //  Created by Sanda Albrecht on 5/23/22.
 //
 
-protocol WeatherInteractorInput {
+protocol CurrentWeatherInteractorInput {
     func fetchData(lat: Double, lon: Double)
 }
 
-protocol WeatherInteractorOutput: class {
+protocol CurrentWeatherInteractorOutput: class {
     func obtainData(forecast: Forecast)
     func setMock()
 }

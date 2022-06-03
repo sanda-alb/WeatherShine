@@ -16,9 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let vc = WeatherViewController()
+        let vc = CurrentWeatherViewController()
         
-        WeatherModuleConfigurator().configureModuleForViewInput(viewInput: vc)
+        CurrentWeatherModuleConfigurator().configureModuleForViewInput(viewInput: vc)
         let nav = UINavigationController(rootViewController: vc)
         window.rootViewController = nav
         

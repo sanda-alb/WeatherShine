@@ -10,9 +10,9 @@ import SnapKit
 import CoreLocation
 import Kingfisher
 
-class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProtocol {
+class CurrentWeatherViewController: UIViewController, CurrentWeatherViewInput, CurrentWeatherViewProtocol {
     
-    var output: WeatherViewOutput?
+    var output: CurrentWeatherViewOutput?
     
     // MARK: - Labels
 
@@ -27,8 +27,11 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     
     // MARK: - Views
     
-    private let weatherIcon      = UIImageView()
-    private let placeholderImage = UIImage(named: "placeholder")
+    private let weatherIcon = UIImageView()
+    private var bottomView  = UIView()
+    
+    
+    private let openButton = UIButton()
     
     // MARK: - Data
     
@@ -60,7 +63,9 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
           humidityLabel,
           windValue,
           tempValue,
-          humidityValue
+          humidityValue,
+          bottomView,
+          openButton
         ].forEach{
             view.addSubview($0)
         }
@@ -116,16 +121,32 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
             make.top.equalTo(tempLabel.snp.bottom).offset(10)
             make.centerX.equalTo(humidityLabel.snp.centerX)
         }
+        
+        openButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(humidityValue.snp.bottom).offset(100)
+            make.height.equalTo(40)
+            make.width.equalTo(100)
+            
+        }
+//        bottomView.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(10)
+//            make.trailing.equalToSuperview().offset(-10)
+//            make.height.equalTo(200)
+//            make.bottom.equalToSuperview()
+//        }
     }
 
     private func setupAppearance() {
-        view.backgroundColor = .white
-        todayLabel.text = "Today, 15 Dec"
+        
+        view.backgroundColor = Colors.yellowLight
+        bottomView.backgroundColor = Colors.purpleLight
         windLabel.text = "Wind"
         tempLabel.text = "Temp"
         humidityLabel.text = "Humidity"
         
-//        weatherIcon.image = placeholderImage
+        openButton.backgroundColor = Colors.purpleLight
+    
         
         todayLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
         todayLabel.textColor = .secondaryLabel
@@ -172,6 +193,7 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
         let iconId = weather.current.weather.first?.icon
         
         setIcon(iconId: iconId ?? "placeholder")
+        setDate()
     }
     
     func setIcon(iconId: String) {
@@ -183,7 +205,7 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
         case "03d", "03n":
             weatherIcon.image = UIImage(named: "scatteredClouds")
         case "04d", "04n":
-            weatherIcon.image = UIImage(named: "brokenClouds")
+            weatherIcon.image = UIImage(named: "brockenClouds")
         case "09d", "09n":
             weatherIcon.image = UIImage(named: "showerRain")
         case "10d", "10n":
@@ -202,10 +224,18 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
     }
     
     func setMock() {
-        tempValue.text = "32 °C"
-        humidityValue.text = "92%"
-        windValue.text = "14"
-        cityLabel.text = "Tokio"
+        tempValue.text = "00 °C"
+        humidityValue.text = "00%"
+        windValue.text = "00.0"
+        cityLabel.text = "MockCity"
+    }
+    
+    func setDate() {
+        let date  = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "dMMM"
+        todayLabel.text = "Today, \(dateFormatter.string(from: date))"
     }
     
     func getCity(timezone: String) -> String {
@@ -220,7 +250,7 @@ class WeatherViewController: UIViewController, WeatherViewInput, WeatherViewProt
 
 // MARK: - CLLocationManagerDelegate
 
-extension WeatherViewController: CLLocationManagerDelegate {
+extension CurrentWeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
       print("didFailWithError \(error.localizedDescription)")
     }

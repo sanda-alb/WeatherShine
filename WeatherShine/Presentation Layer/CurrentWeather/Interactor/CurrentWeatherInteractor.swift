@@ -6,21 +6,20 @@
 //
 import Alamofire
 
-class WeatherInteractor: WeatherInteractorInput {
+class CurrentWeatherInteractor: CurrentWeatherInteractorInput {
     
-    weak var output: WeatherInteractorOutput?
+    weak var output: CurrentWeatherInteractorOutput?
     
     func fetchData(lat: Double, lon: Double) {
-        let API_KEY = "582031dfb6b35824f6b6c0e85d5c8ccd"
         let parameters: [String: Any] =
         [ "lat": lat,
           "lon": lon,
           "exclude": "minutely,alerts",
           "units": "metric",
-          "appid": API_KEY
+          "appid": Constants.API_KEY
         ]
         
-        AF.request("https://api.openweathermap.org/data/2.5/onecall",parameters: parameters)
+        AF.request(Constants.BASE_URL, parameters: parameters)
         .validate()
         .responseDecodable(of: Forecast.self) { response in
             switch response.result {

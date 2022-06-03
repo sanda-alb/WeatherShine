@@ -1,25 +1,25 @@
 //
-//  WeatherPresenter.swift
+//  CurrentWeatherPresenter.swift
 //  WeatherShine
 //
 //  Created by Sanda Albrecht on 5/23/22.
 //
 import Foundation
 
-class WeatherPresenter {
+class CurrentWeatherPresenter {
     
     // MARK: - Components
     
-    weak var view: WeatherViewInput?
-    var interactor: WeatherInteractorInput
-    var router: WeatherRouterInput
+    weak var view: CurrentWeatherViewInput?
+    var interactor: CurrentWeatherInteractorInput
+    var router: CurrentWeatherRouterInput
     
     // MARK: - Init
     
     init(
-        view       : WeatherViewInput,
-        interactor : WeatherInteractorInput,
-        router     : WeatherRouterInput
+        view       : CurrentWeatherViewInput,
+        interactor : CurrentWeatherInteractorInput,
+        router     : CurrentWeatherRouterInput
     ) {
         self.view       = view
         self.interactor = interactor
@@ -27,13 +27,13 @@ class WeatherPresenter {
     }
 }
 
-extension WeatherPresenter: WeatherViewOutput {
+extension CurrentWeatherPresenter: CurrentWeatherViewOutput {
     func requestWeather(lat: Double, lon: Double) {
         interactor.fetchData(lat: lat, lon: lon)
     }
 }
 
-extension WeatherPresenter: WeatherInteractorOutput {
+extension CurrentWeatherPresenter: CurrentWeatherInteractorOutput {
     func obtainData(forecast: Forecast) {
         view?.getForecast(forecast: forecast)
         view?.setCurrent(forecast)

@@ -46,13 +46,13 @@
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "fetchData(lat:lon:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C4955AA0-0C64-423B-AFAD-29F2A717B77D - 7a377d423cd773f0"
+                  uuid = "C4955AA0-0C64-423B-AFAD-29F2A717B77D - 7a377d423cd77411"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -62,12 +62,12 @@
                   urlString = "file:///Users/albrecht/Projects/MyProjects/WeatherShine/WeatherShine/Presentation%20Layer/Interactor/WeatherInteractor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
                   offsetFromSymbolStart = "805">
                </Location>
                <Location
-                  uuid = "C4955AA0-0C64-423B-AFAD-29F2A717B77D - 7a377d423cd773f0"
+                  uuid = "C4955AA0-0C64-423B-AFAD-29F2A717B77D - 7a377d423cd77411"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -77,8 +77,8 @@
                   urlString = "file:///Users/albrecht/Projects/MyProjects/WeatherShine/WeatherShine/Presentation%20Layer/Interactor/WeatherInteractor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
                   offsetFromSymbolStart = "1385">
                </Location>
             </Locations>
@@ -110,8 +110,8 @@
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "fetchData(lat:lon:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "fetchData(lat:lon:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,9 +142,25 @@
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "fetchData(lat:lon:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37C913D8-99BF-490B-9D51-E151150FEC4E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherShine/Presentation Layer/View/WeatherView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "setIcon(iconId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

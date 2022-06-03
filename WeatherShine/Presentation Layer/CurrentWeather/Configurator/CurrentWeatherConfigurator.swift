@@ -1,5 +1,5 @@
 //
-//  WeatherConfigurator.swift
+//  CurrentWeatherConfigurator.swift
 //  WeatherShine
 //
 //  Created by Sanda Albrecht on 5/23/22.
@@ -7,22 +7,22 @@
 
 import UIKit
 
-class WeatherModuleConfigurator {
+class CurrentWeatherModuleConfigurator {
 
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
         
-        if let viewController = viewInput as? WeatherViewController {
+        if let viewController = viewInput as? CurrentWeatherViewController {
             configure(with: viewController)
         }
     }
 
-    private func configure(with viewController: WeatherViewController) {
+    private func configure(with viewController: CurrentWeatherViewController) {
 
-        let interactor = WeatherInteractor()
+        let interactor = CurrentWeatherInteractor()
         
-        let router = WeatherRouter(viewController: viewController)
+        let router = CurrentWeatherRouter(viewController: viewController)
 
-        let presenter = WeatherPresenter(
+        let presenter = CurrentWeatherPresenter(
             view      : viewController,
             interactor: interactor,
             router    : router
@@ -32,4 +32,3 @@ class WeatherModuleConfigurator {
         viewController.output = presenter
     } 
 }
- 
