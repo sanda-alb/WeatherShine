@@ -28,6 +28,7 @@ class CurrentWeatherPresenter {
 }
 
 extension CurrentWeatherPresenter: CurrentWeatherViewOutput {
+    
     func openHourlyWeather() {
         router.openHourlyWeather()
     }

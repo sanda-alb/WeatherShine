@@ -15,7 +15,6 @@ protocol CurrentWeatherViewOutput {
     func openHourlyWeather()
 }
 
-
 protocol CurrentWeatherViewProtocol: CurrentWeatherViewInput {
     var output: CurrentWeatherViewOutput? { get set }
 }

@@ -30,7 +30,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     private let weatherIcon = UIImageView()
     private var bottomView  = UIView()
     
-    
     private let openButton = UIButton()
     
     // MARK: - Data
@@ -42,8 +41,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     private var currentLocation: CLLocation?
     
 //    var dailyModels = [DailyWeather]()
-    
-    var iconURL = "http://openweathermap.org/img/wn/10d@2x.png"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -191,37 +188,10 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         
         let iconId = weather.current.weather.first?.icon
         
-        setIcon(iconId: iconId ?? "placeholder")
+        weatherIcon.setWeatherIcon(iconId: iconId ?? "placeholder")
         setDate()
     }
-    
-    func setIcon(iconId: String) {
-        switch iconId {
-        case "01d", "01n":
-            weatherIcon.image = UIImage(named: "clearSky")
-        case "02d", "02n":
-            weatherIcon.image = UIImage(named: "fewClouds")
-        case "03d", "03n":
-            weatherIcon.image = UIImage(named: "scatteredClouds")
-        case "04d", "04n":
-            weatherIcon.image = UIImage(named: "brockenClouds")
-        case "09d", "09n":
-            weatherIcon.image = UIImage(named: "showerRain")
-        case "10d", "10n":
-            weatherIcon.image = UIImage(named: "rain")
-        case "11d", "11n":
-            weatherIcon.image = UIImage(named: "thunderstorm")
-        case "13d", "13n":
-            weatherIcon.image = UIImage(named: "snow")
-        case "50d", "50n":
-            weatherIcon.image = UIImage(named: "mist")
-        case "placeholder":
-            weatherIcon.image = UIImage(named: "placeholder")
-        default:
-            weatherIcon.image = UIImage(named: "placeholder")
-        }
-    }
-    
+        
     func setMock() {
         tempValue.text = "00 °C"
         humidityValue.text = "00%"
@@ -275,3 +245,5 @@ extension CurrentWeatherView: CLLocationManagerDelegate {
         output?.requestWeather(lat: lat, lon: lon)
     }
 }
+
+
