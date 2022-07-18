@@ -14,17 +14,23 @@ class HourlyWeatherPresenter {
     weak var view: HourlytWeatherViewInput?
     var router   : HourlyWeatherRouterInput
     
+    let data     : Forecast
+    
     // MARK: - Init
     
     init(
         view  : HourlytWeatherViewInput,
-        router: HourlyWeatherRouterInput
+        router: HourlyWeatherRouterInput,
+        data  : Forecast
     ) {
         self.view   = view
         self.router = router
+        self.data   = data
     }
 }
 
 extension HourlyWeatherPresenter: HourlyWeatherViewOutput {
-
+    func viewIsReady() {
+        view?.setData(data: data)
+    }
 }

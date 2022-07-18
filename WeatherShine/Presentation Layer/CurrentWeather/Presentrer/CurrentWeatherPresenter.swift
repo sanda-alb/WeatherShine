@@ -29,8 +29,8 @@ class CurrentWeatherPresenter {
 
 extension CurrentWeatherPresenter: CurrentWeatherViewOutput {
     
-    func openHourlyWeather() {
-        router.openHourlyWeather()
+    func openHourlyWeather(data: Forecast) {
+        router.openHourlyWeather(data: data)
     }
     
     func requestWeather(lat: Double, lon: Double) {
@@ -41,7 +41,6 @@ extension CurrentWeatherPresenter: CurrentWeatherViewOutput {
 extension CurrentWeatherPresenter: CurrentWeatherInteractorOutput {
     func obtainData(forecast: Forecast) {
         view?.setCurrent(forecast)
-        
     }
     
     func setMock() {

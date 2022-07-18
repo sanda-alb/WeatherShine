@@ -13,6 +13,7 @@ import Kingfisher
 class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeatherViewProtocol {
     
     var output: CurrentWeatherViewOutput?
+    var data: Forecast?
     
     // MARK: - Labels
 
@@ -40,8 +41,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
     
-//    var dailyModels = [DailyWeather]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -181,6 +180,7 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     }
     
     func setCurrent(_ weather: Forecast) {
+        data = weather
         tempValue.text = String(format: "%.0f", weather.current.temp) + " °C"
         humidityValue.text = String(weather.current.humidity) + "%"
         windValue.text = String(round(weather.current.windSpeed))
@@ -216,9 +216,9 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         return timezone
     }
     
-    
     @objc private func onOpenButtonTap() {
-        output?.openHourlyWeather()
+        guard let data = data else { return }
+        output?.openHourlyWeather(data: data)
     }
 }
 
@@ -245,5 +245,3 @@ extension CurrentWeatherView: CLLocationManagerDelegate {
         output?.requestWeather(lat: lat, lon: lon)
     }
 }
-
-

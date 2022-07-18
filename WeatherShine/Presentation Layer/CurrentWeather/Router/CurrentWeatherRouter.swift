@@ -13,21 +13,18 @@ class CurrentWeatherRouter {
         self.viewController = viewController
     }
     
-    func showHourlyWeather() {
+    func showHourlyWeather(data: Forecast) {
         let vc = HourlyWeatherView()
-        
-        
-        HourlyWeatherModuleConfigurator().configureModuleForViewInput(viewInput: viewController)
-       
+        HourlyWeatherModuleConfigurator().configureModuleForViewInput(
+            viewInput: vc,
+            data: data
+        )
         viewController?.navigationController?.pushViewController(vc, animated: true)
-    
     }
 }
 
-
 extension CurrentWeatherRouter: CurrentWeatherRouterInput {
-    func openHourlyWeather() {
-        showHourlyWeather()
+    func openHourlyWeather(data: Forecast) {
+        showHourlyWeather(data: data)
     }
-    
 }

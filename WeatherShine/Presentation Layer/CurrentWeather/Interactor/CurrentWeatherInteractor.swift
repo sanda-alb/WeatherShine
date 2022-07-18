@@ -25,7 +25,7 @@ class CurrentWeatherInteractor: CurrentWeatherInteractorInput {
             switch response.result {
             case.success:
                 print("Validation Successful")
-                debugPrint(response)
+//                debugPrint(response)
                 if let forecast = response.value {
                     self.output?.obtainData(forecast: forecast)
                 }

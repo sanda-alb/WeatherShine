@@ -5,8 +5,6 @@
 //  Created by Sanda Albrecht on 5/23/22.
 //
 
-import UIKit
-
 class CurrentWeatherModuleConfigurator {
 
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {

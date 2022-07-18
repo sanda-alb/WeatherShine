@@ -12,7 +12,7 @@ protocol  CurrentWeatherViewInput: class {
 
 protocol CurrentWeatherViewOutput {
     func requestWeather(lat: Double, lon: Double)
-    func openHourlyWeather()
+    func openHourlyWeather(data: Forecast)
 }
 
 protocol CurrentWeatherViewProtocol: CurrentWeatherViewInput {

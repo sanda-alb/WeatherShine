@@ -6,5 +6,5 @@
 //
 
 protocol CurrentWeatherRouterInput {
- func openHourlyWeather()
+    func openHourlyWeather(data: Forecast)
 }

@@ -9,10 +9,9 @@ import Foundation
 import UIKit
 import SnapKit
 
-class HourlyWeatherView: UIViewController, HourlytWeatherViewInput, HourlyWeatherViewProtocol {
+class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     
     var output: HourlyWeatherViewOutput?
-    
     
     // MARK: - UIViews
 
@@ -27,7 +26,6 @@ class HourlyWeatherView: UIViewController, HourlytWeatherViewInput, HourlyWeathe
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout()
         )
-    
     
     // MARK: - Labels
     
@@ -61,7 +59,15 @@ class HourlyWeatherView: UIViewController, HourlytWeatherViewInput, HourlyWeathe
         embedViews()
         setupLayout()
         setupAppearance()
+        output?.viewIsReady()
         setupBehaviour()
+//        output?.viewIsReady()
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        output?.viewIsReady()
     }
     
     
@@ -297,10 +303,11 @@ class HourlyWeatherView: UIViewController, HourlytWeatherViewInput, HourlyWeathe
         sunriseTime.text = "20:15"
     }
     
-    
     private func setupBehaviour() {
         
     }
+    
+   
     
     // MARK: - CollectionView appearance
     
@@ -317,5 +324,13 @@ class HourlyWeatherView: UIViewController, HourlytWeatherViewInput, HourlyWeathe
         let collectionViewLayout = (hourlyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout)
         collectionViewLayout.itemSize = CGSize(width: 200, height: 80)
         collectionViewLayout.scrollDirection = .horizontal
+    }
+}
+
+// MARK: - HourlyWeatherViewInput
+
+extension HourlyWeatherView: HourlytWeatherViewInput {
+    func setData(data: Forecast) {
+        print("Print")
     }
 }
