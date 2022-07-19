@@ -7,7 +7,7 @@
 
 import Foundation 
 
-protocol HourlytWeatherViewInput: class {
+protocol HourlytWeatherViewInput: AnyObject {
     func setData(data: Forecast)
 }
 

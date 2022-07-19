@@ -36,9 +36,11 @@ struct CurrentWeather: Decodable {
     let feelsLike: Double
     let pressure: Int
     let humidity: Int
+    let uvi: Double
     let clouds: Int
     let visibility: Int
     let windSpeed: Double
+    let windDirection: Int
     let weather: [Weather]
     
     enum CodingKeys: String, CodingKey {
@@ -49,9 +51,11 @@ struct CurrentWeather: Decodable {
         case feelsLike = "feels_like"
         case pressure = "pressure"
         case humidity = "humidity"
+        case uvi = "uvi"
         case clouds = "clouds"
         case visibility = "visibility"
         case windSpeed = "wind_speed"
+        case windDirection = "wind_deg"
         case weather = "weather"
     }
 }

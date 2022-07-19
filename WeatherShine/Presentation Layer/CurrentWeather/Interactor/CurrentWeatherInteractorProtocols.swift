@@ -9,7 +9,7 @@ protocol CurrentWeatherInteractorInput {
     func fetchData(lat: Double, lon: Double)
 }
 
-protocol CurrentWeatherInteractorOutput: class {
+protocol CurrentWeatherInteractorOutput: AnyObject {
     func obtainData(forecast: Forecast)
     func setMock()
 }

@@ -283,6 +283,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         todayLabel.text = "Today"
         comfortLabel.text = "Comfort"
         windLabel.text = "Wind"
+        humidityLabel.text = "Humidity"
         sunriseSunsetLabel.text = "Sunrise and Sunset"
         
         humidityIcon.image = UIImage(named: "humidity")
@@ -292,15 +293,6 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         
         comfortSeparator.backgroundColor = .gray
         windSeparator.backgroundColor = .gray
-        
-        humidityLabel.text = "Humidity"
-        humidityValueLabel.text = "81%"
-        feelingLabel.text = "Feeling"
-        uvIndexLabel.text = "Index UV "
-        windDirectionLabel.text = "Direction"
-        windSpeedLabel.text = "Speed"
-        sunsetTime.text = "5:53"
-        sunriseTime.text = "20:15"
     }
     
     private func setupBehaviour() {
@@ -331,6 +323,32 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
 
 extension HourlyWeatherView: HourlytWeatherViewInput {
     func setData(data: Forecast) {
-        print("Print")
+        
+        let current = data.current
+        
+        humidityValueLabel.text = "\(current.humidity)%"
+        feelingLabel.text = "Feeling  \(Int(current.feelsLike))°C"
+        uvIndexLabel.text = "Index UV \(Int(current.uvi)) \(Int(current.uvi).setUVCategory())"
+        windDirectionLabel.text = "Direction \(current.windDirection.setWindDirection())"
+        windSpeedLabel.text = "Speed \(Int(current.windSpeed)) metre/sec"
+        sunsetTime.text = current.sunset.setTime()
+        sunriseTime.text = current.sunrise.setTime()
+     
+   
+       
     }
 }
+
+
+//func setCurrent(_ weather: Forecast) {
+//    data = weather
+//    tempValue.text = String(format: "%.0f", weather.current.temp) + " °C"
+//    humidityValue.text = String(weather.current.humidity) + "%"
+//    windValue.text = String(round(weather.current.windSpeed))
+//    cityLabel.text = getCity(timezone: weather.timezone)
+//
+//    let iconId = weather.current.weather.first?.icon
+//
+//    weatherIcon.setWeatherIcon(iconId: iconId ?? "placeholder")
+//    setDate()
+//}

@@ -182,8 +182,8 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     func setCurrent(_ weather: Forecast) {
         data = weather
         tempValue.text = String(format: "%.0f", weather.current.temp) + " °C"
-        humidityValue.text = String(weather.current.humidity) + "%"
-        windValue.text = String(round(weather.current.windSpeed))
+        humidityValue.text = "\(weather.current.humidity)%"
+        windValue.text = "\(Int(weather.current.windSpeed))"
         cityLabel.text = getCity(timezone: weather.timezone)
         
         let iconId = weather.current.weather.first?.icon

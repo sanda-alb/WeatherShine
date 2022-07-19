@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0B17353F-34B9-4104-B327-FAC0B251CCC0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/ViewController.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F154430E-8CCF-497C-95D9-5F47FF81B50C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/Presentrer/WeatherPresenter.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C4955AA0-0C64-423B-AFAD-29F2A717B77D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
@@ -53,7 +53,7 @@
             <Locations>
                <Location
                   uuid = "C4955AA0-0C64-423B-AFAD-29F2A717B77D - 7a377d423cd77411"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.DataResponse&lt;WeatherShine.Forecast, Alamofire.AFError&gt;) -&gt; () in WeatherShine.WeatherInteractor.fetchData(lat: Swift.Double, lon: Swift.Double) -&gt; ()"
@@ -68,7 +68,7 @@
                </Location>
                <Location
                   uuid = "C4955AA0-0C64-423B-AFAD-29F2A717B77D - 7a377d423cd77411"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.DataResponse&lt;WeatherShine.Forecast, Alamofire.AFError&gt;) -&gt; () in WeatherShine.WeatherInteractor.fetchData(lat: Swift.Double, lon: Swift.Double) -&gt; ()"
@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "722D8A59-12F0-4ADC-B6F2-B5E1F8800A5E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/Presentrer/WeatherPresenter.swift"
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "26E3E8E5-1BCC-4607-A1A6-58047115476E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
@@ -120,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7C909309-1056-406D-A7B5-F393354E2D37"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
@@ -136,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "466A2387-C973-492A-A556-F21EC22D9178"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/Interactor/WeatherInteractor.swift"
@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "37C913D8-99BF-490B-9D51-E151150FEC4E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/View/WeatherView.swift"
@@ -184,7 +184,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5E48664E-51A0-4F8E-82F0-753FD9BA4D7F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/HourlyWeather/View/HourlyWeatherView.swift"
@@ -216,7 +216,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3BFF147C-8598-417A-9B75-665B68A60D46"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/HourlyWeather/View/HourlyWeatherView.swift"
@@ -232,7 +232,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "15FD4D3F-C570-4B2B-A431-CA6CABED5105"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/HourlyWeather/Configurator/HourlyWeatherConfigirator.swift"
@@ -248,7 +248,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "85C35FB9-9A0E-4A9A-8572-A01A45279676"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/HourlyWeather/Configurator/HourlyWeatherConfigirator.swift"
@@ -264,7 +264,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "13F280B9-B9D7-4206-BF13-51B0B6FBB022"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/HourlyWeather/Configurator/HourlyWeatherConfigirator.swift"
@@ -280,7 +280,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0A42A77F-FA33-4199-88E8-135D7CA98F93"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/HourlyWeather/Configurator/HourlyWeatherConfigirator.swift"
@@ -296,7 +296,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "68441D93-C476-4E35-899E-695F38732480"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/HourlyWeather/Configurator/HourlyWeatherConfigirator.swift"
@@ -312,7 +312,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "394E8BBC-6046-48A2-A178-220D816C7D3B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/HourlyWeather/Configurator/HourlyWeatherConfigirator.swift"
@@ -328,7 +328,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2BF2DEE6-D8CD-4C95-953B-2E70EBB70257"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/CurrentWeather/Configurator/CurrentWeatherConfigurator.swift"
@@ -344,7 +344,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6E16275A-9B0F-46E6-8F47-AD1F8AC8F74D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/HourlyWeather/Configurator/HourlyWeatherConfigirator.swift"
@@ -360,7 +360,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A4D6FCB4-AB1F-4480-9BC9-014B5A123855"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/CurrentWeather/Router/CurrentWeatherRouter.swift"
@@ -376,7 +376,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8ACE58E5-8884-4CEC-81AB-26D791AFDCDD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherShine/Presentation Layer/HourlyWeather/Configurator/HourlyWeatherConfigirator.swift"
