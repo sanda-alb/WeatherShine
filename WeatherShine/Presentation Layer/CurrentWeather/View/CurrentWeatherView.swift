@@ -84,8 +84,7 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         weatherIcon.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(230)
-            make.height.equalTo(230)
-            make.width.equalTo(230)
+            make.height.width.equalTo(230)
         }
         
         windLabel.snp.makeConstraints { make in
@@ -125,12 +124,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
             make.width.equalTo(100)
             
         }
-//        bottomView.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(10)
-//            make.trailing.equalToSuperview().offset(-10)
-//            make.height.equalTo(200)
-//            make.bottom.equalToSuperview()
-//        }
     }
 
     private func setupAppearance() {

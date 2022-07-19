@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-final class HourlyWetherCell: UICollectionViewCell {
+final class HourlyWeatherCell: UICollectionViewCell {
     private let weatherIcon = UIImageView()
     private let timeLabel = UILabel()
     private let temperatureLabel = UILabel()
@@ -36,42 +36,41 @@ final class HourlyWetherCell: UICollectionViewCell {
     
     private func setupLayout() {
         weatherIcon.snp.makeConstraints { make in
-            make.height.equalTo(40)
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(5)
+            make.height.width.equalTo(75)
+            make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(5)
         }
         
         timeLabel.snp.makeConstraints { make in
-            make.height.equalTo(10)
+            make.height.equalTo(20)
             make.centerX.equalToSuperview()
             make.top.equalTo(weatherIcon.snp.bottom).offset(5)
         }
         
         temperatureLabel.snp.makeConstraints { make in
-            make.height.equalTo(10)
+            make.height.equalTo(20)
             make.centerX.equalToSuperview()
             make.top.equalTo(timeLabel.snp.bottom).offset(5)
         }
     }
     
     private func setupApperance() {
-        contentView.backgroundColor = .secondarySystemGroupedBackground
+        contentView.backgroundColor = Colors.yellowLight
 
         contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = 8
+        contentView.layer.cornerRadius = 20
     }
 }
 
-extension HourlyWetherCell {
+extension HourlyWeatherCell {
     func apply(viewModel: ViewModel) {
-        weatherIcon.image = viewModel.icon
+        weatherIcon.setWeatherIcon(iconId: viewModel.iconId)
         timeLabel.text = viewModel.time
         temperatureLabel.text = viewModel.temperature
     }
     
     struct ViewModel {
-        let icon: UIImage
+        let iconId: String
         let time: String
         let temperature: String
     }

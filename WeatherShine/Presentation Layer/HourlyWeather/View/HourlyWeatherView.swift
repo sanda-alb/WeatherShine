@@ -12,6 +12,8 @@ import SnapKit
 class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     
     var output: HourlyWeatherViewOutput?
+//    private var data: Forecast?
+    private var hourlyWeather: [HourlyWeatherCell.ViewModel] = []
     
     // MARK: - UIViews
 
@@ -29,7 +31,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     
     // MARK: - Labels
     
-    private let todayLabel         = UILabel()
+    private let hourlyLabel         = UILabel()
     private let comfortLabel       = UILabel()
     private let windLabel          = UILabel()
     private let sunriseSunsetLabel = UILabel()
@@ -61,6 +63,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         setupAppearance()
         output?.viewIsReady()
         setupBehaviour()
+        setupCollectionViewAppearance()
 //        output?.viewIsReady()
     }
     
@@ -78,7 +81,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
           comfortContainer,
           windContainer,
           sunriseSunsetContainer,
-          todayLabel,
+          hourlyLabel,
           comfortLabel,
           windLabel,
           sunriseSunsetLabel,
@@ -120,7 +123,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     
     // MARK: - Setup Layout
     private func setupLayout() {
-        todayLabel.snp.makeConstraints { make in
+        hourlyLabel.snp.makeConstraints { make in
             make.bottom.equalTo(hourlyCollectionView.snp.top).offset(-5)
             make.leading.equalToSuperview().offset(30)
             make.height.equalTo(20)
@@ -245,7 +248,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         
         sunsetIcon.snp.makeConstraints { make in
             make.width.height.equalTo(100)
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(15)
             make.centerX.equalToSuperview().offset(80)
         }
         
@@ -263,8 +266,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     private func setupAppearance() {
         view.backgroundColor = Colors.purpleLight
         
-        [ hourlyCollectionView,
-          comfortContainer,
+        [ comfortContainer,
           windContainer,
           sunriseSunsetContainer
         ].forEach{
@@ -272,7 +274,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
             $0.layer.cornerRadius = 20
         }
         
-        [ todayLabel,
+        [ hourlyLabel,
           comfortLabel,
           windLabel,
           sunriseSunsetLabel
@@ -280,7 +282,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
             $0.textColor = .white
         }
         
-        todayLabel.text = "Today"
+        hourlyLabel.text = "Hourly"
         comfortLabel.text = "Comfort"
         windLabel.text = "Wind"
         humidityLabel.text = "Humidity"
@@ -296,32 +298,24 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     }
     
     private func setupBehaviour() {
+        hourlyCollectionView.dataSource = self
         
+        hourlyCollectionView.register(HourlyWeatherCell.self, forCellWithReuseIdentifier: "HourlyWeatherCell")
     }
     
-   
-    
     // MARK: - CollectionView appearance
-    
     private func setupCollectionViewAppearance() {
-//        hourlyCollectionView.backgroundColor = .systemGroupedBackground
-        hourlyCollectionView.contentInset = UIEdgeInsets(
-            top: 0,
-            left: 16,
-            bottom: 0,
-            right: 16
-        )
-        hourlyCollectionView.showsHorizontalScrollIndicator = true
-        
+        hourlyCollectionView.showsHorizontalScrollIndicator = false
+        hourlyCollectionView.backgroundColor = Colors.purpleLight
         let collectionViewLayout = (hourlyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout)
-        collectionViewLayout.itemSize = CGSize(width: 200, height: 80)
+        collectionViewLayout.itemSize = CGSize(width: 100, height: 150)
         collectionViewLayout.scrollDirection = .horizontal
     }
 }
 
 // MARK: - HourlyWeatherViewInput
-
 extension HourlyWeatherView: HourlytWeatherViewInput {
+    
     func setData(data: Forecast) {
         
         let current = data.current
@@ -330,25 +324,33 @@ extension HourlyWeatherView: HourlytWeatherViewInput {
         feelingLabel.text = "Feeling  \(Int(current.feelsLike))°C"
         uvIndexLabel.text = "Index UV \(Int(current.uvi)) \(Int(current.uvi).setUVCategory())"
         windDirectionLabel.text = "Direction \(current.windDirection.setWindDirection())"
-        windSpeedLabel.text = "Speed \(Int(current.windSpeed)) metre/sec"
+        windSpeedLabel.text = "Speed \(Int(current.windSpeed)) m/sec"
         sunsetTime.text = current.sunset.setTime()
         sunriseTime.text = current.sunrise.setTime()
-     
-   
-       
+        
+        self.hourlyWeather = data.hourly.map {
+            HourlyWeatherCell.ViewModel.init(
+                iconId: $0.weather.last?.icon ?? "default",
+                time: $0.time.setTime(),
+                temperature: "\(Int($0.temp)) °C"
+            )
+        }
     }
 }
 
-
-//func setCurrent(_ weather: Forecast) {
-//    data = weather
-//    tempValue.text = String(format: "%.0f", weather.current.temp) + " °C"
-//    humidityValue.text = String(weather.current.humidity) + "%"
-//    windValue.text = String(round(weather.current.windSpeed))
-//    cityLabel.text = getCity(timezone: weather.timezone)
-//
-//    let iconId = weather.current.weather.first?.icon
-//
-//    weatherIcon.setWeatherIcon(iconId: iconId ?? "placeholder")
-//    setDate()
-//}
+// MARK: - UICollectionViewDataSource
+extension HourlyWeatherView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.hourlyWeather.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let hourlyCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "HourlyWeatherCell",
+            for: indexPath
+        ) as! HourlyWeatherCell
+        
+        hourlyCell.apply(viewModel: hourlyWeather[indexPath.item])
+        return hourlyCell
+    }
+}

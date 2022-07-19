@@ -16,7 +16,7 @@ extension UIImageView {
         case "02d", "02n":
             self.image = UIImage(named: "fewClouds")
         case "03d", "03n":
-            self.image = UIImage(named: "scatteredClouds")
+            self.image = UIImage(named: "scatteredСlouds")
         case "04d", "04n":
             self.image = UIImage(named: "brockenClouds")
         case "09d", "09n":
