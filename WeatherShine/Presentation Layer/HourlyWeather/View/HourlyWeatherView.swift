@@ -320,8 +320,11 @@ extension HourlyWeatherView: HourlytWeatherViewInput {
         
         let current = data.current
         
+        //delete
+        print(data)
+        
         humidityValueLabel.text = "\(current.humidity)%"
-        feelingLabel.text = "Feeling  \(Int(current.feelsLike))°C"
+        feelingLabel.text = "Feeling  \(Int(current.feelsLike)) °C"
         uvIndexLabel.text = "Index UV \(Int(current.uvi)) \(Int(current.uvi).setUVCategory())"
         windDirectionLabel.text = "Direction \(current.windDirection.setWindDirection())"
         windSpeedLabel.text = "Speed \(Int(current.windSpeed)) m/sec"

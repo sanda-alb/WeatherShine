@@ -188,7 +188,7 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     func setMock() {
         tempValue.text = "00 °C"
         humidityValue.text = "00%"
-        windValue.text = "00.0"
+        windValue.text = "00"
         cityLabel.text = "MockCity"
     }
     

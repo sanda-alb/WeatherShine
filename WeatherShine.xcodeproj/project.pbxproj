@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F000322A283E8232006760BE /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0003229283E8231006760BE /* Forecast.swift */; };
-		F000322C283E9378006760BE /* CurrentWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000322B283E9378006760BE /* CurrentWeatherTableViewCell.swift */; };
 		F000323228413CB1006760BE /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F000323128413CB1006760BE /* CurrentWeatherViewModel.swift */; };
 		F00B1346283B9C8C003F5D0E /* CurrentWeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B1345283B9C8C003F5D0E /* CurrentWeatherInteractor.swift */; };
 		F00B134A283B9CB7003F5D0E /* CurrentWeatherConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B1349283B9CB7003F5D0E /* CurrentWeatherConfigurator.swift */; };
@@ -30,7 +29,7 @@
 		F072F1132832C63C00907CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F072F1112832C63C00907CB2 /* LaunchScreen.storyboard */; };
 		F072F11C2832C98500907CB2 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F072F11B2832C98500907CB2 /* SnapKit.xcframework */; };
 		F072F11D2832C98500907CB2 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F072F11B2832C98500907CB2 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F09B56A8287C623100B0D432 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B56A7287C623100B0D432 /* Date.swift */; };
+		F09B56A8287C623100B0D432 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B56A7287C623100B0D432 /* Int.swift */; };
 		F09B56AA287C75E300B0D432 /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B56A9287C75E200B0D432 /* HourlyWeatherCell.swift */; };
 		F0D5F9A028491D6A00EA3B18 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F99F28491D6A00EA3B18 /* Colors.swift */; };
 		F0D5F9AD284A1AAE00EA3B18 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9AC284A1AAE00EA3B18 /* HourlyWeatherView.swift */; };
@@ -59,7 +58,6 @@
 
 /* Begin PBXFileReference section */
 		F0003229283E8231006760BE /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
-		F000322B283E9378006760BE /* CurrentWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		F000323128413CB1006760BE /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 		F00B1345283B9C8C003F5D0E /* CurrentWeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherInteractor.swift; sourceTree = "<group>"; };
 		F00B1349283B9CB7003F5D0E /* CurrentWeatherConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherConfigurator.swift; sourceTree = "<group>"; };
@@ -81,7 +79,7 @@
 		F072F1122832C63C00907CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F072F1142832C63C00907CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F072F11B2832C98500907CB2 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
-		F09B56A7287C623100B0D432 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F09B56A7287C623100B0D432 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		F09B56A9287C75E200B0D432 /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		F0D5F99F28491D6A00EA3B18 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F0D5F9AC284A1AAE00EA3B18 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			children = (
 				F072F10A2832C63800907CB2 /* CurrentWeatherView.swift */,
 				F062056D283BA3E6004FADA4 /* CurrentWeatherViewProtocols.swift */,
-				F000322B283E9378006760BE /* CurrentWeatherTableViewCell.swift */,
 				F000323128413CB1006760BE /* CurrentWeatherViewModel.swift */,
 			);
 			path = View;
@@ -216,7 +213,7 @@
 		F0D5F99C284918D600EA3B18 /* Extetension */ = {
 			isa = PBXGroup;
 			children = (
-				F09B56A7287C623100B0D432 /* Date.swift */,
+				F09B56A7287C623100B0D432 /* Int.swift */,
 				F03721CF288072F700C26A83 /* UIImageView.swift */,
 			);
 			path = Extetension;
@@ -351,14 +348,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F09B56A8287C623100B0D432 /* Date.swift in Sources */,
+				F09B56A8287C623100B0D432 /* Int.swift in Sources */,
 				F0620574283BA41D004FADA4 /* CurrentWeatherRouter.swift in Sources */,
 				F0D5F9B7284A1B1300EA3B18 /* HourlyWeatherConfigirator.swift in Sources */,
 				F0620570283BA3F6004FADA4 /* CurrentWeatherPresenter.swift in Sources */,
 				F0D5F9AD284A1AAE00EA3B18 /* HourlyWeatherView.swift in Sources */,
 				F0D5F9B3284A1AE500EA3B18 /* HourlyWeatherRouter.swift in Sources */,
 				F03721D0288072F800C26A83 /* UIImageView.swift in Sources */,
-				F000322C283E9378006760BE /* CurrentWeatherTableViewCell.swift in Sources */,
 				F0D5F9A028491D6A00EA3B18 /* Colors.swift in Sources */,
 				F0D5F9B1284A1AD500EA3B18 /* HourlyWeatherPresenter.swift in Sources */,
 				F0620578283BA595004FADA4 /* CurrentWeatherInteractorProtocols.swift in Sources */,
