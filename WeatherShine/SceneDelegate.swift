@@ -16,19 +16,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let vc = CurrentWeatherView()
-
-        CurrentWeatherModuleConfigurator().configureModuleForViewInput(viewInput: vc)
+//        let vc = CurrentWeatherView()
+        let dc = CurrentWeatherView()
+        CurrentWeatherModuleConfigurator().configureModuleForViewInput(viewInput: dc)
         
-//        let vc = HourlyWeatherView()
-//        
-//        HourlyWeatherModuleConfigurator().configureModuleForViewInput(viewInput: vc)
+        let vc = WelcomeContainerViewController(
+            contentViewController: dc,
+            bottomSheetViewController: HourlyWeatherView(),
+            bottomSheetConfiguration: .init(
+                height: UIScreen.main.bounds.height * 0.8,
+                initialOffset: 60 + window.safeAreaInsets.bottom
+            )
+        )
         
         let nav = UINavigationController(rootViewController: vc)
         window.rootViewController = nav
         
         window.makeKeyAndVisible()
         self.window = window
+        
+        
+//        var window: UIWindow?
+//
+//           func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//
+//               window = UIWindow()
+//               window?.rootViewController = WelcomeContainerViewController(
+//                   contentViewController: HelloViewController(),
+//                   bottomSheetViewController: MyCustomViewController(),
+//                   bottomSheetConfiguration: .init(
+//                       height: UIScreen.main.bounds.height * 0.8,
+//                       initialOffset: 60 + window!.safeAreaInsets.bottom
+//                   )
+//               )
+//               window?.makeKeyAndVisible()
+//
+//               return true
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -12,7 +12,7 @@ import SnapKit
 class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     
     var output: HourlyWeatherViewOutput?
-//    private var data: Forecast?
+    
     private var hourlyWeather: [HourlyWeatherCell.ViewModel] = []
     
     // MARK: - UIViews
@@ -265,6 +265,14 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     
     private func setupAppearance() {
         view.backgroundColor = Colors.purpleLight
+        
+        //bottomsheet
+        view.layer.cornerRadius = 20
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOffset = .init(width: 0, height: -2)
+        view.layer.shadowRadius = 20
+        view.layer.shadowOpacity = 0.5
         
         [ comfortContainer,
           windContainer,

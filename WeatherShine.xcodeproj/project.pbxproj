@@ -29,6 +29,8 @@
 		F072F1132832C63C00907CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F072F1112832C63C00907CB2 /* LaunchScreen.storyboard */; };
 		F072F11C2832C98500907CB2 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F072F11B2832C98500907CB2 /* SnapKit.xcframework */; };
 		F072F11D2832C98500907CB2 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F072F11B2832C98500907CB2 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F075E6C5288872D10049E9F7 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075E6C4288872D10049E9F7 /* BottomSheet.swift */; };
+		F075E6C72888731E0049E9F7 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F075E6C62888731E0049E9F7 /* Container.swift */; };
 		F09B56A8287C623100B0D432 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B56A7287C623100B0D432 /* Int.swift */; };
 		F09B56AA287C75E300B0D432 /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B56A9287C75E200B0D432 /* HourlyWeatherCell.swift */; };
 		F0D5F9A028491D6A00EA3B18 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F99F28491D6A00EA3B18 /* Colors.swift */; };
@@ -79,6 +81,8 @@
 		F072F1122832C63C00907CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F072F1142832C63C00907CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F072F11B2832C98500907CB2 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
+		F075E6C4288872D10049E9F7 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		F075E6C62888731E0049E9F7 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		F09B56A7287C623100B0D432 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		F09B56A9287C75E200B0D432 /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		F0D5F99F28491D6A00EA3B18 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			children = (
 				F0D5F9A32849F84000EA3B18 /* CurrentWeather */,
 				F0D5F9A42849F88300EA3B18 /* HourlyWeather */,
+				F075E6C62888731E0049E9F7 /* Container.swift */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				F072F1142832C63C00907CB2 /* Info.plist */,
 				F062057F283BDCB6004FADA4 /* Constants.swift */,
 				F0D5F99F28491D6A00EA3B18 /* Colors.swift */,
+				F075E6C4288872D10049E9F7 /* BottomSheet.swift */,
 			);
 			path = WeatherShine;
 			sourceTree = "<group>";
@@ -358,7 +364,9 @@
 				F0D5F9A028491D6A00EA3B18 /* Colors.swift in Sources */,
 				F0D5F9B1284A1AD500EA3B18 /* HourlyWeatherPresenter.swift in Sources */,
 				F0620578283BA595004FADA4 /* CurrentWeatherInteractorProtocols.swift in Sources */,
+				F075E6C5288872D10049E9F7 /* BottomSheet.swift in Sources */,
 				F0620576283BA42A004FADA4 /* CurrentWeatherRouterProtocols.swift in Sources */,
+				F075E6C72888731E0049E9F7 /* Container.swift in Sources */,
 				F072F10B2832C63800907CB2 /* CurrentWeatherView.swift in Sources */,
 				F062056E283BA3E6004FADA4 /* CurrentWeatherViewProtocols.swift in Sources */,
 				F09B56AA287C75E300B0D432 /* HourlyWeatherCell.swift in Sources */,

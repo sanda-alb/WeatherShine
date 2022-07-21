@@ -11,7 +11,6 @@ import CoreLocation
 import Kingfisher
 
 class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeatherViewProtocol {
-    
     var output: CurrentWeatherViewOutput?
     var data: Forecast?
     
@@ -210,8 +209,8 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     }
     
     @objc private func onOpenButtonTap() {
-        guard let data = data else { return }
-        output?.openHourlyWeather(data: data)
+//        guard let data = data else { return }
+//        output?.openHourlyWeather(data: data)
     }
 }
 
