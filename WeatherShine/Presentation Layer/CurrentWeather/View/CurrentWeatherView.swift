@@ -133,7 +133,7 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         tempLabel.text = "Temp"
         humidityLabel.text = "Humidity"
         
-        openButton.backgroundColor = Colors.purpleLight
+//        openButton.backgroundColor = Colors.purpleLight
     
         
         todayLabel.font = UIFont.preferredFont(forTextStyle: .caption2)

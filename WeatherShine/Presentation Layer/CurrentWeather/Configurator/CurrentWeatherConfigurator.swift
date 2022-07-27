@@ -13,7 +13,8 @@ class CurrentWeatherModuleConfigurator {
     }
 
     private func configure(with viewController: CurrentWeatherView) {
-        let interactor = CurrentWeatherInteractor()
+        let weatherService = WeatherAPIService()
+        let interactor = CurrentWeatherInteractor(weatherService: WeatherAPIService())
         let router = CurrentWeatherRouter(viewController: viewController)
         
         let presenter = CurrentWeatherPresenter(

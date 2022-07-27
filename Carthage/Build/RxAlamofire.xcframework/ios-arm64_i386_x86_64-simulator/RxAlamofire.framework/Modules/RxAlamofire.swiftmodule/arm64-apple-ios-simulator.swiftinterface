@@ -1,0 +1,128 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RxAlamofire
+import Alamofire
+import Foundation
+import RxCocoa
+import RxSwift
+import Swift
+public let RxAlamofireUnknownError: Foundation.NSError
+public func urlRequest(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil) throws -> Foundation.URLRequest
+public func request(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.DataRequest>
+public func request(_ urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.DataRequest>
+public func requestResponse(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Foundation.HTTPURLResponse>
+public func requestResponse(_ urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Foundation.HTTPURLResponse>
+public func response(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Foundation.HTTPURLResponse>
+public func requestData(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Foundation.Data)>
+public func requestData(_ urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Foundation.Data)>
+public func data(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Foundation.Data>
+public func requestString(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Swift.String)>
+public func requestString(_ urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Swift.String)>
+public func string(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Swift.String>
+public func requestJSON(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Any)>
+public func requestJSON(_ urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Any)>
+public func json(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Any>
+public func requestDecodable<T>(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, T)> where T : Swift.Decodable
+public func requestDecodable<T>(_ urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, T)> where T : Swift.Decodable
+public func decodable<T>(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<T> where T : Swift.Decodable
+public func upload(_ file: Foundation.URL, urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+public func upload(_ file: Foundation.URL, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+public func upload(_ file: Foundation.URL, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<RxAlamofire.RxProgress>
+public func upload(_ data: Foundation.Data, urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+public func upload(_ data: Foundation.Data, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+public func upload(_ data: Foundation.Data, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<RxAlamofire.RxProgress>
+public func upload(_ stream: Foundation.InputStream, urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+public func upload(_ stream: Foundation.InputStream, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+public func upload(_ stream: Foundation.InputStream, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<RxAlamofire.RxProgress>
+public func upload(multipartFormData: @escaping (Alamofire.MultipartFormData) -> Swift.Void, urlRequest: Alamofire.URLRequestConvertible) -> RxSwift.Observable<Alamofire.UploadRequest>
+public func upload(multipartFormData: @escaping (Alamofire.MultipartFormData) -> Swift.Void, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+public func upload(multipartFormData: @escaping (Alamofire.MultipartFormData) -> Swift.Void, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<RxAlamofire.RxProgress>
+public func download(_ urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil, to destination: @escaping Alamofire.DownloadRequest.Destination) -> RxSwift.Observable<Alamofire.DownloadRequest>
+public func download(resumeData: Foundation.Data, interceptor: Alamofire.RequestInterceptor? = nil, to destination: @escaping Alamofire.DownloadRequest.Destination) -> RxSwift.Observable<Alamofire.DownloadRequest>
+extension Session : RxSwift.ReactiveCompatible {
+  public typealias ReactiveBase = Alamofire.Session
+}
+extension Reactive where Base : Alamofire.Session {
+  public func request(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.DataRequest>
+  public func request(urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.DataRequest>
+  public func response(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Foundation.HTTPURLResponse>
+  public func responseData(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Foundation.Data)>
+  public func data(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Foundation.Data>
+  public func responseString(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Swift.String)>
+  public func string(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Swift.String>
+  public func responseJSON(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Any)>
+  public func json(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Any>
+  public func responseDecodable<T>(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, T)> where T : Swift.Decodable
+  public func decodable<T>(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: Alamofire.Parameters? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<T> where T : Swift.Decodable
+  public func upload(_ file: Foundation.URL, urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+  public func upload(_ file: Foundation.URL, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+  public func upload(_ file: Foundation.URL, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<RxAlamofire.RxProgress>
+  public func upload(_ data: Foundation.Data, urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+  public func upload(_ data: Foundation.Data, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+  public func upload(_ data: Foundation.Data, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<RxAlamofire.RxProgress>
+  public func upload(_ stream: Foundation.InputStream, urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+  public func upload(_ stream: Foundation.InputStream, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+  public func upload(_ stream: Foundation.InputStream, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<RxAlamofire.RxProgress>
+  public func upload(multipartFormData: @escaping (Alamofire.MultipartFormData) -> Swift.Void, urlRequest: Alamofire.URLRequestConvertible) -> RxSwift.Observable<Alamofire.UploadRequest>
+  public func upload(multipartFormData: @escaping (Alamofire.MultipartFormData) -> Swift.Void, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Alamofire.UploadRequest>
+  public func upload(multipartFormData: @escaping (Alamofire.MultipartFormData) -> Swift.Void, to url: Alamofire.URLConvertible, method: Alamofire.HTTPMethod, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<RxAlamofire.RxProgress>
+  public func download(_ urlRequest: Alamofire.URLRequestConvertible, interceptor: Alamofire.RequestInterceptor? = nil, to destination: @escaping Alamofire.DownloadRequest.Destination) -> RxSwift.Observable<Alamofire.DownloadRequest>
+  public func download(resumeData: Foundation.Data, interceptor: Alamofire.RequestInterceptor? = nil, to destination: @escaping Alamofire.DownloadRequest.Destination) -> RxSwift.Observable<Alamofire.DownloadRequest>
+}
+extension ObservableType where Self.Element == Alamofire.DataRequest {
+  public func responseJSON() -> RxSwift.Observable<Alamofire.DataResponse<Any, Alamofire.AFError>>
+  public func json(options: Foundation.JSONSerialization.ReadingOptions = .allowFragments) -> RxSwift.Observable<Any>
+  public func responseString(encoding: Swift.String.Encoding? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Swift.String)>
+  public func string(encoding: Swift.String.Encoding? = nil) -> RxSwift.Observable<Swift.String>
+  public func responseData() -> RxSwift.Observable<(Foundation.HTTPURLResponse, Foundation.Data)>
+  public func response() -> RxSwift.Observable<Foundation.HTTPURLResponse>
+  public func data() -> RxSwift.Observable<Foundation.Data>
+  public func progress() -> RxSwift.Observable<RxAlamofire.RxProgress>
+}
+extension ObservableType where Self.Element == Alamofire.DataRequest {
+  public func validate<S>(statusCode: S) -> RxSwift.Observable<Self.Element> where S : Swift.Sequence, S.Element == Swift.Int
+  public func validate() -> RxSwift.Observable<Self.Element>
+  public func validate<S>(contentType acceptableContentTypes: S) -> RxSwift.Observable<Self.Element> where S : Swift.Sequence, S.Element == Swift.String
+  public func validate(_ validation: @escaping Alamofire.DataRequest.Validation) -> RxSwift.Observable<Self.Element>
+}
+extension Request : RxSwift.ReactiveCompatible {
+  public typealias ReactiveBase = Alamofire.Request
+}
+extension Reactive where Base : Alamofire.DataRequest {
+  public func response(queue: Dispatch.DispatchQueue = .main) -> RxSwift.Observable<Foundation.HTTPURLResponse>
+  public func responseResult<T>(queue: Dispatch.DispatchQueue = .main, responseSerializer: T) -> RxSwift.Observable<(Foundation.HTTPURLResponse, T.SerializedObject)> where T : Alamofire.DataResponseSerializerProtocol
+  public func responseJSON() -> RxSwift.Observable<Alamofire.DataResponse<Any, Alamofire.AFError>>
+  public func result<T>(queue: Dispatch.DispatchQueue = .main, responseSerializer: T) -> RxSwift.Observable<T.SerializedObject> where T : Alamofire.DataResponseSerializerProtocol
+  public func responseData() -> RxSwift.Observable<(Foundation.HTTPURLResponse, Foundation.Data)>
+  public func data() -> RxSwift.Observable<Foundation.Data>
+  public func responseString(encoding: Swift.String.Encoding? = nil) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Swift.String)>
+  public func string(encoding: Swift.String.Encoding? = nil) -> RxSwift.Observable<Swift.String>
+  public func responseJSON(options: Foundation.JSONSerialization.ReadingOptions = .allowFragments) -> RxSwift.Observable<(Foundation.HTTPURLResponse, Any)>
+  public func json(options: Foundation.JSONSerialization.ReadingOptions = .allowFragments) -> RxSwift.Observable<Any>
+  public func responseDecodable<T>(decoder: Alamofire.DataDecoder = JSONDecoder()) -> RxSwift.Observable<(Foundation.HTTPURLResponse, T)> where T : Swift.Decodable
+  public func decodable<T>(decoder: Alamofire.DataDecoder = JSONDecoder()) -> RxSwift.Observable<T> where T : Swift.Decodable
+}
+extension Reactive where Base : Alamofire.Request {
+  public func progress() -> RxSwift.Observable<RxAlamofire.RxProgress>
+}
+public struct RxProgress {
+  public let bytesWritten: Swift.Int64
+  public let totalBytes: Swift.Int64
+  public init(bytesWritten: Swift.Int64, totalBytes: Swift.Int64)
+}
+extension RxProgress {
+  public var bytesRemaining: Swift.Int64 {
+    get
+  }
+  public var completed: Swift.Float {
+    get
+  }
+}
+extension RxProgress : Swift.Equatable {
+}
+public func == (lhs: RxAlamofire.RxProgress, rhs: RxAlamofire.RxProgress) -> Swift.Bool
+extension Reactive where Base : Foundation.URLSession {
+  public func json(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: [Swift.String : Any]? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Any>
+  public func response(method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: [Swift.String : Any]? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<(response: Foundation.HTTPURLResponse, data: Foundation.Data)>
+  public func data(_ method: Alamofire.HTTPMethod, _ url: Alamofire.URLConvertible, parameters: [Swift.String : Swift.AnyObject]? = nil, encoding: Alamofire.ParameterEncoding = URLEncoding.default, headers: Alamofire.HTTPHeaders? = nil) -> RxSwift.Observable<Foundation.Data>
+}

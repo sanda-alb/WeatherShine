@@ -1,16 +1,57 @@
 {
-  "commitish" : "7.2.2",
+  "Mac" : [
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "5ae2a3ce9f66bd1b8fdfa5f8b459c85d2bc5f8cef16b09a1382160738944e282",
+      "name" : "Kingfisher",
+      "container" : "Kingfisher.xcframework",
+      "identifier" : "macos-arm64_x86_64"
+    }
+  ],
+  "watchOS" : [
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "331c56e73e9d6ca54dbcbcb8a6762bd2fc14590eb28ab541bfbf70f9bd72d55a",
+      "name" : "Kingfisher",
+      "container" : "Kingfisher.xcframework",
+      "identifier" : "watchos-arm64_32_armv7k"
+    },
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "500095efb4c3254cd4f7f6235b5559e94ac21aca0628eb1fb768849f629dd599",
+      "name" : "Kingfisher",
+      "container" : "Kingfisher.xcframework",
+      "identifier" : "watchos-arm64_i386_x86_64-simulator"
+    }
+  ],
+  "tvOS" : [
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "b0b60e37a9f821db80c3c34435cbc6e455246ba226a5b82c5385accc2ab13de3",
+      "name" : "Kingfisher",
+      "container" : "Kingfisher.xcframework",
+      "identifier" : "tvos-arm64_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "0133b26ed69b62a423b013b210bd7f7a9bbedb1137eb7abfc28d419146613f9e",
+      "name" : "Kingfisher",
+      "container" : "Kingfisher.xcframework",
+      "identifier" : "tvos-arm64"
+    }
+  ],
+  "commitish" : "7.3.0",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)",
-      "hash" : "33d9816b101c7f7c62a78b3b35c7a29ffe4b360312059d657b342393bb11a783",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "0dfc7744787dc94072049bcc23d6728a0c6997da019683d38bcfab1940b1421b",
       "name" : "Kingfisher",
       "container" : "Kingfisher.xcframework",
       "identifier" : "ios-arm64_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)",
-      "hash" : "297ff5c928407ab820488255e5320b95cf1933a5e6e7796b8643fbc3dbc1d97f",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "4682a9da4ea58a5b817f492d0249ae78f29fcd4d3c472a2906d3ef2d4e12efb4",
       "name" : "Kingfisher",
       "container" : "Kingfisher.xcframework",
       "identifier" : "ios-arm64"

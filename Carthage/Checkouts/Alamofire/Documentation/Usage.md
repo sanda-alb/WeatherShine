@@ -25,7 +25,6 @@
     - [Response Handler](#response-handler)
     - [Response Data Handler](#response-data-handler)
     - [Response String Handler](#response-string-handler)
-    - [Response JSON Handler](#response-json-handler)
     - [Response `Decodable` Handler](#response-decodable-handler)
     - [Chained Response Handlers](#chained-response-handlers)
     - [Response Handler Queue](#response-handler-queue)
@@ -112,6 +111,7 @@ public struct HTTPMethod: RawRepresentable, Equatable, Hashable {
     public static let patch = HTTPMethod(rawValue: "PATCH")
     public static let post = HTTPMethod(rawValue: "POST")
     public static let put = HTTPMethod(rawValue: "PUT")
+    public static let query = HTTPMethod(rawValue: "QUERY")
     public static let trace = HTTPMethod(rawValue: "TRACE")
 
     public let rawValue: String

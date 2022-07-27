@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             bottomSheetViewController: HourlyWeatherView(),
             bottomSheetConfiguration: .init(
                 height: UIScreen.main.bounds.height * 0.8,
-                initialOffset: 60 + window.safeAreaInsets.bottom
+                initialOffset: 150 + window.safeAreaInsets.bottom
             )
         )
         
