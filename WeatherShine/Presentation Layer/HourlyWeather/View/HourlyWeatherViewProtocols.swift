@@ -7,14 +7,15 @@
 
 import Foundation 
 
-protocol HourlytWeatherViewInput: AnyObject {
+protocol HourlyWeatherViewInput: AnyObject {
     func setData(data: Forecast)
 }
 
 protocol HourlyWeatherViewOutput {
     func viewIsReady()
+    func requestWeather(lat: Double, lon: Double)
 }
 
-protocol HourlyWeatherViewProtocol: HourlytWeatherViewInput {
+protocol HourlyWeatherViewProtocol: HourlyWeatherViewInput {
     var output: HourlyWeatherViewOutput? { get set }
 }

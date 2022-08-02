@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/Alamofire.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		AnG1v1ZqLHHNzNUakzvmuPQ+Ncw=
+		ee3LOPtGwZMcKB/YRD2fqMOQ4mM=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		V5PtIlQ/F33QeFNFqo/rTj+KMEk=
+		fSVkNGJUPiI9aAgOK0IzyY3HImU=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
@@ -54,22 +54,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AnG1v1ZqLHHNzNUakzvmuPQ+Ncw=
+			ee3LOPtGwZMcKB/YRD2fqMOQ4mM=
 			</data>
 			<key>hash2</key>
 			<data>
-			FUxOKgZ2uPbQrIRj86ByaxFEHB8XSqCZGYOeQjBDeW0=
+			zdFvQ0yPNuQucYQjPHV0bBoWn55EbSAk/u++TdaoSCQ=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			V5PtIlQ/F33QeFNFqo/rTj+KMEk=
+			fSVkNGJUPiI9aAgOK0IzyY3HImU=
 			</data>
 			<key>hash2</key>
 			<data>
-			TebCcCRgtCzXKo+siU5yFa6iF5DIiAHu9a/rRotDvlw=
+			lQ2SXKNj+TyLrAsKlwKszUKkxs/gdhocoNI3bkut/Y4=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>

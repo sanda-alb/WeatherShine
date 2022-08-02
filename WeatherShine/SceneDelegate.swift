@@ -16,13 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-//        let vc = CurrentWeatherView()
-        let dc = CurrentWeatherView()
-        CurrentWeatherModuleConfigurator().configureModuleForViewInput(viewInput: dc)
+        let currentVC = CurrentWeatherView()
+        CurrentWeatherModuleConfigurator().configureModuleForViewInput(viewInput: currentVC)
+        let hourlyVC = HourlyWeatherView()
+        HourlyWeatherModuleConfigurator().configureModuleForViewInput(viewInput: hourlyVC)
+        
         
         let vc = WelcomeContainerViewController(
-            contentViewController: dc,
-            bottomSheetViewController: HourlyWeatherView(),
+            contentViewController: currentVC,
+            bottomSheetViewController: hourlyVC,
             bottomSheetConfiguration: .init(
                 height: UIScreen.main.bounds.height * 0.8,
                 initialOffset: 150 + window.safeAreaInsets.bottom
@@ -34,24 +36,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window.makeKeyAndVisible()
         self.window = window
-        
-        
-//        var window: UIWindow?
-//
-//           func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//
-//               window = UIWindow()
-//               window?.rootViewController = WelcomeContainerViewController(
-//                   contentViewController: HelloViewController(),
-//                   bottomSheetViewController: MyCustomViewController(),
-//                   bottomSheetConfiguration: .init(
-//                       height: UIScreen.main.bounds.height * 0.8,
-//                       initialOffset: 60 + window!.safeAreaInsets.bottom
-//                   )
-//               )
-//               window?.makeKeyAndVisible()
-//
-//               return true
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

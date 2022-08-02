@@ -10,9 +10,9 @@ class CurrentWeatherPresenter {
     
     // MARK: - Components
     
-    weak var view: CurrentWeatherViewInput?
+    weak var view : CurrentWeatherViewInput?
     var interactor: CurrentWeatherInteractorInput
-    var router: CurrentWeatherRouterInput
+    var router    : CurrentWeatherRouterInput
     
     // MARK: - Init
     

@@ -16,8 +16,7 @@ class CurrentWeatherRouter {
     func showHourlyWeather(data: Forecast) {
         let vc = HourlyWeatherView()
         HourlyWeatherModuleConfigurator().configureModuleForViewInput(
-            viewInput: vc,
-            data: data
+            viewInput: vc
         )
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }

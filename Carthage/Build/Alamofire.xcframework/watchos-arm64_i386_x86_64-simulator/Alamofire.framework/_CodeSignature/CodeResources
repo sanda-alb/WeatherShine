@@ -14,15 +14,15 @@
 		</data>
 		<key>Modules/Alamofire.swiftmodule/Project/arm64-apple-watchos-simulator.swiftsourceinfo</key>
 		<data>
-		X3Uhdt1THfAwu6khj9qrPg9ERIE=
+		oo6FK/24eWNriyQY+4NM7BzKdoU=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/Project/i386-apple-watchos-simulator.swiftsourceinfo</key>
 		<data>
-		lfsD6/B+Q625lYYCB2Xi+jIhQ6Q=
+		epDg4edy0tyjoTwNSzH3g3o4LIc=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/Project/x86_64-apple-watchos-simulator.swiftsourceinfo</key>
 		<data>
-		XAyg6CPTJ+GSIOx8a/+TZ57Nw0U=
+		38Za7cQrwKatAyxCE5gIaKgTtjo=
 		</data>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-watchos-simulator.swiftdoc</key>
 		<data>
@@ -66,33 +66,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			X3Uhdt1THfAwu6khj9qrPg9ERIE=
+			oo6FK/24eWNriyQY+4NM7BzKdoU=
 			</data>
 			<key>hash2</key>
 			<data>
-			suItHQr19+wLlADq5kiAjw4i1wAtubBmVHJmqs3DlX4=
+			9G4U8WaV6W/1lzZWM0z75d/z83ieGnlXouzSSu0uG5s=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/Project/i386-apple-watchos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lfsD6/B+Q625lYYCB2Xi+jIhQ6Q=
+			epDg4edy0tyjoTwNSzH3g3o4LIc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Qvpgzi9ybk/58uIAI2GMGq4AHCuP7kJCxEDEu8m7g8g=
+			VKlAK57uZwk+XEjl6X3O1XMrOSpDAaCHefNNbDDM4fg=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/Project/x86_64-apple-watchos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XAyg6CPTJ+GSIOx8a/+TZ57Nw0U=
+			38Za7cQrwKatAyxCE5gIaKgTtjo=
 			</data>
 			<key>hash2</key>
 			<data>
-			c/3eD96m/Kj4z3+wBZ9U3luudaa7pbNXsdbGWBGObhw=
+			QElSYRFnTZe+hAmdl289FKwIoJsMMO2GD89/7YyrXIE=
 			</data>
 		</dict>
 		<key>Modules/Alamofire.swiftmodule/arm64-apple-watchos-simulator.swiftdoc</key>

@@ -6,37 +6,43 @@
 //
 
 import Alamofire
+import RxSwift
+import Dispatch
 
 class WeatherAPIService: WeatherAPIServiceProtocol {
-
-    var weatherForecast: Forecast? 
     
-    func fetchWeather(lat: Double, lon: Double) {
-        let parameters: [String: Any] =
-        [ "lat": lat,
-          "lon": lon,
-          "exclude": "minutely,alerts",
-          "units": "metric",
-          "appid": Constants.API_KEY
-        ]
-        
-        AF.request(Constants.BASE_URL, parameters: parameters)
-        .validate()
-        .responseDecodable(of: Forecast.self) { response in
-            switch response.result {
-            case.success:
-                print("Validation Successful")
-//                debugPrint(response)
+    var weatherForecast: Forecast?
+
+    private let disposeBag = DisposeBag()
+    
+    func fetchWeather(lat: Double, lon: Double) -> Observable<Forecast> {
+        return Observable.create{ observer -> Disposable in
+            
+            let parameters: [String: Any] =
+            [ "lat": lat,
+              "lon": lon,
+              "exclude": "minutely,alerts",
+              "units": "metric",
+              "appid": Constants.API_KEY
+            ]
+                 
+            AF.request(
+                Constants.BASE_URL,
+                method: .get,
+                parameters: parameters
+            )
+            .responseDecodable(of: Forecast.self) { response in
+                if let error = response.error{
+                    observer.onError(error)
+                    print(error)
+                }
                 if let forecast = response.value {
                     self.weatherForecast = forecast
-//                    print(self.weatherForecast)
+                    observer.onNext(forecast)
                 }
-                
-            case let .failure(error):
-                print(error)
-                debugPrint(response)
-                
+                observer.onCompleted()
             }
+            return Disposables.create()
         }
     }
 }

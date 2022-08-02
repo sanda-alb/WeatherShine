@@ -16,6 +16,5 @@ class HourlyWeatherRouter {
     }
 }
 
-
 extension HourlyWeatherRouter: HourlyWeatherRouterInput {
 }

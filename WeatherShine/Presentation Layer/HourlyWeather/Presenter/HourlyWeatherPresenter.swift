@@ -11,26 +11,35 @@ class HourlyWeatherPresenter {
     
     // MARK: - Components
     
-    weak var view: HourlytWeatherViewInput?
-    var router   : HourlyWeatherRouterInput
-    
-    let data     : Forecast
+    weak var view : HourlyWeatherViewInput?
+    var interactor: HourlyWeatherInteractorInput
+    var router    : HourlyWeatherRouterInput
     
     // MARK: - Init
     
     init(
-        view  : HourlytWeatherViewInput,
-        router: HourlyWeatherRouterInput,
-        data  : Forecast
+        view      : HourlyWeatherViewInput,
+        router    : HourlyWeatherRouterInput,
+        interactor: HourlyWeatherInteractorInput
     ) {
-        self.view   = view
-        self.router = router
-        self.data   = data
+        self.view       = view
+        self.router     = router
+        self.interactor = interactor
     }
 }
 
 extension HourlyWeatherPresenter: HourlyWeatherViewOutput {
     func viewIsReady() {
-        view?.setData(data: data)
+        // 
+    }
+    
+    func requestWeather(lat: Double, lon: Double) {
+        interactor.fetchData(lat: lat, lon: lon)
+    }
+}
+
+extension HourlyWeatherPresenter: HourlyWeatherInteractorOutput {
+    func obtainData(forecast: Forecast) {
+        view?.setData(data: forecast)
     }
 }

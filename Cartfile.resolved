@@ -1,5 +1,5 @@
 github "Alamofire/Alamofire" "5.6.2"
+github "Moya/Moya" "15.0.0"
+github "ReactiveCocoa/ReactiveSwift" "6.7.0"
 github "ReactiveX/RxSwift" "6.5.0"
-github "RxSwiftCommunity/RxAlamofire" "v6.1.2"
 github "SnapKit/SnapKit" "5.6.0"
-github "onevcat/Kingfisher" "7.3.0"

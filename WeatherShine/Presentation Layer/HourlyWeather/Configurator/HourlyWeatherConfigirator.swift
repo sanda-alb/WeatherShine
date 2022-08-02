@@ -7,23 +7,24 @@
  
 class HourlyWeatherModuleConfigurator {
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, data: Forecast) {
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
 
         if let viewController = viewInput as? HourlyWeatherView {
-            configure(with: viewController, data: data)
+            configure(with: viewController)
         }
     }
     
-    private func configure(with viewController: HourlyWeatherView, data: Forecast) {
+    private func configure(with viewController: HourlyWeatherView) {
 
-        let router = HourlyWeatherRouter(viewController: viewController)
-
-        let presenter = HourlyWeatherPresenter(
-            view: viewController,
-            router: router,
-            data: data
+        let router     = HourlyWeatherRouter(viewController: viewController)
+        let interactor = HourlyWeatherInteractor(weatherService: WeatherAPIService())
+        let presenter  = HourlyWeatherPresenter(
+            view      : viewController,
+            router    : router,
+            interactor: interactor
         )
-
+        
+        interactor.output     = presenter
         viewController.output = presenter
     }
 }
