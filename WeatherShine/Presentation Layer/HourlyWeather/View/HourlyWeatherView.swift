@@ -317,7 +317,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         hourlyCollectionView.showsHorizontalScrollIndicator = false
         hourlyCollectionView.backgroundColor = Colors.purpleLight
         let collectionViewLayout = (hourlyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout)
-        collectionViewLayout.itemSize = CGSize(width: 100, height: 130)
+        collectionViewLayout.itemSize = CGSize(width: 85, height: 130)
         collectionViewLayout.scrollDirection = .horizontal
     }
 }

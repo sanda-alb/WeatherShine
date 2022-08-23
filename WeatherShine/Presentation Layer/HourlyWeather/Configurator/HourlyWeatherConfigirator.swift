@@ -17,7 +17,10 @@ class HourlyWeatherModuleConfigurator {
     private func configure(with viewController: HourlyWeatherView) {
 
         let router     = HourlyWeatherRouter(viewController: viewController)
-        let interactor = HourlyWeatherInteractor(weatherService: WeatherAPIService())
+        let interactor = HourlyWeatherInteractor(
+            weatherService: WeatherAPIService(),
+            locationService: LocationService()
+        )
         let presenter  = HourlyWeatherPresenter(
             view      : viewController,
             router    : router,

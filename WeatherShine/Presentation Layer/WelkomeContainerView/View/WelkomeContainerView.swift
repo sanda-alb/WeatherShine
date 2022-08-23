@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreLocation
-import Kingfisher
 
 final class WelcomeContainerViewController: BottomSheetContainerViewController
 <CurrentWeatherView, HourlyWeatherView> {
@@ -16,40 +15,37 @@ final class WelcomeContainerViewController: BottomSheetContainerViewController
         super.viewDidLoad()
     }
     
-    var data: Forecast?
-    
     // MARK: - Data
     
-    private var latitude: Double? = nil
-    private var longitude: Double? = nil
-    
-    private let locationManager = CLLocationManager()
-    private var currentLocation: CLLocation?
-    
+    var data: Forecast?
 }
 
-// MARK: - CLLocationManagerDelegate
-
-extension WelcomeContainerViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-      print("didFailWithError \(error.localizedDescription)")
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-        if !locations.isEmpty, currentLocation == nil {
-            currentLocation = locations.last
-            locationManager.stopUpdatingLocation()
-            requestWeatherForLocation()
-        }
-    }
-    
-    func requestWeatherForLocation() {
-        guard let currentLocation = currentLocation else { return }
-        let lat = currentLocation.coordinate.latitude
-        let lon = currentLocation.coordinate.longitude
-//        output?.requestWeather(lat: lat, lon: lon)
-    }
+enum DataState {
+    case empty
+    case location
+    case data
+    case loading
+    case error
 }
+    
 
-
+//extension DataState {
+//    
+//    func update(for state: DataState ) {
+//        switch state {
+//        case .emptyData
+            
+//        case .empty:
+//            setLabels(hidden: true)
+//            orderIDLabel.text = nil
+//            qrCodeView.image = nil
+//        case .downloaded(let url, let pinCode):
+//            setLabels(hidden: pinCode?.isEmpty ?? true)
+//            orderIDLabel.text = pinCode
+//            qrCodeView.kf.setImage(with: url)
+//        case .generated(let image):
+//            setLabels(hidden: true)
+//            orderIDLabel.text = nil
+//            set(image: image)
+//        }
+//    }

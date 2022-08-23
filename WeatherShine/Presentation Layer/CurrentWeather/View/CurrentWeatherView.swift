@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 import CoreLocation
-import Kingfisher
 
 class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeatherViewProtocol {
     var output: CurrentWeatherViewOutput?
@@ -29,8 +28,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     
     private let weatherIcon = UIImageView()
     private var bottomView  = UIView()
-    
-    private let openButton = UIButton()
     
     // MARK: - Data
     
@@ -59,8 +56,7 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
           windValue,
           tempValue,
           humidityValue,
-          bottomView,
-          openButton
+          bottomView
         ].forEach{
             view.addSubview($0)
         }
@@ -115,14 +111,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
             make.top.equalTo(tempLabel.snp.bottom).offset(10)
             make.centerX.equalTo(humidityLabel.snp.centerX)
         }
-        
-        openButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(humidityValue.snp.bottom).offset(100)
-            make.height.equalTo(40)
-            make.width.equalTo(100)
-            
-        }
     }
 
     private func setupAppearance() {
@@ -132,9 +120,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         windLabel.text = "Wind"
         tempLabel.text = "Temp"
         humidityLabel.text = "Humidity"
-        
-//        openButton.backgroundColor = Colors.purpleLight
-    
         
         todayLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
         todayLabel.textColor = .secondaryLabel
@@ -160,8 +145,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     private func setupBehaviour() {
         setupLocation()
         
-        // button taps
-        openButton.addTarget(self, action: #selector(onOpenButtonTap), for: .touchUpInside)
     }
 
     private func setupLocation() {
@@ -207,11 +190,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         }
         return timezone
     }
-    
-    @objc private func onOpenButtonTap() {
-//        guard let data = data else { return }
-//        output?.openHourlyWeather(data: data)
-    }
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -230,7 +208,7 @@ extension CurrentWeatherView: CLLocationManagerDelegate {
         }
     }
     
-    func requestWeatherForLocation() {
+    func requestWeatherForLocation()  {
         guard let currentLocation = currentLocation else { return }
         let lat = currentLocation.coordinate.latitude
         let lon = currentLocation.coordinate.longitude

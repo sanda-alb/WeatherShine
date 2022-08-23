@@ -30,5 +30,6 @@ class CurrentWeatherInteractor: CurrentWeatherInteractorInput {
                     print("ERROR: \(error)")
                 }
             ).disposed(by: bag)
+        
     }
 }
