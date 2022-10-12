@@ -12,32 +12,18 @@ import RxSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    private let weatherService: WeatherAPIServiceProtocol = WeatherAPIService()
     private let bag = DisposeBag()
     private let locationService: LocationServiceInterface = LocationService()
+    private var shared = WeatherService.shared
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         locationService.requestLocationAccessIfAvailable(withType: .whenInUse)
-        
-        weatherService.fetchWeather(
-            lat: UserDefaults.standard.double(forKey: "lat"),
-            lon: UserDefaults.standard.double(forKey: "lon")
-        )
-            .subscribe(
-                onNext: { response in
-//                    print(response)
-                },
-                onError: { error in
-                    print("ERROR: \(error)")
-                }
-            ).disposed(by: bag)
+
         return true
     }
     
-        
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

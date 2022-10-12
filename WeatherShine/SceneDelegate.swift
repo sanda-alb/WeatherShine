@@ -15,12 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        let weatherEvent = WeatherService.shared.fetchWeather(
+            lat: UserDefaults.standard.double(forKey: "lat"),
+            lon: UserDefaults.standard.double(forKey: "lon")
+        )
+        
         let window = UIWindow(windowScene: windowScene)
         let currentVC = CurrentWeatherView()
         CurrentWeatherModuleConfigurator().configureModuleForViewInput(viewInput: currentVC)
         let hourlyVC = HourlyWeatherView()
-        HourlyWeatherModuleConfigurator().configureModuleForViewInput(viewInput: hourlyVC)
-        
+        HourlyWeatherModuleConfigurator().configureModuleForViewInput(viewInput: hourlyVC, weatherEvent: weatherEvent)
         
         let vc = WelcomeContainerViewController(
             contentViewController: currentVC,

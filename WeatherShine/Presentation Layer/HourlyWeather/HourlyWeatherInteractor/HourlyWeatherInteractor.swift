@@ -13,35 +13,28 @@ class HourlyWeatherInteractor: HourlyWeatherInteractorInput {
     
     weak var output: HourlyWeatherInteractorOutput?
     
-    private let weatherService: WeatherAPIServiceProtocol
-    private let locationService: LocationServiceInterface
+    private let weatherService: WeatherServiceProtocol
+    private let weatherEvent: Observable<Forecast>
     private let bag = DisposeBag()
     
     init(
-        weatherService: WeatherAPIServiceProtocol,
-        locationService: LocationServiceInterface
+        weatherService: WeatherServiceProtocol,
+        weatherEvent: Observable<Forecast>
     ) {
         self.weatherService = weatherService
-        self.locationService = locationService
+        self.weatherEvent = weatherEvent
     }
     
-    func fetchData(lat: Double, lon: Double) {
-//        weatherService.fetchWeather(lat: lat, lon: lon)
-//            .subscribe(
-//                onNext: { response in
-//                    self.output?.obtainData(forecast: response)
-//                },
-//                onError: { error in
-//                    print("ERROR: \(error)")
-//                }
-//            ).disposed(by: bag)
-        
-        
-        guard let forecast = weatherService.weatherForecast else { return }
-
-        self.output?.obtainData(forecast: forecast)
-    
- 
+    func fetchData() {
+        self.weatherEvent.subscribe(
+            onNext: { response in
+                guard let forecast = WeatherService.shared.forecast else { return }
+                self.output?.obtainData(forecast: forecast)
+                print(forecast)
+            },
+            onError: { error in
+                print("ERROR: \(error)")
+            }
+        ).disposed(by: bag)
     }
 }
-

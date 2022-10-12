@@ -6,7 +6,7 @@
 //
 
 protocol CurrentWeatherInteractorInput {
-    func fetchData(lat: Double, lon: Double)
+    func fetchData()
 }
 
 protocol CurrentWeatherInteractorOutput: AnyObject {

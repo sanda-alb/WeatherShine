@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import CoreLocation
 
 class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeatherViewProtocol {
     var output: CurrentWeatherViewOutput?
@@ -29,23 +28,15 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     private let weatherIcon = UIImageView()
     private var bottomView  = UIView()
     
-    // MARK: - Data
-    
-    private var latitude: Double? = nil
-    private var longitude: Double? = nil
-    
-    private let locationManager = CLLocationManager()
-    private var currentLocation: CLLocation?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         embedViews()
         setupLayout()
         setupAppearance()
-        setupBehaviour()
+        output?.viewLoaded()
     }
-        
+    
     private func embedViews() {
         [ todayLabel,
           cityLabel,
@@ -142,18 +133,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         }
     }
 
-    private func setupBehaviour() {
-        setupLocation()
-        
-    }
-
-    private func setupLocation() {
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
-    }
-    
     func setCurrent(_ weather: Forecast) {
         data = weather
         tempValue.text = String(format: "%.0f", weather.current.temp) + " °C"
@@ -193,25 +172,3 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
 }
 
 // MARK: - CLLocationManagerDelegate
-
-extension CurrentWeatherView: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-      print("didFailWithError \(error.localizedDescription)")
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-        if !locations.isEmpty, currentLocation == nil {
-            currentLocation = locations.last
-            locationManager.stopUpdatingLocation()
-            requestWeatherForLocation()
-        }
-    }
-    
-    func requestWeatherForLocation()  {
-        guard let currentLocation = currentLocation else { return }
-        let lat = currentLocation.coordinate.latitude
-        let lon = currentLocation.coordinate.longitude
-        output?.requestWeather(lat: lat, lon: lon)
-    }
-}

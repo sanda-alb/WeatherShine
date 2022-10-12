@@ -13,23 +13,16 @@ class CurrentWeatherInteractor: CurrentWeatherInteractorInput {
     
     weak var output: CurrentWeatherInteractorOutput?
     
-    private let weatherService: WeatherAPIServiceProtocol
+    private let weatherService: WeatherServiceProtocol
     private let bag = DisposeBag()
-    
-    init(weatherService: WeatherAPIServiceProtocol) {
+
+    init(
+        weatherService: WeatherServiceProtocol
+    ) {
         self.weatherService = weatherService
     }
     
-    func fetchData(lat: Double, lon: Double) {
-        weatherService.fetchWeather(lat: lat, lon: lon)
-            .subscribe(
-                onNext: { response in
-                    self.output?.obtainData(forecast: response)
-                },
-                onError: { error in
-                    print("ERROR: \(error)")
-                }
-            ).disposed(by: bag)
-        
+    func fetchData() {
+
     }
 }

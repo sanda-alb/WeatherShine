@@ -54,26 +54,16 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     private let sunriseIcon  = UIImageView()
     private let sunsetIcon   = UIImageView()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         embedViews()
         setupLayout()
         setupAppearance()
-        output?.viewIsReady()
         setupBehaviour()
         setupCollectionViewAppearance()
-//        output?.viewIsReady()
-        output?.requestWeather(lat: 55.7558, lon: 37.6173)
-    }
-    
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         output?.viewIsReady()
     }
-    
     
     // MARK: - Embed Views
     

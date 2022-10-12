@@ -8,10 +8,9 @@
 import Foundation
 
 protocol HourlyWeatherInteractorInput {
-    func fetchData(lat: Double, lon: Double)
+    func fetchData()
 }
 
 protocol HourlyWeatherInteractorOutput: AnyObject {
     func obtainData(forecast: Forecast)
-//    func setMock()
 }

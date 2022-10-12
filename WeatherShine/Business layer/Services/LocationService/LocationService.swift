@@ -19,8 +19,6 @@ final class LocationService: NSObject {
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        
-//        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.showsBackgroundLocationIndicator = true
         locationManager.startUpdatingLocation()
     }
@@ -71,23 +69,23 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinate = locations.last?.coordinate else { return }
         
-        NotificationCenter.default.post(Notification(name: LocationServiceNotificationName.locationDidUpdate.nameValue,
-                                                     object: self,
-                                                     userInfo: [LocationServiceNotificationInfoKey.location:
-                                                        Location(lat: coordinate.latitude, lon: coordinate.longitude)]))
+        NotificationCenter.default.post(Notification(
+            name: LocationServiceNotificationName.locationDidUpdate.nameValue,
+            object: self,
+            userInfo:
+                [
+                    LocationServiceNotificationInfoKey.location:
+                        Location(lat: coordinate.latitude, lon: coordinate.longitude)
+                ]
+        )
+        )
         
-        UserDefaults.standard.set(coordinate.longitude, forKey: "long")
+        UserDefaults.standard.set(coordinate.longitude, forKey: "lon")
         UserDefaults.standard.set(coordinate.latitude, forKey: "lat")
+        DataState.location.setState()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         // TODO: publish a notification
     }
-}
-
-
-struct DefaultKeys {
-    static let lat = "lat"
-    static let lon = "lon"
-    static let location = "location"
 }

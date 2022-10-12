@@ -11,8 +11,8 @@ protocol  CurrentWeatherViewInput: AnyObject {
 }
 
 protocol CurrentWeatherViewOutput {
-    func requestWeather(lat: Double, lon: Double)
-    func openHourlyWeather(data: Forecast)
+//    func requestWeather(lat: Double, lon: Double)
+    func viewLoaded()
 }
 
 protocol CurrentWeatherViewProtocol: CurrentWeatherViewInput {

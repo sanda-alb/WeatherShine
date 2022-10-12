@@ -5,6 +5,8 @@
 //  Created by Sanda Albrecht on 5/23/22.
 //
 
+import Foundation
+
 class CurrentWeatherModuleConfigurator {
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
         if let viewController = viewInput as? CurrentWeatherView {
@@ -13,8 +15,7 @@ class CurrentWeatherModuleConfigurator {
     }
 
     private func configure(with viewController: CurrentWeatherView) {
-        let weatherService = WeatherAPIService()
-        let interactor = CurrentWeatherInteractor(weatherService: WeatherAPIService())
+        let interactor = CurrentWeatherInteractor(weatherService: WeatherService.shared)
         let router = CurrentWeatherRouter(viewController: viewController)
         
         let presenter = CurrentWeatherPresenter(

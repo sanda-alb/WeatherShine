@@ -14,11 +14,11 @@ class CurrentWeatherRouter {
     }
     
     func showHourlyWeather(data: Forecast) {
-        let vc = HourlyWeatherView()
-        HourlyWeatherModuleConfigurator().configureModuleForViewInput(
-            viewInput: vc
-        )
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+//        let vc = HourlyWeatherView()
+//        HourlyWeatherModuleConfigurator().configureModuleForViewInput(
+//            viewInput: vc
+//        )
+//        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

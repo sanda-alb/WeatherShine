@@ -29,12 +29,8 @@ class CurrentWeatherPresenter {
 
 extension CurrentWeatherPresenter: CurrentWeatherViewOutput {
     
-    func openHourlyWeather(data: Forecast) {
-        router.openHourlyWeather(data: data)
-    }
-    
-    func requestWeather(lat: Double, lon: Double) {
-        interactor.fetchData(lat: lat, lon: lon)
+    func viewLoaded() {
+        interactor.fetchData()
     }
 }
 

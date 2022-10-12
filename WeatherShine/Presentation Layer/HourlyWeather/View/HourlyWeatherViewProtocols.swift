@@ -13,7 +13,6 @@ protocol HourlyWeatherViewInput: AnyObject {
 
 protocol HourlyWeatherViewOutput {
     func viewIsReady()
-    func requestWeather(lat: Double, lon: Double)
 }
 
 protocol HourlyWeatherViewProtocol: HourlyWeatherViewInput {

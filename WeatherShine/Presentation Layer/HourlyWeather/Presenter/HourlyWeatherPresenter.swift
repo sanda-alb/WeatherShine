@@ -30,11 +30,7 @@ class HourlyWeatherPresenter {
 
 extension HourlyWeatherPresenter: HourlyWeatherViewOutput {
     func viewIsReady() {
-        // 
-    }
-    
-    func requestWeather(lat: Double, lon: Double) {
-        interactor.fetchData(lat: lat, lon: lon)
+        interactor.fetchData()
     }
 }
 
