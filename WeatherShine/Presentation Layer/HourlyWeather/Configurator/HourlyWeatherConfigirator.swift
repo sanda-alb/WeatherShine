@@ -9,18 +9,18 @@ import RxSwift
  
 class HourlyWeatherModuleConfigurator {
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, weatherEvent: Observable<Forecast>) {
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, weatherForecast: Observable<Forecast>) {
 
         if let viewController = viewInput as? HourlyWeatherView {
-            configure(with: viewController, weatherEvent: weatherEvent)
+            configure(with: viewController, weatherForecast: weatherForecast)
         }
     }
     
-    private func configure(with viewController: HourlyWeatherView, weatherEvent: Observable<Forecast>) {
+    private func configure(with viewController: HourlyWeatherView, weatherForecast: Observable<Forecast>) {
         let router     = HourlyWeatherRouter(viewController: viewController)
         let interactor = HourlyWeatherInteractor(
             weatherService: WeatherService.shared,
-            weatherEvent: weatherEvent
+            weatherForecast: weatherForecast
         )
         let presenter  = HourlyWeatherPresenter(
             view      : viewController,

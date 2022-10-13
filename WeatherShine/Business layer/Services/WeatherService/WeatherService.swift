@@ -19,15 +19,6 @@ class WeatherService {
 }
 
 extension WeatherService: WeatherServiceProtocol {
-   
-    var data: Forecast? {
-        get {
-            return forecast
-        }
-        set {
-            forecast = newValue
-        }
-    }
     
     func fetchWeather(lat: Double, lon: Double) -> Observable<Forecast> {
         return Observable.create{ observer -> Disposable in
@@ -52,7 +43,6 @@ extension WeatherService: WeatherServiceProtocol {
                     }
                     if let forecast = response.value {
                         self.forecast = forecast
-                        self.data = forecast
                         observer.onNext(forecast)
                     }
                     observer.onCompleted()
@@ -61,7 +51,3 @@ extension WeatherService: WeatherServiceProtocol {
             }
         }
 }
-
-
-
-

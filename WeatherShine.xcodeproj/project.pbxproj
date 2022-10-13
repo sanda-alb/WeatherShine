@@ -78,8 +78,6 @@
 		F00B1345283B9C8C003F5D0E /* CurrentWeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherInteractor.swift; sourceTree = "<group>"; };
 		F00B1349283B9CB7003F5D0E /* CurrentWeatherConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherConfigurator.swift; sourceTree = "<group>"; };
 		F03721CF288072F700C26A83 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		F053E61F28475A2900B8C11E /* Kingfisher */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Kingfisher; path = Carthage/Checkouts/Kingfisher; sourceTree = "<group>"; };
-		F053E62028475A5100B8C11E /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		F057208428BF619C00CB49C2 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		F057208628BF624C00CB49C2 /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
 		F057208A28C0FFA800CB49C2 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -108,9 +106,6 @@
 		F0C0EA8D288AD1890094D73D /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RxSwift; path = Carthage/Checkouts/RxSwift; sourceTree = "<group>"; };
 		F0C0EA8E288AD63F0094D73D /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		F0C0EA9128914EE80094D73D /* RxAlamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxAlamofire.xcframework; path = Carthage/Build/RxAlamofire.xcframework; sourceTree = "<group>"; };
-		F0C0EA94289175500094D73D /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
-		F0C0EA972891756F0094D73D /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
-		F0C0EA9A289199960094D73D /* Moya.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Moya.xcframework; path = Carthage/Build/Moya.xcframework; sourceTree = "<group>"; };
 		F0D5F99F28491D6A00EA3B18 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F0D5F9AC284A1AAE00EA3B18 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		F0D5F9AE284A1AC400EA3B18 /* HourlyWeatherViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewProtocols.swift; sourceTree = "<group>"; };
@@ -253,14 +248,9 @@
 			isa = PBXGroup;
 			children = (
 				F0BD0DEC2893EB7000EEADC5 /* ReactiveSwift.xcframework */,
-				F0C0EA9A289199960094D73D /* Moya.xcframework */,
-				F0C0EA972891756F0094D73D /* RxRelay.xcframework */,
-				F0C0EA94289175500094D73D /* RxCocoa.xcframework */,
 				F0C0EA9128914EE80094D73D /* RxAlamofire.xcframework */,
 				F0C0EA8E288AD63F0094D73D /* RxSwift.xcframework */,
 				F0C0EA8D288AD1890094D73D /* RxSwift */,
-				F053E62028475A5100B8C11E /* Kingfisher.xcframework */,
-				F053E61F28475A2900B8C11E /* Kingfisher */,
 				F0620579283BCDCF004FADA4 /* Alamofire.xcframework */,
 				F072F11B2832C98500907CB2 /* SnapKit.xcframework */,
 			);

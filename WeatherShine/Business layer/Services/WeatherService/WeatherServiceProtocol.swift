@@ -9,5 +9,4 @@ import RxSwift
 
 protocol WeatherServiceProtocol {
     func fetchWeather(lat: Double, lon: Double) -> Observable<Forecast>
-    var data: Forecast? { get set }
 }

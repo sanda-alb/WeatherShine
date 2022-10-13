@@ -54,6 +54,11 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     private let sunriseIcon  = UIImageView()
     private let sunsetIcon   = UIImageView()
     
+    // MARK: - Utils
+    
+    private let containerHeight = UIScreen.main.bounds.height * 0.14
+    private let lineHeight = UIScreen.main.bounds.height * 0.048
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,6 +67,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         setupAppearance()
         setupBehaviour()
         setupCollectionViewAppearance()
+
         output?.viewIsReady()
     }
     
@@ -121,10 +127,10 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         }
         
         hourlyCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(40)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(lineHeight)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
-            make.height.equalTo(130)
+            make.height.equalTo(containerHeight)
         }
         
         comfortLabel.snp.makeConstraints { make in
@@ -134,8 +140,8 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         }
         
         comfortContainer.snp.makeConstraints { make in
-            make.top.equalTo(hourlyCollectionView.snp.bottom).offset(40)
-            make.height.equalTo(130)
+            make.top.equalTo(hourlyCollectionView.snp.bottom).offset(lineHeight)
+            make.height.equalTo(containerHeight)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
         }
@@ -147,10 +153,10 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         }
         
         windContainer.snp.makeConstraints { make in
-            make.top.equalTo(comfortContainer.snp.bottom).offset(40)
+            make.top.equalTo(comfortContainer.snp.bottom).offset(lineHeight)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
-            make.height.equalTo(130)
+            make.height.equalTo(containerHeight)
         }
         
         sunriseSunsetLabel.snp.makeConstraints { make in
@@ -160,10 +166,10 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         }
         
         sunriseSunsetContainer.snp.makeConstraints { make in
-            make.top.equalTo(windContainer.snp.bottom).offset(40)
+            make.top.equalTo(windContainer.snp.bottom).offset(lineHeight)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
-            make.height.equalTo(130)
+            make.height.equalTo(containerHeight)
         }
         
         humidyContainer.snp.makeConstraints { make in
@@ -307,7 +313,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         hourlyCollectionView.showsHorizontalScrollIndicator = false
         hourlyCollectionView.backgroundColor = Colors.purpleLight
         let collectionViewLayout = (hourlyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout)
-        collectionViewLayout.itemSize = CGSize(width: 85, height: 130)
+        collectionViewLayout.itemSize = CGSize(width: 85, height: containerHeight)
         collectionViewLayout.scrollDirection = .horizontal
     }
 }

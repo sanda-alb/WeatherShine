@@ -23,6 +23,8 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     private let humidityLabel = UILabel()
     private let humidityValue = UILabel()
     
+    private let screenHeight = UIScreen.main.bounds.height
+    
     // MARK: - Views
     
     private let weatherIcon = UIImageView()
@@ -34,7 +36,9 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         embedViews()
         setupLayout()
         setupAppearance()
+        print("Current: \(screenHeight)")
         output?.viewLoaded()
+        
     }
     
     private func embedViews() {

@@ -6,16 +6,17 @@
 //
 
 import Foundation
+import RxSwift
 
 class CurrentWeatherModuleConfigurator {
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, weatherForecast: Observable<Forecast>) {
         if let viewController = viewInput as? CurrentWeatherView {
-            configure(with: viewController)
+            configure(with: viewController, weatherForecast: weatherForecast)
         }
     }
 
-    private func configure(with viewController: CurrentWeatherView) {
-        let interactor = CurrentWeatherInteractor(weatherService: WeatherService.shared)
+    private func configure(with viewController: CurrentWeatherView, weatherForecast: Observable<Forecast>) {
+        let interactor = CurrentWeatherInteractor(weatherService: WeatherService.shared, weatherForecast: weatherForecast)
         let router = CurrentWeatherRouter(viewController: viewController)
         
         let presenter = CurrentWeatherPresenter(
