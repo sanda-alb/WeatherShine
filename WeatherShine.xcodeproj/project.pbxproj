@@ -14,6 +14,8 @@
 		F02C24A128A56B0F001FFFCB /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C0EA8E288AD63F0094D73D /* RxSwift.xcframework */; };
 		F02C24A228A56B0F001FFFCB /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0C0EA8E288AD63F0094D73D /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F03721D0288072F800C26A83 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03721CF288072F700C26A83 /* UIImageView.swift */; };
+		F03EB74628FEAB5D000A66E1 /* BottomSheetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EB74528FEAB5D000A66E1 /* BottomSheetConfiguration.swift */; };
+		F03EB74828FEABD7000A66E1 /* BottomSheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EB74728FEABD7000A66E1 /* BottomSheetState.swift */; };
 		F057208528BF619C00CB49C2 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057208428BF619C00CB49C2 /* WeatherService.swift */; };
 		F057208728BF624C00CB49C2 /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057208628BF624C00CB49C2 /* WeatherServiceProtocol.swift */; };
 		F057208B28C0FFA800CB49C2 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057208A28C0FFA800CB49C2 /* State.swift */; };
@@ -78,6 +80,8 @@
 		F00B1345283B9C8C003F5D0E /* CurrentWeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherInteractor.swift; sourceTree = "<group>"; };
 		F00B1349283B9CB7003F5D0E /* CurrentWeatherConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherConfigurator.swift; sourceTree = "<group>"; };
 		F03721CF288072F700C26A83 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		F03EB74528FEAB5D000A66E1 /* BottomSheetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetConfiguration.swift; sourceTree = "<group>"; };
+		F03EB74728FEABD7000A66E1 /* BottomSheetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetState.swift; sourceTree = "<group>"; };
 		F057208428BF619C00CB49C2 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		F057208628BF624C00CB49C2 /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
 		F057208A28C0FFA800CB49C2 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -191,6 +195,16 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		F03EB74928FEAC0C000A66E1 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				F075E6C4288872D10049E9F7 /* BottomSheet.swift */,
+				F03EB74528FEAB5D000A66E1 /* BottomSheetConfiguration.swift */,
+				F03EB74728FEABD7000A66E1 /* BottomSheetState.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		F057208328BF617700CB49C2 /* WeatherService */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +253,6 @@
 				F072F1142832C63C00907CB2 /* Info.plist */,
 				F062057F283BDCB6004FADA4 /* Constants.swift */,
 				F0D5F99F28491D6A00EA3B18 /* Colors.swift */,
-				F075E6C4288872D10049E9F7 /* BottomSheet.swift */,
 			);
 			path = WeatherShine;
 			sourceTree = "<group>";
@@ -285,6 +298,7 @@
 		F0C0EA86288ABADA0094D73D /* Business layer */ = {
 			isa = PBXGroup;
 			children = (
+				F03EB74928FEAC0C000A66E1 /* BottomSheet */,
 				F0C0EA87288ABAF80094D73D /* Services */,
 				F0D5F99C284918D600EA3B18 /* Extetension */,
 			);
@@ -471,7 +485,9 @@
 				F0620576283BA42A004FADA4 /* CurrentWeatherRouterProtocols.swift in Sources */,
 				F075E6C72888731E0049E9F7 /* WelkomeContainerView.swift in Sources */,
 				F072F10B2832C63800907CB2 /* CurrentWeatherView.swift in Sources */,
+				F03EB74628FEAB5D000A66E1 /* BottomSheetConfiguration.swift in Sources */,
 				F062056E283BA3E6004FADA4 /* CurrentWeatherViewProtocols.swift in Sources */,
+				F03EB74828FEABD7000A66E1 /* BottomSheetState.swift in Sources */,
 				F057208728BF624C00CB49C2 /* WeatherServiceProtocol.swift in Sources */,
 				F09B56AA287C75E300B0D432 /* HourlyWeatherCell.swift in Sources */,
 				F057208528BF619C00CB49C2 /* WeatherService.swift in Sources */,
