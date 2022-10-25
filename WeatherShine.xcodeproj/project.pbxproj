@@ -34,6 +34,7 @@
 		F09B56A8287C623100B0D432 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B56A7287C623100B0D432 /* Int.swift */; };
 		F09B56AA287C75E300B0D432 /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B56A9287C75E200B0D432 /* HourlyWeatherCell.swift */; };
 		F0B5D9B32902BC6D001BE9C5 /* HourlySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5D9B22902BC6D001BE9C5 /* HourlySection.swift */; };
+		F0B5D9B6290828FC001BE9C5 /* textWithSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5D9B5290828FC001BE9C5 /* textWithSeparator.swift */; };
 		F0BD0DE92893EB6100EEADC5 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0620579283BCDCF004FADA4 /* Alamofire.xcframework */; };
 		F0BD0DEA2893EB6100EEADC5 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0620579283BCDCF004FADA4 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0BD0DED2893EB7000EEADC5 /* ReactiveSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BD0DEC2893EB7000EEADC5 /* ReactiveSwift.xcframework */; };
@@ -106,6 +107,7 @@
 		F09B56A7287C623100B0D432 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		F09B56A9287C75E200B0D432 /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		F0B5D9B22902BC6D001BE9C5 /* HourlySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlySection.swift; sourceTree = "<group>"; };
+		F0B5D9B5290828FC001BE9C5 /* textWithSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textWithSeparator.swift; sourceTree = "<group>"; };
 		F0BD0DEC2893EB7000EEADC5 /* ReactiveSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReactiveSwift.xcframework; path = Carthage/Build/ReactiveSwift.xcframework; sourceTree = "<group>"; };
 		F0BD0DF22898286200EEADC5 /* HourlyWeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherInteractor.swift; sourceTree = "<group>"; };
 		F0BD0DF42898287F00EEADC5 /* HourlyWeatherInteractorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherInteractorProtocols.swift; sourceTree = "<group>"; };
@@ -272,6 +274,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F0B5D9B4290828AF001BE9C5 /* СustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F0B5D9B22902BC6D001BE9C5 /* HourlySection.swift */,
+				F0B5D9B5290828FC001BE9C5 /* textWithSeparator.swift */,
+			);
+			path = "СustomViews";
+			sourceTree = "<group>";
+		};
 		F0BD0DF1289827CF00EEADC5 /* HourlyWeatherInteractor */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +311,7 @@
 		F0C0EA86288ABADA0094D73D /* Business layer */ = {
 			isa = PBXGroup;
 			children = (
+				F0B5D9B4290828AF001BE9C5 /* СustomViews */,
 				F03EB74928FEAC0C000A66E1 /* BottomSheet */,
 				F0C0EA87288ABAF80094D73D /* Services */,
 				F0D5F99C284918D600EA3B18 /* Extetension */,
@@ -321,7 +333,6 @@
 			children = (
 				F09B56A7287C623100B0D432 /* Int.swift */,
 				F03721CF288072F700C26A83 /* UIImageView.swift */,
-				F0B5D9B22902BC6D001BE9C5 /* HourlySection.swift */,
 			);
 			path = Extetension;
 			sourceTree = "<group>";
@@ -479,6 +490,7 @@
 				F03721D0288072F800C26A83 /* UIImageView.swift in Sources */,
 				F0D5F9A028491D6A00EA3B18 /* Colors.swift in Sources */,
 				F057208B28C0FFA800CB49C2 /* State.swift in Sources */,
+				F0B5D9B6290828FC001BE9C5 /* textWithSeparator.swift in Sources */,
 				F0D5F9B1284A1AD500EA3B18 /* HourlyWeatherPresenter.swift in Sources */,
 				F0F4716A28AFD20D009FFDB7 /* LocationServiceInterface.swift in Sources */,
 				F0B5D9B32902BC6D001BE9C5 /* HourlySection.swift in Sources */,

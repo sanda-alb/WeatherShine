@@ -36,29 +36,35 @@ final class HourlyWeatherCell: UICollectionViewCell {
     
     private func setupLayout() {
         weatherIcon.snp.makeConstraints { make in
-            make.height.width.equalTo(70)
-            make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(5)
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
         }
         
         timeLabel.snp.makeConstraints { make in
-            make.height.equalTo(20)
             make.centerX.equalToSuperview()
             make.top.equalTo(weatherIcon.snp.bottom).offset(5)
+            make.height.equalTo(15)
         }
         
         temperatureLabel.snp.makeConstraints { make in
-            make.height.equalTo(20)
-            make.centerX.equalToSuperview()
             make.top.equalTo(timeLabel.snp.bottom).offset(5)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-10)
+            make.height.equalTo(20)
         }
     }
     
     private func setupApperance() {
-        contentView.backgroundColor = Colors.yellowLight
-
+        timeLabel.font = UIFont.systemFont(ofSize: 15)
+        temperatureLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 20
+        contentView.backgroundColor = Colors.yellowLight
+        
+        weatherIcon.contentMode = .scaleAspectFit
+        weatherIcon.clipsToBounds = true
     }
 }
 
@@ -67,7 +73,6 @@ extension HourlyWeatherCell {
         weatherIcon.setWeatherIcon(iconId: viewModel.iconId)
         timeLabel.text = viewModel.time
         temperatureLabel.text = viewModel.temperature
-        
     }
     
     struct ViewModel {

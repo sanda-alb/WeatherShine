@@ -63,5 +63,3 @@ public extension Int {
         return category
     }
 }
-
-
