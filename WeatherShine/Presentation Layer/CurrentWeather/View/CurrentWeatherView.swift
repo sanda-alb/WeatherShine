@@ -36,9 +36,7 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         embedViews()
         setupLayout()
         setupAppearance()
-        print("Current: \(screenHeight)")
         output?.viewLoaded()
-        
     }
     
     private func embedViews() {
@@ -58,7 +56,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     }
 
     private func setupLayout() {
-        
         todayLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
             make.leading.equalToSuperview().offset(45)
@@ -109,7 +106,6 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     }
 
     private func setupAppearance() {
-        
         view.backgroundColor = Colors.yellowLight
         bottomView.backgroundColor = Colors.purpleLight
         windLabel.text = "Wind"
@@ -174,5 +170,3 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         return timezone
     }
 }
-
-// MARK: - CLLocationManagerDelegate

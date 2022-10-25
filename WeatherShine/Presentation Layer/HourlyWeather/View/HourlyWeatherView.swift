@@ -22,10 +22,12 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     
     // MARK: - Labels
     
-    private let hourlyLabel    = UILabel()
+    private let hourlyLabel   = UILabel()
     private let sunsetTime    = UILabel()
     private let sunriseTime   = UILabel()
     private let humidityValue = UILabel()
+    
+    private let screenHeight = UIScreen.main.bounds.height
     
     // MARK: - Sections
     
@@ -33,15 +35,22 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     private let comfortSection       = HourlySection()
     private let windSection          = HourlySection()
     private let sunsetSunriseSection = HourlySection()
+    
+    private let windValues = textWithSeparator()
+    private let comfortValues = textWithSeparator()
+  
+    private let stackView = UIStackView()
 
-    // MARK: - Image Views
+    // MARK: - ImageViews
     
     private let humidityIcon = UIImageView()
     private let windIcon     = UIImageView()
     private let sunriseIcon  = UIImageView()
     private let sunsetIcon   = UIImageView()
     
-    // MARK: - Utils
+
+    
+    // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,98 +59,97 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         setupLayout()
         setupAppearance()
         setupCollectionView()
+        setupStackView()
         output?.viewIsReady()
     }
     
     // MARK: - Embed Views
     
     private func embedViews() {
+        
+        view.addSubview(stackView)
+        
         [ hourlySection,
           comfortSection,
           windSection,
           sunsetSunriseSection
         ].forEach{
-            view.addSubview($0)
+            stackView.addArrangedSubview($0)
         }
         
-        hourlySection.container.addSubview(hourlyCollectionView)
-        comfortSection.container.addSubview(humidityIcon)
-        comfortSection.container.addSubview(humidityValue)
-        windSection.container.addSubview(windIcon)
+        
+        
+        hourlySection.contentView.addSubview(hourlyCollectionView)
+        comfortSection.contentView.addSubview(humidityIcon)
+        comfortSection.contentView.addSubview(humidityValue)
+        windSection.contentView.addSubview(windIcon)
      
         [ sunsetIcon,
           sunriseIcon,
           sunriseTime,
           sunsetTime
         ].forEach{
-            sunsetSunriseSection.container.addSubview($0)
+            sunsetSunriseSection.contentView.addSubview($0)
         }
     }
     
     // MARK: - Setup Layout
     
     private func setupLayout() {
-        hourlySection.snp.makeConstraints { make in
+        stackView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
-            make.height.equalTo(150)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+            make.width.equalToSuperview().offset(-60)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-20)
+        }
+        
+        hourlySection.snp.makeConstraints { make in
+            make.width.equalToSuperview()
         }
         
         hourlyCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.height.equalTo(125)
+            make.height.equalTo(130)
         }
         
         comfortSection.snp.makeConstraints { make in
-            make.top.equalTo(hourlyCollectionView.snp.bottom).offset(20)
-            make.height.equalTo(150)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+            make.width.equalToSuperview()
         }
         
         windSection.snp.makeConstraints { make in
-            make.top.equalTo(comfortSection.snp.bottom).offset(20)
-            make.height.equalTo(150)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+            make.width.equalToSuperview()
         }
         
         sunsetSunriseSection.snp.makeConstraints { make in
-            make.top.equalTo(windSection.snp.bottom).offset(20)
-            make.height.equalTo(150)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+            make.width.equalToSuperview()
         }
         
         humidityIcon.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.height.width.equalTo(80)
-            make.leading.equalToSuperview().offset(30)
+            make.leading.equalToSuperview().offset(10)
         }
         
         humidityValue.snp.makeConstraints { make in
-            make.top.equalTo(humidityIcon.snp.bottom).offset(5)
-            make.centerX.equalTo(humidityIcon.snp.centerX)
-            make.height.equalTo(15)
+            make.centerY.equalTo(humidityIcon.snp.centerY)
+            make.leading.equalTo(humidityIcon.snp.trailing).offset(5)
         }
         
         windIcon.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(30)
-            make.height.width.equalTo(100)
+            make.leading.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview().offset(-10)
             make.centerY.equalToSuperview()
         }
         
         sunriseIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(100)
             make.top.equalToSuperview()
             make.centerX.equalToSuperview().offset(-80)
         }
         
         sunsetIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(100)
             make.top.equalToSuperview()
             make.centerX.equalToSuperview().offset(80)
         }
@@ -149,16 +157,21 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         sunriseTime.snp.makeConstraints { make in
             make.centerX.equalTo(sunriseIcon)
             make.top.equalTo(sunriseIcon.snp.bottom)
+            make.bottom.equalToSuperview().offset(-10)
+            make.height.equalTo(15)
         }
         
         sunsetTime.snp.makeConstraints { make in
             make.centerX.equalTo(sunsetIcon)
             make.top.equalTo(sunsetIcon.snp.bottom)
+            make.height.equalTo(15)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
     
     private func setupAppearance() {
         view.backgroundColor = Colors.purpleLight
+        hourlySection.contentView.backgroundColor = .clear
         
         //bottomsheet
         view.layer.cornerRadius = 20
@@ -169,22 +182,31 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         view.layer.shadowOpacity = 0.5
         
         // section headlines
-        hourlySection.headlineLabel.text        = "Hourly"
-        comfortSection.headlineLabel.text       = "Comfort"
-        windSection.headlineLabel.text          = "Wind"
-        sunsetSunriseSection.headlineLabel.text = "Sunrise and Sunset"
+        hourlySection.title.text        = "Hourly"
+        comfortSection.title.text       = "Comfort"
+        windSection.title.text          = "Wind"
+        sunsetSunriseSection.title.text = "Sunrise and Sunset"
         
-        comfortSection.addSeparatorWithParam()
-        windSection.addSeparatorWithParam()
+        humidityValue.font = UIFont.systemFont(ofSize: 30)
         
         // images
         humidityIcon.image = UIImage(named: "humidity")
         windIcon.image = UIImage(named: "wind")
         sunriseIcon.image = UIImage(named: "sunrise")
         sunsetIcon.image = UIImage(named: "sunset")
+        
+//        comfortSection.addSeparatorWithParam()
+//        windSection.addSeparatorWithParam()
+        
+        windIcon.contentMode = .scaleAspectFit
+//        windIcon.clipsToBounds = true
+        
+        sunriseIcon.contentMode = .scaleAspectFit
+        sunsetIcon.contentMode = .scaleAspectFit
+        sunsetIcon.clipsToBounds = true
+        sunsetIcon.clipsToBounds = true
     }
     
-
     // MARK: - Setup CollectionView
     
     private func setupCollectionView() {
@@ -193,11 +215,19 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         hourlyCollectionView.register(HourlyWeatherCell.self, forCellWithReuseIdentifier: "HourlyWeatherCell")
         
         hourlyCollectionView.showsHorizontalScrollIndicator = false
+
         hourlyCollectionView.backgroundColor = Colors.purpleLight
-        
+            
         let collectionViewLayout = (hourlyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout)
+    
         collectionViewLayout.itemSize = CGSize(width: 80, height: 125)
         collectionViewLayout.scrollDirection = .horizontal
+    }
+    
+    private func setupStackView() {
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 20
     }
 }
 
@@ -209,7 +239,7 @@ extension HourlyWeatherView: HourlyWeatherViewInput {
         
         let current = data.current
     
-        humidityValue.text = "\(current.humidity)%"
+        humidityValue.text = "\(current.humidity)"
 
         comfortSection.upperLabel.text = "Feeling  \(Int(current.feelsLike)) °C"
         comfortSection.lowerLabel.text = "Index UV \(Int(current.uvi)) \(Int(current.uvi).setUVCategory())"

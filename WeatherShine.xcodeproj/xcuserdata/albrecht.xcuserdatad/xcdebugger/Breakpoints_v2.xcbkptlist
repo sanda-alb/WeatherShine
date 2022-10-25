@@ -94,9 +94,9 @@
             filePath = "WeatherShine/Presentation Layer/HourlyWeather/View/HourlyWeatherView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,10 +110,8 @@
             filePath = "WeatherShine/Presentation Layer/HourlyWeather/View/HourlyWeatherView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            startingLineNumber = "282"
+            endingLineNumber = "282">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,25 +124,9 @@
             filePath = "WeatherShine/Presentation Layer/HourlyWeather/View/HourlyWeatherView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BEC308A8-52ED-425D-9C79-D12196025B9E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherShine/Presentation Layer/HourlyWeather/View/HourlyWeatherView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "343"
-            endingLineNumber = "343"
-            landmarkName = "setData(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
