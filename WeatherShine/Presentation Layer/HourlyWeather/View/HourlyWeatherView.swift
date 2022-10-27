@@ -109,7 +109,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.height.equalTo(130)
+            make.height.equalTo(120)
         }
         
         comfortSection.snp.makeConstraints { make in
@@ -224,7 +224,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
             
         let collectionViewLayout = (hourlyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout)
     
-        collectionViewLayout.itemSize = CGSize(width: 80, height: 130)
+        collectionViewLayout.itemSize = CGSize(width: 70, height: 120)
         collectionViewLayout.scrollDirection = .horizontal
     }
     
@@ -253,6 +253,14 @@ extension HourlyWeatherView: HourlyWeatherViewInput {
         
         sunsetTime.text = current.sunset.setTime()
         sunriseTime.text = current.sunrise.setTime()
+        
+        let numbers = [20,17,35,4,12]
+        let evenSquares = numbers.filter{$0 % 2 == 0}.map{$0 * $0}
+        // [400, 16, 144]
+        
+        let hourlyArray: [HourlyWeather] = data.hourly
+   
+     
         
         self.hourlyWeather = data.hourly.map {
             HourlyWeatherCell.ViewModel.init(

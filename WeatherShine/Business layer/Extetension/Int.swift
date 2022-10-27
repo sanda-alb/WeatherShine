@@ -17,6 +17,18 @@ public extension Int {
         return time
     }
     
+    func toDate() -> NSDate {
+        let date = NSDate(timeIntervalSince1970: TimeInterval(self))
+       return date
+    }
+    
+//    double timeStamp = 1513330403393;
+//    NSTimeInterval unixTimeStamp = timeStamp / 1000.0;
+//    NSDate *exactDate = [NSDate dateWithTimeIntervalSince1970:unixTimeStamp];
+//    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+//    dateFormatter.dateFormat = @"dd/MM/yyy hh:mm a";
+//    NSString  *finalate = [dateFormatter stringFromDate:exactDate];
+    
     func setWindDirection() -> String {
         var direction = ""
         
