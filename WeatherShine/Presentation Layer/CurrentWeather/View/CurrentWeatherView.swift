@@ -18,20 +18,16 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
 
     private let todayLabel    = UILabel()
     private let cityLabel     = UILabel()
-    private let windLabel     = UILabel()
-    private let windValue     = UILabel()
-    private let tempLabel     = UILabel()
-    private let tempValue     = UILabel()
-    private let humidityLabel = UILabel()
-    private let humidityValue = UILabel()
     
     // MARK: - UIViews
     
-    private let windContainer     = UIView()
-    private let tempContainer     = UIView()
-    private let humidityContainer = UIView()
+    private let windContainer     = CurrentSection()
+    private let tempContainer     = CurrentSection()
+    private let humidityContainer = CurrentSection()
+    
     private let leftSeparator     = UIView()
     private let rightSeparator    = UIView()
+    private let stackView         = UIStackView()
     
     private let screen = UIScreen.main.bounds
     
@@ -54,25 +50,20 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         [ todayLabel,
           cityLabel,
           weatherIcon,
-          windContainer,
-          tempContainer,
-          humidityContainer
+          stackView
         ].forEach{
             view.addSubview($0)
         }
         
-        [ tempLabel,
-          tempValue,
-          leftSeparator,
-          rightSeparator
-        ].forEach{
-            tempContainer.addSubview($0)
+        [ windContainer,
+          tempContainer,
+          humidityContainer
+        ].forEach {
+            stackView.addArrangedSubview($0)
         }
         
-        windContainer.addSubview(windLabel)
-        windContainer.addSubview(windValue)
-        humidityContainer.addSubview(humidityLabel)
-        humidityContainer.addSubview(humidityValue)
+        tempContainer.addSubview(leftSeparator)
+        tempContainer.addSubview(rightSeparator)
     }
 
     private func setupLayout() {
@@ -90,119 +81,53 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         
         weatherIcon.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-//            make.top.equalToSuperview().offset(230)
             make.top.equalTo(cityLabel.snp.bottom).offset(50)
             make.height.width.equalTo(screen.width * 0.8)
         }
         
-        windContainer.snp.makeConstraints { make in
-            make.top.equalTo(weatherIcon.snp.bottom).offset(50)
+        stackView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.width.equalTo(screen.width / 3)
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-200)
         }
-        
-        tempContainer.snp.makeConstraints { make in
-            make.top.equalTo(weatherIcon.snp.bottom).offset(50)
-            make.leading.equalTo(windContainer.snp.trailing)
-            make.width.equalTo(screen.width / 3)
-        }
-        
-        humidityContainer.snp.makeConstraints { make in
-            make.top.equalTo(weatherIcon.snp.bottom).offset(50)
-            make.leading.equalTo(tempContainer.snp.trailing)
-            make.width.equalTo(screen.width / 3)
-        }
-        
+
         leftSeparator.snp.makeConstraints { make in
-            make.top.equalTo(tempValue.snp.top)
+            make.top.equalTo(tempContainer.value.snp.top)
             make.leading.equalToSuperview()
             make.bottom.equalToSuperview()
-            
-            make.height.equalTo(tempValue.snp.height)
+            make.height.equalTo(tempContainer.value.snp.height)
             make.width.equalTo(2)
         }
         
         rightSeparator.snp.makeConstraints { make in
-            make.top.equalTo(tempValue.snp.top)
+            make.top.equalTo(tempContainer.value.snp.top)
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
-            make.height.equalTo(tempValue.snp.height)
+            make.height.equalTo(tempContainer.value.snp.height)
             make.width.equalTo(2)
-        }
-        
-        windLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
-
-        windValue.snp.makeConstraints { make in
-            make.top.equalTo(windLabel.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
-        }
-        
-        tempLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
-
-        tempValue.snp.makeConstraints { make in
-            make.top.equalTo(windLabel.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
-        }
-
-        humidityLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
-
-        humidityValue.snp.makeConstraints { make in
-            make.top.equalTo(windLabel.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
         }
     }
 
     private func setupAppearance() {
-        [ cityLabel,
-          windLabel,
-          windValue,
-          tempLabel,
-          tempValue,
-          humidityLabel,
-          humidityValue
-        ].forEach {
-            $0.textColor = Colors.purpleDark
-        }
+        cityLabel.textColor = Colors.purpleDark
+        cityLabel.font = UIFont.boldSystemFont(ofSize: 40)
         
         view.backgroundColor = Colors.yellowLight
         leftSeparator.backgroundColor = Colors.purpleDark
         rightSeparator.backgroundColor = Colors.purpleDark
         
-        todayLabel.font = UIFont.systemFont(ofSize: 20)
-        cityLabel.font = UIFont.boldSystemFont(ofSize: 40)
+        windContainer.title.text = "Wind"
+        tempContainer.title.text = "Temp"
+        humidityContainer.title.text = "Humidity"
         
-        [ windLabel,
-          tempLabel,
-          humidityLabel
-        ].forEach {
-            $0.font = UIFont.boldSystemFont(ofSize: 20)
-        }
-        
-        [ windValue,
-          tempValue,
-          humidityValue
-        ].forEach {
-            $0.font = UIFont.boldSystemFont(ofSize: 40)
-        }
-        
-        windLabel.text = "Wind"
-        tempLabel.text = "Temp"
-        humidityLabel.text = "Humidity"
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
     }
 
     func setCurrent(_ weather: Forecast) {
-        tempValue.text = String(format: "%.0f", weather.current.temp) + " °C"
-        humidityValue.text = "\(weather.current.humidity)%"
-        windValue.text = "\(Int(weather.current.windSpeed)) m/s"
+        tempContainer.value.text = String(format: "%.0f", weather.current.temp) + " °C"
+        humidityContainer.value.text = "\(weather.current.humidity)%"
+        windContainer.value.text = "\(Int(weather.current.windSpeed)) m/s"
         cityLabel.text = getCity(timezone: weather.timezone)
         
         let iconId = weather.current.weather.first?.icon
@@ -210,19 +135,12 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
         weatherIcon.setWeatherIcon(iconId: iconId ?? "placeholder")
         setDate()
     }
-        
-    func setMock() {
-        tempValue.text = "00 °C"
-        humidityValue.text = "00%"
-        windValue.text = "00"
-        cityLabel.text = "MockCity"
-    }
-    
+
     func setDate() {
         let date  = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US")
-        dateFormatter.dateFormat = "dMMM"
+        dateFormatter.dateFormat = "d MMM"
         todayLabel.text = "Today, \(dateFormatter.string(from: date))"
     }
     

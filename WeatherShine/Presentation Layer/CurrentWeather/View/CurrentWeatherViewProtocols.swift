@@ -7,11 +7,9 @@
 
 protocol  CurrentWeatherViewInput: AnyObject {
     func setCurrent(_ weather: Forecast)
-    func setMock()
 }
 
 protocol CurrentWeatherViewOutput {
-//    func requestWeather(lat: Double, lon: Double)
     func viewLoaded()
 }
 

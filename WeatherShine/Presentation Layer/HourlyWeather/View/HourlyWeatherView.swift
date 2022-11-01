@@ -200,7 +200,8 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         windSection.title.text          = "Wind"
         sunsetSunriseSection.title.text = "Sunrise and Sunset"
         
-        humidityValue.font = UIFont.systemFont(ofSize: 30)
+        humidityValue.font = UIFont.boldSystemFont(ofSize: 30)
+        humidityValue.textColor = Colors.purpleDark
 
         humidityIcon.image = UIImage(named: "humidity")
         windIcon.image = UIImage(named: "wind")
@@ -254,15 +255,9 @@ extension HourlyWeatherView: HourlyWeatherViewInput {
         sunsetTime.text = current.sunset.setTime()
         sunriseTime.text = current.sunrise.setTime()
         
-        let numbers = [20,17,35,4,12]
-        let evenSquares = numbers.filter{$0 % 2 == 0}.map{$0 * $0}
-        // [400, 16, 144]
+        let horlyForToday  = data.hourly.filter{ $0.time.isToday()}
         
-        let hourlyArray: [HourlyWeather] = data.hourly
-   
-     
-        
-        self.hourlyWeather = data.hourly.map {
+        self.hourlyWeather = data.hourly.filter{ $0.time.isToday()}.map {
             HourlyWeatherCell.ViewModel.init(
                 iconId: $0.weather.last?.icon ?? "default",
                 time: $0.time.setTime(),

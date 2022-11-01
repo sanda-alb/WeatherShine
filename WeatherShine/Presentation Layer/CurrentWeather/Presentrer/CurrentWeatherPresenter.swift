@@ -38,8 +38,4 @@ extension CurrentWeatherPresenter: CurrentWeatherInteractorOutput {
     func obtainData(forecast: Forecast) {
         view?.setCurrent(forecast)
     }
-    
-    func setMock() {
-        view?.setMock() 
-    }
 }

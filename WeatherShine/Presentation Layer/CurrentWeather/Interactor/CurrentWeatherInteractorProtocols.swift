@@ -11,5 +11,4 @@ protocol CurrentWeatherInteractorInput {
 
 protocol CurrentWeatherInteractorOutput: AnyObject {
     func obtainData(forecast: Forecast)
-    func setMock()
 }

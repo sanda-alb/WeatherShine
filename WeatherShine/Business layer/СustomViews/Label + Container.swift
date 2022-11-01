@@ -26,7 +26,6 @@ class HourlySection: UIView {
       return title
     }()
     
-
     override init(frame: CGRect) {
         super.init(frame: frame)
             embedViews()

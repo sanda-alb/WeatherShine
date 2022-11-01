@@ -8,6 +8,14 @@
 import Foundation
 
 public extension Int {
+    
+    func isToday() -> Bool {
+        var isToday: Bool
+        let currentDate = Calendar.current
+        let date = Date(timeIntervalSince1970: TimeInterval(self))
+        if currentDate.isDateInToday(date) { isToday = true } else {isToday = false }
+return isToday
+  }
  
     func setTime() -> String {
         let date = NSDate(timeIntervalSince1970: TimeInterval(self))
@@ -16,18 +24,6 @@ public extension Int {
         let time = utcDateFormatter.string(from: date as Date)
         return time
     }
-    
-    func toDate() -> NSDate {
-        let date = NSDate(timeIntervalSince1970: TimeInterval(self))
-       return date
-    }
-    
-//    double timeStamp = 1513330403393;
-//    NSTimeInterval unixTimeStamp = timeStamp / 1000.0;
-//    NSDate *exactDate = [NSDate dateWithTimeIntervalSince1970:unixTimeStamp];
-//    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-//    dateFormatter.dateFormat = @"dd/MM/yyy hh:mm a";
-//    NSString  *finalate = [dateFormatter stringFromDate:exactDate];
     
     func setWindDirection() -> String {
         var direction = ""

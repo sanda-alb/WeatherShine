@@ -13,7 +13,7 @@ class CurrentSection: UIView {
     
     lazy var  title: UILabel = {
         let title = UILabel()
-        title.font = UIFont.boldSystemFont(ofSize: 40)
+        title.font = UIFont.boldSystemFont(ofSize: 20)
         title.textColor = Colors.purpleDark
         return title
     }()

@@ -20,8 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             lon: UserDefaults.standard.double(forKey: "lon")
         )
         
-    
-        
         let window = UIWindow(windowScene: windowScene)
         let currentVC = CurrentWeatherView()
         CurrentWeatherModuleConfigurator().configureModuleForViewInput(viewInput: currentVC, weatherForecast: weatherForecast)
