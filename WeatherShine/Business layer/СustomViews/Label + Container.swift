@@ -13,7 +13,7 @@ class HourlySection: UIView {
     
     lazy var contentView: UIView = {
         let contentView = UIView()
-        contentView.backgroundColor = Colors.yellowLight
+        contentView.backgroundColor = UIColor(named: "yellowLight")
         contentView.layer.cornerRadius = 20
         return contentView
     }()

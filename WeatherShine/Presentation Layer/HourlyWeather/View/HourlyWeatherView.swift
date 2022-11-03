@@ -192,7 +192,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     // MARK: - Setup Appearance 
     
     private func setupAppearance() {
-        view.backgroundColor = Colors.purpleLight
+        view.backgroundColor = UIColor(named: "purpleLight")
         hourlySection.contentView.backgroundColor = .clear
     
         hourlySection.title.text        = "Hourly"
@@ -201,7 +201,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         sunsetSunriseSection.title.text = "Sunrise and Sunset"
         
         humidityValue.font = UIFont.boldSystemFont(ofSize: 30)
-        humidityValue.textColor = Colors.purpleDark
+        humidityValue.textColor = UIColor(named: "purpleDark")
 
         humidityIcon.image = UIImage(named: "humidity")
         windIcon.image = UIImage(named: "wind")
@@ -221,7 +221,7 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         hourlyCollectionView.register(HourlyWeatherCell.self, forCellWithReuseIdentifier: "HourlyWeatherCell")
         
         hourlyCollectionView.showsHorizontalScrollIndicator = false
-        hourlyCollectionView.backgroundColor = Colors.purpleLight
+        hourlyCollectionView.backgroundColor = UIColor(named: "purpleLight")
             
         let collectionViewLayout = (hourlyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout)
     

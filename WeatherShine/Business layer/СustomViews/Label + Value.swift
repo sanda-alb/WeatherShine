@@ -14,14 +14,14 @@ class CurrentSection: UIView {
     lazy var  title: UILabel = {
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 20)
-        title.textColor = Colors.purpleDark
+        title.textColor = UIColor(named: "purpleDark")
         return title
     }()
     
     lazy var value: UILabel = {
       let value = UILabel()
         value.font = UIFont.boldSystemFont(ofSize: 40)
-        value.textColor = Colors.purpleDark
+        value.textColor = UIColor(named: "purpleDark")
       return value
     }()
     

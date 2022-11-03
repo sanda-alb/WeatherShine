@@ -61,7 +61,7 @@ final class HourlyWeatherCell: UICollectionViewCell {
         
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 20
-        contentView.backgroundColor = Colors.yellowLight
+        contentView.backgroundColor = UIColor(named: "yellowLight")
         
         weatherIcon.contentMode = .scaleAspectFit
         weatherIcon.clipsToBounds = true

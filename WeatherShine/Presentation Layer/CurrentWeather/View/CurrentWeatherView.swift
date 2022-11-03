@@ -96,7 +96,7 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
             make.leading.equalToSuperview()
             make.bottom.equalToSuperview()
             make.height.equalTo(tempContainer.value.snp.height)
-            make.width.equalTo(2)
+            make.width.equalTo(1)
         }
         
         rightSeparator.snp.makeConstraints { make in
@@ -104,17 +104,17 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
             make.height.equalTo(tempContainer.value.snp.height)
-            make.width.equalTo(2)
+            make.width.equalTo(1)
         }
     }
 
     private func setupAppearance() {
-        cityLabel.textColor = Colors.purpleDark
+        cityLabel.textColor = UIColor(named: "purpleDark")
         cityLabel.font = UIFont.boldSystemFont(ofSize: 40)
         
-        view.backgroundColor = Colors.yellowLight
-        leftSeparator.backgroundColor = Colors.purpleDark
-        rightSeparator.backgroundColor = Colors.purpleDark
+        view.backgroundColor = UIColor(named: "yellowLight")
+        leftSeparator.backgroundColor = UIColor(named: "purpleDark")
+        rightSeparator.backgroundColor = UIColor(named: "purpleDark")
         
         windContainer.title.text = "Wind"
         tempContainer.title.text = "Temp"
@@ -125,7 +125,7 @@ class CurrentWeatherView: UIViewController, CurrentWeatherViewInput, CurrentWeat
     }
 
     func setCurrent(_ weather: Forecast) {
-        tempContainer.value.text = String(format: "%.0f", weather.current.temp) + " °C"
+        tempContainer.value.text =  "\(Int(weather.current.temp)) °C"
         humidityContainer.value.text = "\(weather.current.humidity)%"
         windContainer.value.text = "\(Int(weather.current.windSpeed)) m/s"
         cityLabel.text = getCity(timezone: weather.timezone)

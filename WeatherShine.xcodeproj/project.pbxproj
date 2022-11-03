@@ -44,13 +44,13 @@
 		F0BD0DF02893EB8000EEADC5 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F072F11B2832C98500907CB2 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0BD0DF32898286200EEADC5 /* HourlyWeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD0DF22898286200EEADC5 /* HourlyWeatherInteractor.swift */; };
 		F0BD0DF52898287F00EEADC5 /* HourlyWeatherInteractorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD0DF42898287F00EEADC5 /* HourlyWeatherInteractorProtocols.swift */; };
-		F0D5F9A028491D6A00EA3B18 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F99F28491D6A00EA3B18 /* Colors.swift */; };
 		F0D5F9AD284A1AAE00EA3B18 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9AC284A1AAE00EA3B18 /* HourlyWeatherView.swift */; };
 		F0D5F9AF284A1AC400EA3B18 /* HourlyWeatherViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9AE284A1AC400EA3B18 /* HourlyWeatherViewProtocols.swift */; };
 		F0D5F9B1284A1AD500EA3B18 /* HourlyWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9B0284A1AD500EA3B18 /* HourlyWeatherPresenter.swift */; };
 		F0D5F9B3284A1AE500EA3B18 /* HourlyWeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9B2284A1AE500EA3B18 /* HourlyWeatherRouter.swift */; };
 		F0D5F9B5284A1AFE00EA3B18 /* HourlyWeatherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9B4284A1AFE00EA3B18 /* HourlyWeatherProtocols.swift */; };
 		F0D5F9B7284A1B1300EA3B18 /* HourlyWeatherConfigirator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9B6284A1B1300EA3B18 /* HourlyWeatherConfigirator.swift */; };
+		F0EF9A122912FA9F00AF27E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F072F1112832C63C00907CB2 /* LaunchScreen.storyboard */; };
 		F0F4716428AAA84F009FFDB7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4716328AAA84F009FFDB7 /* LocationService.swift */; };
 		F0F4716628AAA861009FFDB7 /* LocationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4716528AAA861009FFDB7 /* LocationServiceProtocol.swift */; };
 		F0F4716A28AFD20D009FFDB7 /* LocationServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4716928AFD20D009FFDB7 /* LocationServiceInterface.swift */; };
@@ -116,7 +116,6 @@
 		F0C0EA8D288AD1890094D73D /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RxSwift; path = Carthage/Checkouts/RxSwift; sourceTree = "<group>"; };
 		F0C0EA8E288AD63F0094D73D /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		F0C0EA9128914EE80094D73D /* RxAlamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxAlamofire.xcframework; path = Carthage/Build/RxAlamofire.xcframework; sourceTree = "<group>"; };
-		F0D5F99F28491D6A00EA3B18 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F0D5F9AC284A1AAE00EA3B18 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		F0D5F9AE284A1AC400EA3B18 /* HourlyWeatherViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewProtocols.swift; sourceTree = "<group>"; };
 		F0D5F9B0284A1AD500EA3B18 /* HourlyWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherPresenter.swift; sourceTree = "<group>"; };
@@ -258,7 +257,6 @@
 				F072F1112832C63C00907CB2 /* LaunchScreen.storyboard */,
 				F072F1142832C63C00907CB2 /* Info.plist */,
 				F062057F283BDCB6004FADA4 /* Constants.swift */,
-				F0D5F99F28491D6A00EA3B18 /* Colors.swift */,
 			);
 			path = WeatherShine;
 			sourceTree = "<group>";
@@ -473,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F072F1102832C63C00907CB2 /* Assets.xcassets in Resources */,
+				F0EF9A122912FA9F00AF27E5 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +490,6 @@
 				F0D5F9B3284A1AE500EA3B18 /* HourlyWeatherRouter.swift in Sources */,
 				F0BD0DF32898286200EEADC5 /* HourlyWeatherInteractor.swift in Sources */,
 				F03721D0288072F800C26A83 /* UIImageView.swift in Sources */,
-				F0D5F9A028491D6A00EA3B18 /* Colors.swift in Sources */,
 				F057208B28C0FFA800CB49C2 /* State.swift in Sources */,
 				F0B5D9B6290828FC001BE9C5 /* textWithSeparator.swift in Sources */,
 				F0D5F9B1284A1AD500EA3B18 /* HourlyWeatherPresenter.swift in Sources */,
@@ -665,6 +663,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherShine/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Ask for permission";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ask for permission";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -692,6 +693,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherShine/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Ask for permission";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ask for permission";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
