@@ -6,7 +6,7 @@
 //
 
 protocol  CurrentWeatherViewInput: AnyObject {
-    func setCurrent(_ weather: Forecast)
+    func set(state: DataState)
 }
 
 protocol CurrentWeatherViewOutput {

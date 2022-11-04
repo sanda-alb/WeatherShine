@@ -28,14 +28,14 @@ class CurrentWeatherPresenter {
 }
 
 extension CurrentWeatherPresenter: CurrentWeatherViewOutput {
-    
     func viewLoaded() {
         interactor.fetchData()
+        view?.set(state: .loading)
     }
 }
 
 extension CurrentWeatherPresenter: CurrentWeatherInteractorOutput {
     func obtainData(forecast: Forecast) {
-        view?.setCurrent(forecast)
+        view?.set(state: .hasData(weather: forecast))
     }
 }

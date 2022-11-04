@@ -82,7 +82,6 @@ extension LocationService: CLLocationManagerDelegate {
         
         UserDefaults.standard.set(coordinate.longitude, forKey: "lon")
         UserDefaults.standard.set(coordinate.latitude, forKey: "lat")
-        DataState.location.setState()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

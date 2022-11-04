@@ -8,24 +8,7 @@
 import Foundation
 
 enum DataState {
-    case empty
-    case location
-    case data
     case loading
+    case hasData(weather: Forecast)
     case error
-    
-    func setState() {
-        switch self {
-        case .empty:
-            print("Empty state")
-        case .location:
-            print("Location State")
-        case .loading:
-            print("Loading State")
-        case .data:
-           print("Data State")
-        case .error:
-            print("Error")
-        }
-    }
 }

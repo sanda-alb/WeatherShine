@@ -51,6 +51,7 @@
 		F0D5F9B5284A1AFE00EA3B18 /* HourlyWeatherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9B4284A1AFE00EA3B18 /* HourlyWeatherProtocols.swift */; };
 		F0D5F9B7284A1B1300EA3B18 /* HourlyWeatherConfigirator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5F9B6284A1B1300EA3B18 /* HourlyWeatherConfigirator.swift */; };
 		F0EF9A122912FA9F00AF27E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F072F1112832C63C00907CB2 /* LaunchScreen.storyboard */; };
+		F0EF9A14291581C800AF27E5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF9A13291581C800AF27E5 /* String.swift */; };
 		F0F4716428AAA84F009FFDB7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4716328AAA84F009FFDB7 /* LocationService.swift */; };
 		F0F4716628AAA861009FFDB7 /* LocationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4716528AAA861009FFDB7 /* LocationServiceProtocol.swift */; };
 		F0F4716A28AFD20D009FFDB7 /* LocationServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4716928AFD20D009FFDB7 /* LocationServiceInterface.swift */; };
@@ -122,6 +123,7 @@
 		F0D5F9B2284A1AE500EA3B18 /* HourlyWeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherRouter.swift; sourceTree = "<group>"; };
 		F0D5F9B4284A1AFE00EA3B18 /* HourlyWeatherProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherProtocols.swift; sourceTree = "<group>"; };
 		F0D5F9B6284A1B1300EA3B18 /* HourlyWeatherConfigirator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherConfigirator.swift; sourceTree = "<group>"; };
+		F0EF9A13291581C800AF27E5 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F0F4716328AAA84F009FFDB7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F0F4716528AAA861009FFDB7 /* LocationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProtocol.swift; sourceTree = "<group>"; };
 		F0F4716928AFD20D009FFDB7 /* LocationServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceInterface.swift; sourceTree = "<group>"; };
@@ -278,8 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				F0B5D9B22902BC6D001BE9C5 /* Label + Container.swift */,
-				F0B5D9B5290828FC001BE9C5 /* textWithSeparator.swift */,
 				F0B5D9B7290AC00A001BE9C5 /* Label + Value.swift */,
+				F0B5D9B5290828FC001BE9C5 /* textWithSeparator.swift */,
 			);
 			path = "СustomViews";
 			sourceTree = "<group>";
@@ -334,6 +336,7 @@
 			children = (
 				F09B56A7287C623100B0D432 /* Int.swift */,
 				F03721CF288072F700C26A83 /* UIImageView.swift */,
+				F0EF9A13291581C800AF27E5 /* String.swift */,
 			);
 			path = Extetension;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				F075E6C5288872D10049E9F7 /* BottomSheet.swift in Sources */,
 				F0BD0DF52898287F00EEADC5 /* HourlyWeatherInteractorProtocols.swift in Sources */,
 				F0620576283BA42A004FADA4 /* CurrentWeatherRouterProtocols.swift in Sources */,
+				F0EF9A14291581C800AF27E5 /* String.swift in Sources */,
 				F075E6C72888731E0049E9F7 /* WelkomeContainerView.swift in Sources */,
 				F072F10B2832C63800907CB2 /* CurrentWeatherView.swift in Sources */,
 				F03EB74628FEAB5D000A66E1 /* BottomSheetConfiguration.swift in Sources */,
@@ -663,6 +667,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherShine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Ask for permission";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ask for permission";
@@ -693,6 +698,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherShine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Ask for permission";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ask for permission";

@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,16 +12,46 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleAspectFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="0RD-kI-lq5">
+                                <rect key="frame" x="171" y="293" width="72" height="75"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whatever your plans are, and wherever you are, stay one step ahead with Weather Shine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZI-v2-o2B">
+                                <rect key="frame" x="40" y="588" width="334" height="64.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="LaunchLabel" translatesAutoresizingMaskIntoConstraints="NO" id="gxj-zg-awM">
+                                <rect key="frame" x="53" y="388" width="308" height="120"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="purpleLight"/>
+                        <constraints>
+                            <constraint firstItem="gxj-zg-awM" firstAttribute="top" secondItem="0RD-kI-lq5" secondAttribute="bottom" constant="20" id="0EC-FI-6bO"/>
+                            <constraint firstItem="lZI-v2-o2B" firstAttribute="top" secondItem="gxj-zg-awM" secondAttribute="bottom" constant="80" id="2Se-NK-tZe"/>
+                            <constraint firstItem="0RD-kI-lq5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6yu-sB-Bue"/>
+                            <constraint firstItem="gxj-zg-awM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="8Il-LY-TMS"/>
+                            <constraint firstItem="gxj-zg-awM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RfK-CP-De9"/>
+                            <constraint firstAttribute="trailing" secondItem="lZI-v2-o2B" secondAttribute="trailing" constant="40" id="UpA-jr-nrA"/>
+                            <constraint firstItem="lZI-v2-o2B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="lW2-od-3Pn"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchLabel" width="308" height="119.5"/>
+        <image name="wind" width="72" height="75"/>
+        <namedColor name="purpleLight">
+            <color red="0.6119999885559082" green="0.6119999885559082" blue="0.83899998664855957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>
