@@ -212,6 +212,10 @@
 		315A4C57241EF28B00D57C7A /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A4C55241EF28B00D57C7A /* StringEncoding+Alamofire.swift */; };
 		315A4C58241EF28B00D57C7A /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A4C55241EF28B00D57C7A /* StringEncoding+Alamofire.swift */; };
 		315A4C59241EF28B00D57C7A /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A4C55241EF28B00D57C7A /* StringEncoding+Alamofire.swift */; };
+		3165407329AEBC0400C9BE08 /* RequestCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3165407229AEBC0400C9BE08 /* RequestCompression.swift */; };
+		3165407429AEBC0400C9BE08 /* RequestCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3165407229AEBC0400C9BE08 /* RequestCompression.swift */; };
+		3165407529AEBC0400C9BE08 /* RequestCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3165407229AEBC0400C9BE08 /* RequestCompression.swift */; };
+		3165407629AEBC0400C9BE08 /* RequestCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3165407229AEBC0400C9BE08 /* RequestCompression.swift */; };
 		31727418218BAEC90039FFCC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31727417218BAEC90039FFCC /* HTTPMethod.swift */; };
 		31727419218BAEC90039FFCC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31727417218BAEC90039FFCC /* HTTPMethod.swift */; };
 		3172741A218BAEC90039FFCC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31727417218BAEC90039FFCC /* HTTPMethod.swift */; };
@@ -498,18 +502,19 @@
 		312D1E0B1FC2551400E51FF1 /* Usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Usage.md; path = Documentation/Usage.md; sourceTree = "<group>"; };
 		312D1E0C1FC2551400E51FF1 /* AdvancedUsage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = AdvancedUsage.md; path = Documentation/AdvancedUsage.md; sourceTree = "<group>"; };
 		31425AC0241F098000EE3CCC /* InternalRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalRequestTests.swift; sourceTree = "<group>"; };
-		3145E0E227977AA300949557 /* iOS-TS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "iOS-TS.xctestplan"; sourceTree = "<group>"; };
-		3145E0E32797A8EF00949557 /* tvOS-TS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "tvOS-TS.xctestplan"; sourceTree = "<group>"; };
+		3145E0E227977AA300949557 /* iOS-NoTS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "iOS-NoTS.xctestplan"; sourceTree = "<group>"; };
+		3145E0E32797A8EF00949557 /* tvOS-NoTS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "tvOS-NoTS.xctestplan"; sourceTree = "<group>"; };
 		3145E0E42797A8EF00949557 /* tvOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = tvOS.xctestplan; sourceTree = "<group>"; };
 		3145E0E52797A8EF00949557 /* tvOS-Old.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "tvOS-Old.xctestplan"; sourceTree = "<group>"; };
 		3145E0E62797D91600949557 /* watchOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = watchOS.xctestplan; sourceTree = "<group>"; };
-		3145E0E72797D94200949557 /* watchOS-TS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "watchOS-TS.xctestplan"; sourceTree = "<group>"; };
+		3145E0E72797D94200949557 /* watchOS-NoTS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "watchOS-NoTS.xctestplan"; sourceTree = "<group>"; };
 		3145E0E82797D9E700949557 /* macOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = macOS.xctestplan; sourceTree = "<group>"; };
-		3145E0E92797D9E900949557 /* macOS-TS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "macOS-TS.xctestplan"; sourceTree = "<group>"; };
+		3145E0E92797D9E900949557 /* macOS-NoTS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "macOS-NoTS.xctestplan"; sourceTree = "<group>"; };
 		314998E927A6560600ABB856 /* Request+AlamofireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+AlamofireTests.swift"; sourceTree = "<group>"; };
 		31501E872196962A005829F2 /* ParameterEncoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoderTests.swift; sourceTree = "<group>"; };
 		31577E0A2676E72D001C7532 /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
 		315A4C55241EF28B00D57C7A /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
+		3165407229AEBC0400C9BE08 /* RequestCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCompression.swift; sourceTree = "<group>"; };
 		31727417218BAEC90039FFCC /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3172741C218BB1790039FFCC /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
 		31727421218BB9A50039FFCC /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
@@ -750,15 +755,15 @@
 		31EF4BF4279646000048A19D /* Test Plans */ = {
 			isa = PBXGroup;
 			children = (
+				3145E0E227977AA300949557 /* iOS-NoTS.xctestplan */,
 				31EF4BF627964B520048A19D /* iOS-Old.xctestplan */,
-				3145E0E227977AA300949557 /* iOS-TS.xctestplan */,
 				31EF4BF5279646450048A19D /* iOS.xctestplan */,
-				3145E0E92797D9E900949557 /* macOS-TS.xctestplan */,
+				3145E0E92797D9E900949557 /* macOS-NoTS.xctestplan */,
 				3145E0E82797D9E700949557 /* macOS.xctestplan */,
+				3145E0E32797A8EF00949557 /* tvOS-NoTS.xctestplan */,
 				3145E0E52797A8EF00949557 /* tvOS-Old.xctestplan */,
-				3145E0E32797A8EF00949557 /* tvOS-TS.xctestplan */,
 				3145E0E42797A8EF00949557 /* tvOS.xctestplan */,
-				3145E0E72797D94200949557 /* watchOS-TS.xctestplan */,
+				3145E0E72797D94200949557 /* watchOS-NoTS.xctestplan */,
 				3145E0E62797D91600949557 /* watchOS.xctestplan */,
 			);
 			path = "Test Plans";
@@ -907,6 +912,7 @@
 				311B198F20B0D3B40036823B /* MultipartUpload.swift */,
 				4C3D00531C66A63000D1F709 /* NetworkReachabilityManager.swift */,
 				4C0CB645220CA8A400604EDC /* RedirectHandler.swift */,
+				3165407229AEBC0400C9BE08 /* RequestCompression.swift */,
 				4C256A0521EEB69000AD5D87 /* RequestInterceptor.swift */,
 				4CDE2C451AF89FF300BABAE5 /* ResponseSerialization.swift */,
 				4C256A1921F1449C00AD5D87 /* RetryPolicy.swift */,
@@ -921,11 +927,7 @@
 			isa = PBXGroup;
 			children = (
 				312D1E0C1FC2551400E51FF1 /* AdvancedUsage.md */,
-				4CE292321EF4A393008DA555 /* CHANGELOG.md */,
-				4CE292331EF4A393008DA555 /* CONTRIBUTING.md */,
-				4CE292311EF4A393008DA555 /* README.md */,
 				312D1E0B1FC2551400E51FF1 /* Usage.md */,
-				319ECE9E25EC96E8001C38CA /* .github */,
 				4C9E88361F5FB39F000BEC61 /* Migration Guides */,
 			);
 			name = Documentation;
@@ -934,9 +936,13 @@
 		4CE292381EF4B116008DA555 /* Deployment */ = {
 			isa = PBXGroup;
 			children = (
+				319ECE9E25EC96E8001C38CA /* .github */,
 				4CE292391EF4B12B008DA555 /* Alamofire.podspec */,
+				4CE292321EF4A393008DA555 /* CHANGELOG.md */,
+				4CE292331EF4A393008DA555 /* CONTRIBUTING.md */,
 				4CF3B4281F5FC7900075BE59 /* LICENSE */,
 				31B2CA9521AA25CD005B371A /* Package.swift */,
+				4CE292311EF4A393008DA555 /* README.md */,
 			);
 			name = Deployment;
 			sourceTree = "<group>";
@@ -1194,8 +1200,9 @@
 		F8111E2A19A95C8B0040E7D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Alamofire;
 				TargetAttributes = {
 					31293064263E17D600473CEA = {
@@ -1511,6 +1518,7 @@
 				4C0CB643220CA89400604EDC /* URLRequest+Alamofire.swift in Sources */,
 				4CF6270F1BA7CBF60011A099 /* ResponseSerialization.swift in Sources */,
 				4C256A0821EEB69000AD5D87 /* RequestInterceptor.swift in Sources */,
+				3165407529AEBC0400C9BE08 /* RequestCompression.swift in Sources */,
 				4C43669D1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift in Sources */,
 				315A4C58241EF28B00D57C7A /* StringEncoding+Alamofire.swift in Sources */,
 				4C3D00561C66A63000D1F709 /* NetworkReachabilityManager.swift in Sources */,
@@ -1599,6 +1607,7 @@
 				31FB2F8822C828D8007FD6D5 /* URLEncodedFormEncoder.swift in Sources */,
 				4C0CB642220CA89400604EDC /* URLRequest+Alamofire.swift in Sources */,
 				4C23EB441B327C5B0090E0BC /* MultipartFormData.swift in Sources */,
+				3165407429AEBC0400C9BE08 /* RequestCompression.swift in Sources */,
 				4C256A0721EEB69000AD5D87 /* RequestInterceptor.swift in Sources */,
 				315A4C57241EF28B00D57C7A /* StringEncoding+Alamofire.swift in Sources */,
 				4C43669C1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift in Sources */,
@@ -1642,6 +1651,7 @@
 				31FB2F8A22C828D8007FD6D5 /* URLEncodedFormEncoder.swift in Sources */,
 				4C0CB644220CA89400604EDC /* URLRequest+Alamofire.swift in Sources */,
 				4C256A0921EEB69000AD5D87 /* RequestInterceptor.swift in Sources */,
+				3165407629AEBC0400C9BE08 /* RequestCompression.swift in Sources */,
 				4C43669E1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift in Sources */,
 				315A4C59241EF28B00D57C7A /* StringEncoding+Alamofire.swift in Sources */,
 				E4202FD41B667AA100C997FB /* Alamofire.swift in Sources */,
@@ -1685,6 +1695,7 @@
 				31FB2F8722C828D8007FD6D5 /* URLEncodedFormEncoder.swift in Sources */,
 				4C0CB641220CA89400604EDC /* URLRequest+Alamofire.swift in Sources */,
 				4C811F8D1B51856D00E0F59A /* ServerTrustEvaluation.swift in Sources */,
+				3165407329AEBC0400C9BE08 /* RequestCompression.swift in Sources */,
 				4C256A0621EEB69000AD5D87 /* RequestInterceptor.swift in Sources */,
 				315A4C56241EF28B00D57C7A /* StringEncoding+Alamofire.swift in Sources */,
 				4C43669B1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift in Sources */,
@@ -1884,6 +1895,7 @@
 		4CF627001BA7CB3E0011A099 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1901,6 +1913,7 @@
 		4CF627011BA7CB3E0011A099 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1988,6 +2001,7 @@
 		E4202FDE1B667AA100C997FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2006,6 +2020,7 @@
 		E4202FDF1B667AA100C997FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2077,7 +2092,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 5.6.2;
+				MARKETING_VERSION = 5.7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -2143,7 +2158,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 5.6.2;
+				MARKETING_VERSION = 5.7.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					CFNetwork,
@@ -2164,6 +2179,7 @@
 		F8111E4719A95C8B0040E7D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2182,6 +2198,7 @@
 		F8111E4819A95C8B0040E7D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

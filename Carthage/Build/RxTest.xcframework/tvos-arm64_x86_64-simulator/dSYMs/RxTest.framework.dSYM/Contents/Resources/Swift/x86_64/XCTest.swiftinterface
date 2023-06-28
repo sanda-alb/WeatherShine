@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
-// swift-module-flags: -target x86_64-apple-tvos9.0-simulator -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name XCTestSwiftSupport -swift-version 5 -enforce-exclusivity=checked -Osize -module-name XCTest
-// swift-module-flags-ignorable: -user-module-version 20076
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target x86_64-apple-tvos11.0-simulator -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name XCTestSwiftSupport -swift-version 5 -enforce-exclusivity=checked -Osize -module-name XCTest
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 21501
 import Foundation
 import Swift
 @_exported import XCTest
@@ -57,6 +57,38 @@ extension XCTIssue : _ObjectiveCBridgeable {
 extension XCTSourceCodeLocation {
   convenience public init(filePath: StaticString = #filePath, lineNumber: UInt = #line)
 }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13.0, tvOS 13.0, *)
+final public class XCTKeyPathExpectation<T, V> : XCTestExpectation, @unchecked Sendable where T : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  public typealias Predicate = @Sendable (_ observedObject: T, _ change: NSKeyValueObservedChange<V>) async -> Bool
+  #endif
+  @available(*, unavailable, message: "Use init(keyPath:observedObject:options:predicate:) instead.")
+  @objc convenience dynamic public init()
+  @available(*, unavailable, message: "Use init(keyPath:observedObject:options:predicate:) instead.")
+  @objc override convenience dynamic public init(description: String)
+  @objc deinit
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  convenience public init(keyPath: KeyPath<T, V>, observedObject: T, options: NSKeyValueObservingOptions = [.initial, .new, .old], predicate: Predicate? = nil)
+  #endif
+  final public let keyPath: KeyPath<T, V>
+  final public let observedObject: T
+  final public let options: NSKeyValueObservingOptions
+}
+@available(iOS 13.0, tvOS 13.0, *)
+extension XCTKeyPathExpectation where V : Swift.Equatable {
+  convenience public init(keyPath: KeyPath<T, V>, observedObject: T, options: NSKeyValueObservingOptions = [.initial, .new, .old], expectedValue: V)
+  final public var expectedValue: V? {
+    get
+  }
+}
+extension XCTestCase {
+  @available(iOS 13.0, tvOS 13.0, *)
+  public func expectation<T, V>(that keyPath: KeyPath<T, V>, on observedObject: T, options: NSKeyValueObservingOptions = [.initial, .new, .old], willEqual expectedValue: V) -> XCTKeyPathExpectation<T, V> where T : ObjectiveC.NSObject, V : Swift.Equatable
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  @available(iOS 13.0, tvOS 13.0, *)
+  public func expectation<T, V>(that keyPath: KeyPath<T, V>, on observedObject: T, options: NSKeyValueObservingOptions = [.initial, .new, .old], willSatisfy predicate: XCTKeyPathExpectation<T, V>.Predicate? = nil) -> XCTKeyPathExpectation<T, V> where T : ObjectiveC.NSObject
+  #endif
+}
 extension XCTContext {
   public class func runActivity<Result>(named name: String, block: (XCTActivity) throws -> Result) rethrows -> Result
 }
@@ -74,12 +106,10 @@ public struct XCTSkip : Error, CustomNSError {
 public func XCTSkipIf(_ expression: @autoclosure () throws -> Bool, _ message: @autoclosure () -> String? = nil, file: StaticString = #filePath, line: UInt = #line) throws
 public func XCTSkipUnless(_ expression: @autoclosure () throws -> Bool, _ message: @autoclosure () -> String? = nil, file: StaticString = #filePath, line: UInt = #line) throws
 extension XCTestCase {
-  
   #if compiler(>=5.3) && $AsyncAwait && $Sendable
   @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-  public func addTeardownBlock(_ block: @escaping () async throws -> Void)
+  public func addTeardownBlock(_ block: @escaping @Sendable () async throws -> Void)
   #endif
-
 }
 public func XCTExpectFailure(_ failureReason: String? = nil, options: XCTExpectedFailure.Options = .init())
 @inlinable public func XCTExpectFailure(_ failureReason: String? = nil, enabled: Bool? = nil, strict: Bool? = nil, issueMatcher: ((XCTIssue) -> Bool)? = nil) {
@@ -135,6 +165,6 @@ extension XCUIGestureVelocity : ExpressibleByIntegerLiteral {
   public typealias IntegerLiteralType = Swift.Int
 }
 extension XCUIGestureVelocity : ExpressibleByFloatLiteral {
-  public init(floatLiteral value: CGFloat.NativeType)
-  public typealias FloatLiteralType = CoreGraphics.CGFloat.NativeType
+  public typealias FloatLiteralType = CGFloat.NativeType
+  public init(floatLiteral value: FloatLiteralType)
 }

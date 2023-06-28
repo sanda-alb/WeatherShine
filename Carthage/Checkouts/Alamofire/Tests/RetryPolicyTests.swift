@@ -154,16 +154,37 @@ class BaseRetryPolicyTestCase: BaseTestCase {
 final class RetryPolicyTestCase: BaseRetryPolicyTestCase {
     // MARK: Tests - Retry
 
+    func testThatRetryIsNotPerformedOnCancelledRequests() {
+        // Given
+        let retrier = InspectorInterceptor(Retrier { _, _, _, completion in
+            completion(.retry)
+        })
+        let session = Session(interceptor: retrier)
+        let didFinish = expectation(description: "didFinish request")
+
+        // When
+        let request = session.request(.default).responseDecodable(of: TestResponse.self) { _ in
+            didFinish.fulfill()
+        }
+        request.cancel()
+
+        waitForExpectations(timeout: timeout)
+
+        // Then
+        XCTAssertTrue(request.isCancelled)
+        XCTAssertEqual(retrier.retryCalledCount, 0)
+    }
+
     func testThatRetryPolicyRetriesRequestsBelowRetryLimit() {
         // Given
         let retryPolicy = RetryPolicy()
-        let request = self.request(method: .get)
+        let request = request(method: .get)
 
         var results: [Int: RetryResult] = [:]
 
         // When
         for index in 0...2 {
-            let expectation = self.expectation(description: "retry policy should complete")
+            let expectation = expectation(description: "retry policy should complete")
 
             retryPolicy.retry(request, for: session, dueTo: connectionLostError) { result in
                 results[index] = result
@@ -200,8 +221,8 @@ final class RetryPolicyTestCase: BaseRetryPolicyTestCase {
 
         // When
         for method in methods {
-            let request = self.request(method: method)
-            let expectation = self.expectation(description: "retry policy should complete")
+            let request = request(method: method)
+            let expectation = expectation(description: "retry policy should complete")
 
             retryPolicy.retry(request, for: session, dueTo: connectionLostError) { result in
                 results[method] = result
@@ -228,8 +249,8 @@ final class RetryPolicyTestCase: BaseRetryPolicyTestCase {
 
         // When
         for statusCode in statusCodes {
-            let request = self.request(method: .get, statusCode: statusCode)
-            let expectation = self.expectation(description: "retry policy should complete")
+            let request = request(method: .get, statusCode: statusCode)
+            let expectation = expectation(description: "retry policy should complete")
 
             retryPolicy.retry(request, for: session, dueTo: unknownError) { result in
                 results[statusCode] = result
@@ -256,10 +277,10 @@ final class RetryPolicyTestCase: BaseRetryPolicyTestCase {
 
         // When
         for code in errorCodes {
-            let request = self.request(method: .get)
+            let request = request(method: .get)
             let error = URLError(code)
 
-            let expectation = self.expectation(description: "retry policy should complete")
+            let expectation = expectation(description: "retry policy should complete")
 
             retryPolicy.retry(request, for: session, dueTo: error) { result in
                 results[code] = result
@@ -286,10 +307,10 @@ final class RetryPolicyTestCase: BaseRetryPolicyTestCase {
 
         // When
         for code in errorCodes {
-            let request = self.request(method: .get)
+            let request = request(method: .get)
             let error = AFError.sessionTaskFailed(error: URLError(code))
 
-            let expectation = self.expectation(description: "retry policy should complete")
+            let expectation = expectation(description: "retry policy should complete")
 
             retryPolicy.retry(request, for: session, dueTo: error) { result in
                 results[code] = result
@@ -312,7 +333,7 @@ final class RetryPolicyTestCase: BaseRetryPolicyTestCase {
     func testThatRetryPolicyDoesNotRetryErrorsThatAreNotRetryable() {
         // Given
         let retryPolicy = RetryPolicy()
-        let request = self.request(method: .get)
+        let request = request(method: .get)
 
         let errors: [Error] = [resourceUnavailable,
                                unknown,
@@ -323,7 +344,7 @@ final class RetryPolicyTestCase: BaseRetryPolicyTestCase {
 
         // When
         for error in errors {
-            let expectation = self.expectation(description: "retry policy should complete")
+            let expectation = expectation(description: "retry policy should complete")
 
             retryPolicy.retry(request, for: session, dueTo: error) { result in
                 results.append(result)
@@ -348,13 +369,13 @@ final class RetryPolicyTestCase: BaseRetryPolicyTestCase {
     func testThatRetryPolicyTimeDelayBacksOffExponentially() {
         // Given
         let retryPolicy = RetryPolicy(retryLimit: 4)
-        let request = self.request(method: .get)
+        let request = request(method: .get)
 
         var results: [Int: RetryResult] = [:]
 
         // When
         for index in 0...4 {
-            let expectation = self.expectation(description: "retry policy should complete")
+            let expectation = expectation(description: "retry policy should complete")
 
             retryPolicy.retry(request, for: session, dueTo: connectionLostError) { result in
                 results[index] = result

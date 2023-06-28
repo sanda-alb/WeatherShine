@@ -6,47 +6,71 @@
 	<dict>
 		<key>Headers/RxBlocking-Swift.h</key>
 		<data>
-		fjnnnvvDiY7P6lh+TyiFEqA4+YQ=
+		CkXDkHVMl0gVK6gL/MJnvAsxbMQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		eUEqjhETGTf4b5zzk1/7XFY80uo=
+		vGx2JOrRiC8aYiBQMbKoqDDs/bI=
+		</data>
+		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.abi.json</key>
+		<data>
+		Styune6rF3OECp2JpKtt80Qlxrs=
+		</data>
+		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.private.swiftinterface</key>
+		<data>
+		SI5r1RjYMcN6t4coxYN2rQuKmC4=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.swiftdoc</key>
 		<data>
-		9s2Uf9Yl00HaFMWYhC6c4Qj08oM=
+		4oTG3lxko0Wqyy9J2/JfinCkYtc=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.swiftinterface</key>
 		<data>
-		nReoWP9G80TLDUZLQwwqfLYXtEA=
+		SI5r1RjYMcN6t4coxYN2rQuKmC4=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.swiftmodule</key>
 		<data>
-		0D6krsyuQQHsIeuTXJatbRh3VlI=
+		KOTg5qS4tpTaT3ugAcjqezeGSK8=
+		</data>
+		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.abi.json</key>
+		<data>
+		Styune6rF3OECp2JpKtt80Qlxrs=
+		</data>
+		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.private.swiftinterface</key>
+		<data>
+		W/dcBwxsbvwkBksYoGwjpgrl/hI=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.swiftdoc</key>
 		<data>
-		fTTENM9AcQWGUVwTSaceqS2q4WA=
+		rsu738qTYqrtcdLseVebCoYXOTA=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.swiftinterface</key>
 		<data>
-		V4LK3Vm1ng1dkI8xEGS8DptXa+0=
+		W/dcBwxsbvwkBksYoGwjpgrl/hI=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.swiftmodule</key>
 		<data>
-		wJp7dwwv1YHEwDx4L6ulYe3kxYs=
+		OZ8EfB99D8G26dsEFn+34bk93NU=
+		</data>
+		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.abi.json</key>
+		<data>
+		Styune6rF3OECp2JpKtt80Qlxrs=
+		</data>
+		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.private.swiftinterface</key>
+		<data>
+		dnRVfUQlRJjnAV+pGx/IZ+04NKU=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.swiftdoc</key>
 		<data>
-		AYqg3bdtwu9txG211uveMh10cxQ=
+		gncc8YjS4Gnv8pA5rkSn640C14U=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.swiftinterface</key>
 		<data>
-		7Lpb26Q2FJOfJLYcWkHOpuhNg/Q=
+		dnRVfUQlRJjnAV+pGx/IZ+04NKU=
 		</data>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.swiftmodule</key>
 		<data>
-		pnPX35TLQ9nHVuZwVVdldqwlkJ8=
+		1JoBDW7OfnVPmLJk88aQZNoCaK0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -59,110 +83,176 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fjnnnvvDiY7P6lh+TyiFEqA4+YQ=
+			CkXDkHVMl0gVK6gL/MJnvAsxbMQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			mX3kCpnYs5Mh1EWC0aB9lg/zV1PJCnAI+4A0skTDdrI=
+			XDRWNb4oOPIZp3MIJcHOTtXGE+bJCshUPA3At9VdfQk=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.abi.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Styune6rF3OECp2JpKtt80Qlxrs=
+			</data>
+			<key>hash2</key>
+			<data>
+			zZ2SUdfh+fDUYfoOXZwLqyiZRoBoU9Uuq7D7kR8hScE=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			SI5r1RjYMcN6t4coxYN2rQuKmC4=
+			</data>
+			<key>hash2</key>
+			<data>
+			qUq/k+4aljExMHUlc+a2wARQd9PSXCeNMRVQjI9L17Q=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9s2Uf9Yl00HaFMWYhC6c4Qj08oM=
+			4oTG3lxko0Wqyy9J2/JfinCkYtc=
 			</data>
 			<key>hash2</key>
 			<data>
-			pfct8ToON3eAgNbtvVvCR28mr8uanH7oMr2fouoQsRQ=
+			JG1t3xsyF55sxJHgFYZpcB20mLRg/9B0AH1NSboXZPo=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nReoWP9G80TLDUZLQwwqfLYXtEA=
+			SI5r1RjYMcN6t4coxYN2rQuKmC4=
 			</data>
 			<key>hash2</key>
 			<data>
-			mZksKTnNMBCROoagL03zdpEQ5ilCp3gWp0ArFaBYREE=
+			qUq/k+4aljExMHUlc+a2wARQd9PSXCeNMRVQjI9L17Q=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-watchos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0D6krsyuQQHsIeuTXJatbRh3VlI=
+			KOTg5qS4tpTaT3ugAcjqezeGSK8=
 			</data>
 			<key>hash2</key>
 			<data>
-			esX4zdl2l6r9h2sRXcE4LO4wqJKGGThaIt4jzttOywQ=
+			BrICa8OO53HcW49i/OjgU1TrLTyNmPsKDir2MGuhI30=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.abi.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Styune6rF3OECp2JpKtt80Qlxrs=
+			</data>
+			<key>hash2</key>
+			<data>
+			zZ2SUdfh+fDUYfoOXZwLqyiZRoBoU9Uuq7D7kR8hScE=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			W/dcBwxsbvwkBksYoGwjpgrl/hI=
+			</data>
+			<key>hash2</key>
+			<data>
+			CmFnSDRe20/6Kvjpb7q6/ne7g72ZuIhWwBohIYyCTXM=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fTTENM9AcQWGUVwTSaceqS2q4WA=
+			rsu738qTYqrtcdLseVebCoYXOTA=
 			</data>
 			<key>hash2</key>
 			<data>
-			0AtJOEDexBOORRJEdACnJD6Pt22BOqJ3+Z7EO6Bf8U0=
+			TPclR2Ih2n6FCACNTWSjzGywhhOwbXmYa5cl82eAMFg=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			V4LK3Vm1ng1dkI8xEGS8DptXa+0=
+			W/dcBwxsbvwkBksYoGwjpgrl/hI=
 			</data>
 			<key>hash2</key>
 			<data>
-			VvnXAPi2zG5YCUuwVWYgCAbLbuv/4r/L3eQVwgAj5Ao=
+			CmFnSDRe20/6Kvjpb7q6/ne7g72ZuIhWwBohIYyCTXM=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/i386-apple-watchos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wJp7dwwv1YHEwDx4L6ulYe3kxYs=
+			OZ8EfB99D8G26dsEFn+34bk93NU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Gddq0pejgJzJcd1rCjOz9CSusguhnIPmSOeQyAc1Gc4=
+			6SVigltP1xCd7QNgJFEYXjjFUBKtsW6V4CBdnZ97FdQ=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.abi.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Styune6rF3OECp2JpKtt80Qlxrs=
+			</data>
+			<key>hash2</key>
+			<data>
+			zZ2SUdfh+fDUYfoOXZwLqyiZRoBoU9Uuq7D7kR8hScE=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dnRVfUQlRJjnAV+pGx/IZ+04NKU=
+			</data>
+			<key>hash2</key>
+			<data>
+			bxl0AueBfhRezJDn/oGI+hZq/Mtk9IyJDk5BRF6TGiA=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AYqg3bdtwu9txG211uveMh10cxQ=
+			gncc8YjS4Gnv8pA5rkSn640C14U=
 			</data>
 			<key>hash2</key>
 			<data>
-			5cAuBNGn/HNIvxWa48RvP2RDEka3cx3iJQRsYjWVBwg=
+			07RADjVAok7oBq1KSJkFqrpCVPnb+AYtx2ej0SmzJCc=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7Lpb26Q2FJOfJLYcWkHOpuhNg/Q=
+			dnRVfUQlRJjnAV+pGx/IZ+04NKU=
 			</data>
 			<key>hash2</key>
 			<data>
-			kVjsVXQfaPHXD7K5n7iExosW1kE5Y/GYQtVgpnYxFBA=
+			bxl0AueBfhRezJDn/oGI+hZq/Mtk9IyJDk5BRF6TGiA=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-watchos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pnPX35TLQ9nHVuZwVVdldqwlkJ8=
+			1JoBDW7OfnVPmLJk88aQZNoCaK0=
 			</data>
 			<key>hash2</key>
 			<data>
-			C4uO/Uvd5Se+HHGkqrYJ5DrBfcJM4AFBiVH4N8a/qbo=
+			RjrbfIt7Ba2qJV4d4aswRs2t+hcjAN/zfki/1r94lYo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

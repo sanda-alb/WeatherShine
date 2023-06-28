@@ -5,7 +5,8 @@ Aside from features marked [🔥 Experimental 🔥], `Alamofire` adheres to [Sem
 compatibility should be preserved in most cases, but cannot be guaranteed.
 
 #### 5.x Releases
-- `5.6.x` Releases - [5.6.0](#560) | [5.6.1](#561) | [5.6.2](#562)
+- `5.7.x` Releases - [5.7.0](#570) | [5.7.1](#571)
+- `5.6.x` Releases - [5.6.0](#560) | [5.6.1](#561) | [5.6.2](#562) | [5.6.3](#563) | [5.6.4](#564)
 - `5.5.x` Releases - [5.5.0](#550)
 - `5.4.x` Releases - [5.4.0](#540) | [5.4.1](#541) | [5.4.2](#542) | [5.4.3](#543) | [5.4.4](#544)
 - `5.3.x` Releases - [5.3.0](#530)
@@ -49,6 +50,66 @@ compatibility should be preserved in most cases, but cannot be guaranteed.
 
 ---
 
+## [5.7.1](https://github.com/Alamofire/Alamofire/releases/tag/5.7.1)
+Released on 2023-05-10. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/milestone/86?closed=1).
+
+#### Updated
+- Deployment targets reverted to (macOS 10.12, iOS 10, tvOS 10, and watchOS 3)+
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#3720](https://github.com/Alamofire/Alamofire/pull/3720).
+
+## [5.7.0](https://github.com/Alamofire/Alamofire/releases/tag/5.7.0)
+Released on 2023-05-09. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/milestone/84?closed=1).
+
+#### Added
+- Request body compression support. This is disabled by default.
+  - Added by [Jon Shier](https://github.com/jshier) in Pull Request [#3701](https://github.com/Alamofire/Alamofire/pull/3701).
+- `ArrayEncoding.custom` to `URLEncodedFormEncoder` and `URLEncoding`.
+  - Added by [Mike Naquin](https://github.com/naquin) in Pull Request [#3699](https://github.com/Alamofire/Alamofire/pull/3699).
+- `KeyPathEncoding` to `URLEncodedFormEncoder`.
+  - Added by [Jon Shier](https://github.com/jshier) in Pull Request [#3689](https://github.com/Alamofire/Alamofire/pull/3689).
+- `NilEncoding` to `URLEncodedFormEncoder`.
+  - Added by [Jon Shier](https://github.com/jshier) in Pull Request [#3686](https://github.com/Alamofire/Alamofire/pull/3686).
+
+#### Updated
+- Alamofire now requires Swift 5.5+ and (macOS 10.13, iOS 11, tvOS 11, and watchOS 4)+.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Requests [#3670](https://github.com/Alamofire/Alamofire/pull/3670) and [#3717](https://github.com/Alamofire/Alamofire/pull/3717).
+- `flatMap` to `map` in `HTTPHeaders`.
+  - Updated by [kati](https://github.com/kati-kms) in Pull Request [#3704](https://github.com/Alamofire/Alamofire/pull/3704).
+- Various CI integrations.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Requests [#3685](https://github.com/Alamofire/Alamofire/pull/3685) and [#3712](https://github.com/Alamofire/Alamofire/pull/3712).
+
+#### Fixed
+- Reachability API usage safety.
+  - Fixed by [Jon Shier](https://github.com/jshier) in Pull Request [#3684](https://github.com/Alamofire/Alamofire/pull/3684).
+- Unused `bufferingPolicy` in `StreamOf`.
+  - Fixed by [Duc](https://github.com/trungducc) in Pull Request [#3668](https://github.com/Alamofire/Alamofire/pull/3668).
+- Various documentation typos.
+  - Fixed by [Timo Wälisch](https://github.com/TimoWaelischIdealo), [Tony](https://github.com/iamtony), and [uhooi](https://github.com/uhooi) in various PRs.
+
+---
+
+## [5.6.4](https://github.com/Alamofire/Alamofire/releases/tag/5.6.4)
+Released on 2022-11-21. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/milestone/85?closed=1).
+
+#### Fixed
+- Deprecated OS version support in Swift 5.7 SPM Package.
+  - Fixed by [Guglielmo Faglioni](https://github.com/guidev) in Pull Request [#3665](https://github.com/Alamofire/Alamofire/pull/3665).
+
+## [5.6.3](https://github.com/Alamofire/Alamofire/releases/tag/5.6.3)
+Released on 2022-11-20. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/milestone/83?closed=1).
+
+#### Updated
+- Swift package to 5.7, CI to Xcode 14.1.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#3653](https://github.com/Alamofire/Alamofire/pull/3653).
+
+#### Fixed
+- Calls to deprecated cancellation handler function.
+  - Fixed by [Sven Münnich](https://github.com/svenmuennich) in Pull Request [#3657](https://github.com/Alamofire/Alamofire/pull/3657).
+- Unnecessary protocol conformance on Combine publishers.
+  - Fixed by [MoonkiKim(김문기)](https://github.com/tedKim5178) in Pull Request [#3650](https://github.com/Alamofire/Alamofire/pull/3650).
+- Don't attempt retry when `Request` has already been cancelled.
+  - Fixed by [Jon Shier](https://github.com/jshier) in Pull Request [#3641](https://github.com/Alamofire/Alamofire/pull/3641).
+
 ## [5.6.2](https://github.com/Alamofire/Alamofire/releases/tag/5.6.2)
 Released on 2022-07-17. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/milestone/82?closed=1).
 
@@ -57,7 +118,7 @@ Released on 2022-07-17. All issues associated with this milestone can be found u
   - Added by [Jon Shier](https://github.com/jshier) in Pull Request [#3624](https://github.com/Alamofire/Alamofire/pull/3624).
 
 #### Updated
-- CI support for all supported Xcode, macOS, and Linux version.
+- CI support for all supported Xcode, macOS, and Linux versions.
   - Updated by [Jon Shier](https://github.com/jshier) in Pull Requests [#3607](https://github.com/Alamofire/Alamofire/pull/3607) and [#3622](https://github.com/Alamofire/Alamofire/pull/3622).
 - Support for various Xcode version.
   - Updated by [Jon Shier](https://github.com/jshier) in Pull Requests [#3616](https://github.com/Alamofire/Alamofire/pull/3616) and [#3632](https://github.com/Alamofire/Alamofire/pull/3632).

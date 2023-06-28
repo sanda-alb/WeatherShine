@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "configure(with:)"
+            landmarkName = "configure(with:weatherForecast:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

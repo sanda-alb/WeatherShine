@@ -330,7 +330,8 @@ final class SessionTestCase: BaseTestCase {
 
     // MARK: Tests - Supported Accept-Encodings
 
-    func testDefaultAcceptEncodingSupportsAppropriateEncodingsOnAppropriateSystems() {
+    // Disabled due to HTTPBin flakiness.
+    func _testDefaultAcceptEncodingSupportsAppropriateEncodingsOnAppropriateSystems() {
         // Given
         let brotliExpectation = expectation(description: "brotli request should complete")
         let gzipExpectation = expectation(description: "gzip request should complete")
@@ -377,7 +378,7 @@ final class SessionTestCase: BaseTestCase {
         let url = Endpoint().url
         let urlRequest = URLRequest(url: url)
 
-        let expectation = self.expectation(description: "\(url)")
+        let expectation = expectation(description: "\(url)")
 
         var response: HTTPURLResponse?
 
@@ -403,7 +404,7 @@ final class SessionTestCase: BaseTestCase {
         let url = Endpoint().url
         let urlRequest = URLRequest(url: url)
 
-        let expectation = self.expectation(description: "\(url)")
+        let expectation = expectation(description: "\(url)")
 
         var response: DataResponse<Data?, AFError>?
 
@@ -431,7 +432,7 @@ final class SessionTestCase: BaseTestCase {
         let url = Endpoint().url
         let urlRequest = URLRequest(url: url)
 
-        let expectation = self.expectation(description: "\(url)")
+        let expectation = expectation(description: "\(url)")
 
         var response: DataResponse<Data?, AFError>?
 
@@ -460,7 +461,7 @@ final class SessionTestCase: BaseTestCase {
         let url = Endpoint().url
         let urlRequest = URLRequest(url: url)
 
-        let expectation = self.expectation(description: "\(url)")
+        let expectation = expectation(description: "\(url)")
 
         var response: DataResponse<Data?, AFError>?
 
@@ -531,7 +532,7 @@ final class SessionTestCase: BaseTestCase {
         // Given
         let session = Session()
         let url = Endpoint().url.absoluteString.appending("/äëïöü")
-        let expectation = self.expectation(description: "Request should fail with error")
+        let expectation = expectation(description: "Request should fail with error")
 
         var response: DataResponse<Data?, AFError>?
 
@@ -556,7 +557,7 @@ final class SessionTestCase: BaseTestCase {
         // Given
         let session = Session()
         let url = Endpoint().url.absoluteString.appending("/äëïöü")
-        let expectation = self.expectation(description: "Download should fail with error")
+        let expectation = expectation(description: "Download should fail with error")
 
         var response: DownloadResponse<URL?, AFError>?
 
@@ -582,7 +583,7 @@ final class SessionTestCase: BaseTestCase {
         // Given
         let session = Session()
         let url = Endpoint().url.absoluteString.appending("/äëïöü")
-        let expectation = self.expectation(description: "Upload should fail with error")
+        let expectation = expectation(description: "Upload should fail with error")
 
         var response: DataResponse<Data?, AFError>?
 
@@ -607,7 +608,7 @@ final class SessionTestCase: BaseTestCase {
         // Given
         let session = Session()
         let url = Endpoint().url.absoluteString.appending("/äëïöü")
-        let expectation = self.expectation(description: "Upload should fail with error")
+        let expectation = expectation(description: "Upload should fail with error")
 
         var response: DataResponse<Data?, AFError>?
 
@@ -632,7 +633,7 @@ final class SessionTestCase: BaseTestCase {
         // Given
         let session = Session()
         let url = Endpoint().url.absoluteString.appending("/äëïöü")
-        let expectation = self.expectation(description: "Upload should fail with error")
+        let expectation = expectation(description: "Upload should fail with error")
 
         var response: DataResponse<Data?, AFError>?
 
@@ -856,7 +857,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session()
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -890,7 +891,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session()
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DownloadResponse<TestResponse, AFError>?
 
         let destination: DownloadRequest.Destination = { _, _ in
@@ -925,7 +926,7 @@ final class SessionTestCase: BaseTestCase {
         let handler = UploadHandler()
         let session = Session(interceptor: handler)
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DataResponse<TestResponse, AFError>?
 
         let uploadData = Data("upload data".utf8)
@@ -958,7 +959,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session()
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -991,7 +992,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session(interceptor: sessionHandler)
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -1028,7 +1029,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session(interceptor: handler)
 
-        let expectation = self.expectation(description: "request should eventually succeed")
+        let expectation = expectation(description: "request should eventually succeed")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -1061,7 +1062,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session(interceptor: handler)
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -1097,7 +1098,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session(interceptor: handler)
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -1132,7 +1133,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session(interceptor: handler)
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -1174,7 +1175,7 @@ final class SessionTestCase: BaseTestCase {
 
         let session = Session()
 
-        let expectation = self.expectation(description: "request should eventually fail")
+        let expectation = expectation(description: "request should eventually fail")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -1447,7 +1448,7 @@ final class SessionTestCase: BaseTestCase {
         let handler = RequestHandler()
         let session = Session()
 
-        let expectation = self.expectation(description: "request should complete")
+        let expectation = expectation(description: "request should complete")
         var response: DataResponse<TestResponse, AFError>?
         var completionCallCount = 0
 
@@ -1486,7 +1487,7 @@ final class SessionTestCase: BaseTestCase {
         // Given
         let session = Session()
 
-        let expectation = self.expectation(description: "request should complete")
+        let expectation = expectation(description: "request should complete")
         var response: DataResponse<TestResponse, AFError>?
 
         // When
@@ -1769,7 +1770,7 @@ final class SessionConfigurationHeadersTestCase: BaseTestCase {
             return Session(configuration: configuration)
         }()
 
-        let expectation = self.expectation(description: "request should complete successfully")
+        let expectation = expectation(description: "request should complete successfully")
 
         var response: DataResponse<TestResponse, AFError>?
 

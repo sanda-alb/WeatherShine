@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1400"
+   LastUpgradeVersion = "1430"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -52,7 +52,7 @@
             default = "YES">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:Tests/Test Plans/watchOS-TS.xctestplan">
+            reference = "container:Tests/Test Plans/watchOS-NoTS.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>

@@ -6,94 +6,90 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		xa0QDXqMIBC6b+tBIXtlsGEMSoo=
+		DN8UBQNN16j6Bpl4e00cZQ8/9N8=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/RxBlocking-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			LQjSJcMnZ1qDVEOksJ8d9DgVzqI=
-			</data>
 			<key>hash2</key>
 			<data>
-			S1vmwhq7qGDg6JhwYnAYIqS6i/mqJ1khpLoAPjJRJPg=
+			sIvknu1tUbNMvVVlNpVXYnXWISQVcFDDefTRWfVY2M8=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/arm64-apple-macos.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zZ2SUdfh+fDUYfoOXZwLqyiZRoBoU9Uuq7D7kR8hScE=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gLAbK3uHYnGvg+CTwQ6F4gdweiQiJQlxDNheOCYZJQ8=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-macos.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Da9BTaAzPtxjKMDgtjIqj4ih9hw=
-			</data>
 			<key>hash2</key>
 			<data>
-			zIJIzmYEz1HBNXvsMaFoDsVs4rymBqB2qVEVRE/zwsg=
+			DyrpCAs+PIfdol82aYzXZ32kDWhweqIRNffEZV/TJak=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-macos.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			a5GUkXmvVUrwaeamxuvfpftC11U=
-			</data>
 			<key>hash2</key>
 			<data>
-			QkHJWcfMXBy4O2Rkz60n04J7b5Xi5eS3KR0PWiDW0BM=
+			gLAbK3uHYnGvg+CTwQ6F4gdweiQiJQlxDNheOCYZJQ8=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/arm64-apple-macos.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			pM1opNfMpPuc9kISMu7Xl8sEPsE=
-			</data>
 			<key>hash2</key>
 			<data>
-			n4qvKSS2LfEsugSTtz7AqApvZjfBnt3MeqPrrwrGIFs=
+			5+6LWtIthVWsRXgoJLoAufYLMi0z0pHA2RoPljjetgg=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-macos.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zZ2SUdfh+fDUYfoOXZwLqyiZRoBoU9Uuq7D7kR8hScE=
+			</data>
+		</dict>
+		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+ts2eYhKFnxBssT2w0BIvSu0X93+eybOlHzOSwvbhhE=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			849Zc3VUYS1YMj/WpmABOw8OjCQ=
-			</data>
 			<key>hash2</key>
 			<data>
-			Ks8L6lk4+Xm3ZIWd8gZyBfbKGPWO4866eMrXhEP5xYY=
+			Egt/HTbNlSHpMDbXHtNqO9Y3Zn+tf1tfi/p7c0M8zeY=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-macos.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qP/MO0JNGEU7SIQIK8ygDM2skkU=
-			</data>
 			<key>hash2</key>
 			<data>
-			ybBIqZAr/tNuSsjQajC1zuRlSdt+sxK6E0Mlz4xqAs4=
+			+ts2eYhKFnxBssT2w0BIvSu0X93+eybOlHzOSwvbhhE=
 			</data>
 		</dict>
 		<key>Modules/RxBlocking.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			BSwxogFTMpplQxim9S3twAbc3gQ=
-			</data>
 			<key>hash2</key>
 			<data>
-			hhewwrbVYWZSX7LepdHs6MH2ITAX4XmL+NgfHLHHcb0=
+			mJxtCIN4QzDmYYFQ6sOODyhOjSspeKu6KVpb1qL+CWA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Ng/eBvq0RY4tkuZYZKZGTnrlne4=
-			</data>
 			<key>hash2</key>
 			<data>
 			4p9QQlOCxo9V91GcB2rbboquAm0bzIGxKuXIGHR8SYg=
@@ -101,13 +97,9 @@
 		</dict>
 		<key>Resources/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			xa0QDXqMIBC6b+tBIXtlsGEMSoo=
-			</data>
 			<key>hash2</key>
 			<data>
-			48iKq9a5Jop0N/kJ93Zism913rGn5KM+wLzpwYHEJ10=
+			Tp9IXAe10Imkle5LQ7PRQ/I+3he7W7h0ucPtU2ZWwvM=
 			</data>
 		</dict>
 	</dict>
