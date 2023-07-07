@@ -46,11 +46,32 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
     private let sunriseIcon  = UIImageView()
     private let sunsetIcon   = UIImageView()
     
+    lazy var screenHeight       = UIScreen.main.bounds.height
+    lazy var bottomSheetHeight  = screenHeight * 0.8
+    lazy var hourlySectionWidth = UIScreen.main.bounds.width - 60
+    
+    //Hourly section height
+    lazy var hourlySectionHeight = floor((bottomSheetHeight - stackViewSpacing * 3 - 40)/4)
+
+    //Hourly section contentView height
+    //where 25 is label + offset height
+    lazy var contentViewHeight: CGFloat  = hourlySectionHeight - 25
+    
+    lazy var stackViewSpacing: CGFloat = { [self] in
+        if self.screenHeight > 800 {
+            return 20.0
+        } else if self.screenHeight < 700 {
+            return 10.0
+        } else {
+            return 15.0
+        }
+    }()
+
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         embedViews()
         setupLayout()
         setupAppearance()
@@ -58,12 +79,15 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         setupBottomSheet()
         setupStackView()
         output?.viewIsReady()
+        
+        print("hourlySectionHeight: \(hourlySectionHeight)")
+        print("bottomSheetHeight: \(bottomSheetHeight)")
+        print("contentViewHeight: \(contentViewHeight)")
     }
     
     // MARK: - Embed Views
     
     private func embedViews() {
-        
         view.addSubview(stackView)
         
         [ hourlySection,
@@ -104,12 +128,12 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         hourlySection.snp.makeConstraints { make in
             make.width.equalToSuperview()
         }
-        
+ 
         hourlyCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.height.equalTo(120)
+            make.height.equalTo(contentViewHeight)
         }
         
         comfortSection.snp.makeConstraints { make in
@@ -127,29 +151,30 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         humidityValue.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(30)
             make.centerY.equalToSuperview()
+//            make.trailing.equalTo(humidityIcon.snp.leading)
         }
-        
-        humidityIcon.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.height.width.equalTo(80)
-            make.leading.equalTo(humidityValue.snp.trailing)
-            make.trailing.equalTo(comfortTextBlock.snp.leading).offset(-10)
-        }
+
+//        humidityIcon.snp.makeConstraints { make in
+//            make.centerY.equalToSuperview()
+////            make.width.height.equalTo(contentViewHeight * 0.8)
+//            make.leading.equalTo(humidityValue.snp.trailing)
+//            make.trailing.equalTo(comfortTextBlock.snp.leading).offset(-10)
+//        }
         
         comfortTextBlock.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().offset(-30)
             make.leading.equalTo(windTextBlock.snp.leading)
         }
-        
+
         windTextBlock.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().offset(-30)
             make.leading.equalTo(windIcon.snp.trailing).offset(30)
         }
-    
+
         windIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(100)
+            make.width.height.equalTo(contentViewHeight * 0.8)
             make.leading.equalToSuperview().offset(30)
             make.centerY.equalToSuperview()
         }
@@ -157,23 +182,25 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         sunriseIcon.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview().offset(-80)
+            make.height.width.equalTo(70)
         }
-        
+
         sunsetIcon.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview().offset(80)
+            make.height.width.equalTo(70)
         }
-        
+
         sunriseTime.snp.makeConstraints { make in
             make.centerX.equalTo(sunriseIcon)
-            make.top.equalTo(sunriseIcon.snp.bottom)
+//            make.top.equalTo(sunriseIcon.snp.bottom)
             make.bottom.equalToSuperview().offset(-10)
             make.height.equalTo(15)
         }
-        
+
         sunsetTime.snp.makeConstraints { make in
             make.centerX.equalTo(sunsetIcon)
-            make.top.equalTo(sunsetIcon.snp.bottom)
+//            make.top.equalTo(sunsetIcon.snp.bottom)
             make.height.equalTo(15)
             make.bottom.equalToSuperview().offset(-10)
         }
@@ -224,15 +251,16 @@ class HourlyWeatherView: UIViewController, HourlyWeatherViewProtocol {
         hourlyCollectionView.backgroundColor = UIColor(named: "purpleLight")
             
         let collectionViewLayout = (hourlyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout)
-    
-        collectionViewLayout.itemSize = CGSize(width: 70, height: 120)
+        
+        collectionViewLayout.itemSize = CGSize(width: contentViewHeight/1.5, height: contentViewHeight)
+        
         collectionViewLayout.scrollDirection = .horizontal
     }
     
     private func setupStackView() {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 20
+        stackView.spacing = stackViewSpacing
     }
 }
 
@@ -244,7 +272,7 @@ extension HourlyWeatherView: HourlyWeatherViewInput {
         
         let current = data.current
     
-        humidityValue.text = "\(current.humidity)"
+        humidityValue.text = "\(current.humidity)%"
 
         comfortTextBlock.upperLabel.text = "Feeling  \(Int(current.feelsLike)) °C"
         comfortTextBlock.lowerLabel.text = "Index UV \(Int(current.uvi)) \(Int(current.uvi).setUVCategory())"
@@ -285,3 +313,10 @@ extension HourlyWeatherView: UICollectionViewDataSource {
         return hourlyCell
     }
 }
+
+private extension ConstraintMaker {
+    
+    static let offsetOne = 20
+}
+//: ConstraintOffsetTarget = ConstraintOffsetTarget(value: 0.0)
+//        static var topMargin: ConstraintOffsetTarget = ConstraintOffsetTarget(value: 0.0)

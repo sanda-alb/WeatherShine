@@ -44,20 +44,28 @@ final class HourlyWeatherCell: UICollectionViewCell {
         timeLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(weatherIcon.snp.bottom).offset(5)
-            make.height.equalTo(15)
+            make.height.equalTo(15).priority(.low)
         }
         
         temperatureLabel.snp.makeConstraints { make in
             make.top.equalTo(timeLabel.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-10)
-            make.height.equalTo(20)
+            make.height.equalTo(20).priority(.low)
+
+
         }
     }
     
     private func setupApperance() {
-        timeLabel.font = UIFont.systemFont(ofSize: 15)
-        temperatureLabel.font = UIFont.boldSystemFont(ofSize: 20)
+//        timeLabel.font = UIFont.systemFont(ofSize: 15)
+//        temperatureLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        timeLabel.adjustsFontForContentSizeCategory = true
+        temperatureLabel.adjustsFontForContentSizeCategory = true
+        
+        timeLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
+        temperatureLabel.font = UIFont.preferredFont(forTextStyle: .title3)
         
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 20

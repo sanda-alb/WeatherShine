@@ -47,7 +47,7 @@ class HourlySection: UIView {
     func setupLayout() {
         title.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.height.equalTo(20).priority(.high)
+            make.height.equalTo(20)
             make.leading.equalToSuperview()
         }
         
