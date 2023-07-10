@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import SnapKit
 
+// MARK: - Block of text sepatated by horizontal line
+
 class textBlock: UIView {
     lazy var separator: UIView = {
         let separator = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 1))

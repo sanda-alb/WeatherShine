@@ -51,42 +51,10 @@
             filePath = "WeatherShine/Presentation Layer/HourlyWeather/View/HourlyWeatherView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
-            landmarkName = "setupCollectionView()"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "setupStackView()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D94C90BB-E977-4D85-812F-0FD84D43AAEC - 4b5fe254a12a59a4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WeatherShine.HourlyWeatherView.setupCollectionView() -&gt; ()"
-                  moduleName = "WeatherShine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/albrecht/Projects/MyProjects/WeatherShine/WeatherShine/Presentation%20Layer/HourlyWeather/View/HourlyWeatherView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "256"
-                  endingLineNumber = "256"
-                  offsetFromSymbolStart = "1484">
-               </Location>
-               <Location
-                  uuid = "D94C90BB-E977-4D85-812F-0FD84D43AAEC - 4b5fe254a12a5845"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WeatherShine.HourlyWeatherView.setupCollectionView() -&gt; ()"
-                  moduleName = "WeatherShine"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/albrecht/Projects/MyProjects/WeatherShine/WeatherShine/Presentation%20Layer/HourlyWeather/View/HourlyWeatherView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "255"
-                  endingLineNumber = "255"
-                  offsetFromSymbolStart = "1484">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -58,8 +58,7 @@ final class HourlyWeatherCell: UICollectionViewCell {
     }
     
     private func setupApperance() {
-//        timeLabel.font = UIFont.systemFont(ofSize: 15)
-//        temperatureLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        temperatureLabel.font = UIFont.boldSystemFont(ofSize: 20)
         
         timeLabel.adjustsFontForContentSizeCategory = true
         temperatureLabel.adjustsFontForContentSizeCategory = true
